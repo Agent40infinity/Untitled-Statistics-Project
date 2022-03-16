@@ -1,0 +1,6 @@
+{
+    "Option1": "Name of Option1$t#Test Character worked",
+    "Option2": "Name of Option2$t#Please tell me this works$s#Hopefully if it does, that means the split system works correctly",
+    "Option3": "Name of Option3$t#Another test",
+    "Option4": "Name of Option4$t#Secret Option, should only appear if special item has been obtained.",
+}
