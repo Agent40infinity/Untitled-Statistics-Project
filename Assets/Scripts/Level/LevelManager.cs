@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class LevelManager : MonoBehaviour
 {
     public string identity;
-    public QueueState queue;
+    public int queueSize;
+    public int queueIndex = 0;
+    public static bool queueWaiting = true;
 
     public DialogueController dialogueController;
 
@@ -13,25 +16,29 @@ public class LevelManager : MonoBehaviour
     {
         dialogueController = GameObject.FindWithTag("Dialogue").GetComponent<DialogueController>();
 
-        LoadLevel(identity);
-        LoadQuestion("Prelude");
+        LoadLevel();
     }
 
-    public void LoadLevel(string identity)
+    public void Update()
     {
-        dialogueController.Setup(identity);
+        switch (queueWaiting)
+        { 
+            case true:
+                LoadQuestion("Prelude", QuestionState.Dialogue);
+                break;
+
+        }
     }
 
-    public void LoadQuestion(string question)
+    public void LoadLevel()
     {
-        dialogueController.QuestionSetup(question);
+        DialogueLoading.LoadDialogue(identity);
+        queueSize = DialogueData.currentlyLoaded.levelData.Count;
     }
-}
 
-public enum QueueState
-{ 
-    Prelude,
-    Dialogue,
-    Questions, 
-    Responses,
+    public void LoadQuestion(string question, QuestionState state)
+    {
+        dialogueController.QuestionSetup(question, state);
+        queueWaiting = true;
+    }
 }

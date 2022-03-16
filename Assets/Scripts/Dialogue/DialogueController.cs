@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using System.Linq;
 
 public class DialogueController : MonoBehaviour
 {
@@ -18,17 +17,19 @@ public class DialogueController : MonoBehaviour
 
     public string currentQuestion;
 
-    public void Setup(string level)
-    {
-        DialogueLoading.LoadDialogue(level);
-    }
-
-    public void QuestionSetup(string question)
+    public void QuestionSetup(string question, QuestionState state)
     {
         currentQuestion = question;
 
-        StartCoroutine(DialogueSelection());
-        DisplayDialogue(QuestionState.Dialogue, 0);
+        switch (state)
+        {
+            case QuestionState.Questions:
+                StartCoroutine(DialogueSelection());
+                break;
+            case QuestionState.Dialogue: case QuestionState.Responses:
+                DisplayDialogue(QuestionState.Dialogue, 0);
+                break;
+        }
     }
 
     public IEnumerator DialogueSelection()
@@ -48,7 +49,6 @@ public class DialogueController : MonoBehaviour
             options[i].text = decompiledTitle[i];
         }
 
-        dialogueSelection.SetActive(false);
         yield return null;
     }
 
@@ -103,5 +103,6 @@ public class DialogueController : MonoBehaviour
 public enum QuestionState
 { 
     Dialogue,
+    Questions,
     Responses
 }
