@@ -1540,7 +1540,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 4
   m_TargetDisplay: 0
@@ -1560,10 +1560,10 @@ MonoBehaviour:
   - 0.03
   - 0
   intervalIndex: 0
-  dialogue: []
   index: 0
   display: 
   dialogueState: 1
+  characterText: {fileID: 462435779}
   dialogueText: {fileID: 675261940}
   dialogueParent: {fileID: 558703891}
 --- !u!224 &1057337226
@@ -1601,7 +1601,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueSelection: {fileID: 1427360768}
   dialogueBox: {fileID: 558703891}
-  dialogue: {fileID: 0}
+  dialogue: {fileID: 1057337225}
   secretOption: {fileID: 820666219}
   options:
   - {fileID: 540366799}
@@ -1611,6 +1611,7 @@ MonoBehaviour:
   modifiers:
   - $t#
   - $s#
+  currentQuestion: 
 --- !u!1 &1254402506
 GameObject:
   m_ObjectHideFlags: 0

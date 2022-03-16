@@ -2,16 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.Linq;
 
 public class Dialogue : MonoBehaviour
 {
     public float[] interval = new float[2];
     public int intervalIndex;
-    public List<string> dialogue = new List<string>();
+    public Dictionary<string, string> dialogue = new Dictionary<string, string>();
     public int index;
     public string display;
     public DialogueState dialogueState = DialogueState.Idle;
 
+    public TextMeshProUGUI characterText;
     public TextMeshProUGUI dialogueText;
     public GameObject dialogueParent;
 
@@ -19,7 +21,8 @@ public class Dialogue : MonoBehaviour
     {
         if (dialogueState == DialogueState.Load)
         {
-            StartCoroutine(DisplayText(dialogue[index]));
+            StartCoroutine(DisplayText(dialogue.ElementAt(index).Value));
+            DisplayName(dialogue.ElementAt(index).Key);
             dialogueState = DialogueState.Normal;
         }
 
@@ -30,7 +33,8 @@ public class Dialogue : MonoBehaviour
                 switch (dialogueState)
                 {
                     case DialogueState.Idle:
-                        StartCoroutine(DisplayText(dialogue[index]));
+                        StartCoroutine(DisplayText(dialogue.ElementAt(index).Value));
+                        DisplayName(dialogue.ElementAt(index).Key);
                         dialogueState = DialogueState.Normal;
                         break;
                     case DialogueState.Normal:
@@ -57,6 +61,11 @@ public class Dialogue : MonoBehaviour
     public void UpdateText()
     {
         dialogueText.text = display;
+    }
+
+    public void DisplayName(string name)
+    {
+        characterText.text = name;
     }
 
     public IEnumerator DisplayText(string sentence)

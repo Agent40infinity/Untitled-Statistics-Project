@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.Linq;
 
 public class DialogueController : MonoBehaviour
 {
@@ -12,71 +13,84 @@ public class DialogueController : MonoBehaviour
     public List<TextMeshProUGUI> options = new List<TextMeshProUGUI>();
     public string[] modifiers =
     {
-        "$t#",
-        "$s#"
+        "$c"
     };
+
+    public string currentQuestion;
 
     public void Setup(string level)
     {
         DialogueLoading.LoadDialogue(level);
-        InspectSetup();
     }
 
-    public void InspectSetup()
+    public void QuestionSetup(string question)
+    {
+        currentQuestion = question;
+
+        StartCoroutine(DialogueSelection());
+        DisplayDialogue(QuestionState.Dialogue, 0);
+    }
+
+    public IEnumerator DialogueSelection()
     {
         dialogueSelection.SetActive(true);
 
         string[] decompiledTitle = new string[options.Count];
 
-        /*for (int i = 0; i < decompiledTitle.Length; i++)
+        for (int i = 0; i < decompiledTitle.Length; i++)
         {
-            Debug.Log(DialogueData.currentlyLoaded["Option" + (i + 1)]);
-            decompiledTitle[i] = DialogueData.currentlyLoaded["Option" + (i + 1)];
-            int index = decompiledTitle[i].IndexOf(modifiers[0]);
-            decompiledTitle[i] = decompiledTitle[i].Substring(0, index);
-        }*/
+            //Debug.Log(DialogueData.currentlyLoaded[question["Questions"[]]]);
+            decompiledTitle[i] = DialogueData.currentlyLoaded.levelData[currentQuestion]["Questions"][(i + 1).ToString()];
+        }
 
         for (int i = 0; i < options.Count; i++)
         {
             options[i].text = decompiledTitle[i];
         }
+
+        dialogueSelection.SetActive(false);
+        yield return null;
     }
 
-    public void StorySetup() 
+    public void DisplayDialogue(QuestionState state, int optionIndex)
     {
-        //Don't touch, think up an easy way to queue dialogue for in order to end the storyline (Most likely will have a seperate script called upon in here called Story that contains excess data).
+        DialogueActivation();
+
+        Dictionary<string, string> loadedDialogue = loadedDialogue = DialogueData.currentlyLoaded.levelData[currentQuestion][state.ToString()];
+
+        switch (state)
+        {
+            case QuestionState.Responses:
+                if (int.Parse(DialogueData.currentlyLoaded.answers[currentQuestion]) == optionIndex)
+                {
+                    loadedDialogue.Remove("Incorrect");
+                }
+                else
+                {
+                    loadedDialogue.Remove("Correct");
+                }
+               /* if (loadedDialogue["Correct"].Contains(modifiers[0]))
+                {
+                    string[] processedDialogue = loadedDialogue["Correct"].Split(new string[] { modifiers[0] }, System.StringSplitOptions.None);
+                    loadedDialogue["Correct"] = processedDialogue[1];
+
+                    if (int.Parse(processedDialogue[0]) == optionIndex)
+                    { 
+                        
+                    }
+                    
+                }*/
+                break;
+        }
+
+        dialogue.dialogue = loadedDialogue;
+
+        dialogue.dialogueState = DialogueState.Load;
     }
 
     public void OptionSelection(int optionIndex)
     {
-        InspectLoad(optionIndex);
-    }
-
-    public void InspectLoad(int optionIndex)
-    {
-        DialogueActivation();
-
-        string loadedDialogue = "";
-
-        //loadedDialogue = DialogueData.currentlyLoaded["Option" + optionIndex.ToString()];
-        int index = loadedDialogue.IndexOf(modifiers[0]) + modifiers[0].Length;
-        loadedDialogue = loadedDialogue.Substring(index, loadedDialogue.Length - index);
-
-        if (loadedDialogue.Contains(modifiers[1]))
-        {
-            string[] processedDialogue = loadedDialogue.Split(new string[] { modifiers[1] }, System.StringSplitOptions.None);
-
-            for (int i = 0; i < processedDialogue.Length; i++)
-            {
-                dialogue.dialogue.Add(processedDialogue[i]);
-            }
-        }
-        else
-        {
-            dialogue.dialogue.Add(loadedDialogue);
-        }
-
-        dialogue.dialogueState = DialogueState.Load;
+        DisplayDialogue(QuestionState.Responses, optionIndex);
     }
 
     public void DialogueActivation()
@@ -84,4 +98,10 @@ public class DialogueController : MonoBehaviour
         dialogueSelection.SetActive(false);
         dialogueBox.SetActive(true);
     }
+}
+
+public enum QuestionState
+{ 
+    Dialogue,
+    Responses
 }
