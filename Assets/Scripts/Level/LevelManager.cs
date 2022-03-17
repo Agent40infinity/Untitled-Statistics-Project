@@ -6,8 +6,7 @@ using System.Linq;
 public class LevelManager : MonoBehaviour
 {
     public string identity;
-    public int queueSize;
-    public int queueIndex = 0;
+    public Dictionary<string, List<string>> queue = new Dictionary<string, List<string>>();
     public static bool queueWaiting = true;
 
     public DialogueController dialogueController;
@@ -26,14 +25,24 @@ public class LevelManager : MonoBehaviour
             case true:
                 LoadQuestion("Prelude", QuestionState.Dialogue);
                 break;
+            case false:
 
+                break;
         }
     }
 
     public void LoadLevel()
     {
         DialogueLoading.LoadDialogue(identity);
-        queueSize = DialogueData.currentlyLoaded.levelData.Count;
+
+        for (int i = 0; i < DialogueData.currentlyLoaded.levelData.Count; i++)
+        {
+            for (int j = 0; j < DialogueData.currentlyLoaded.levelData.Count; j++)
+            {
+
+            }
+            /*queue.Add(DialogueData.currentlyLoaded.levelData.ElementAt(i).Key, DialogueData.currentlyLoaded.levelData.ElementAt(i).Key.ElementAt().Value);*/
+        }
     }
 
     public void LoadQuestion(string question, QuestionState state)
