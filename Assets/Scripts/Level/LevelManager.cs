@@ -22,20 +22,34 @@ public class LevelManager : MonoBehaviour
 
     public void Update()
     {
-
         switch (queueWaiting)
         { 
             case false:
-                //QueueUpdate();
+                QueueUpdate();
                 break;
         }
     }
 
-    /*public void QueueUpdate()
+    public void QueueUpdate()
     {
-        if (DialogueData.currentlyLoaded.levelData[queue[queueIndex]])
-        queue[queueIndex] (PerkType)System.Enum.GetValues(typeof(PerkType)).GetValue(index)
-    }*/
+        int questionIndex = (int)lastState + 1;
+        QuestionState state = (QuestionState)System.Enum.GetValues(typeof(QuestionState)).GetValue(questionIndex);
+
+        if (DialogueData.currentlyLoaded.levelData[queue[queueIndex]].ContainsKey(state.ToString()))
+        {
+            LoadQuestion(queue[queueIndex], state);
+        }
+        else if (queueIndex < queue.Count)
+        {
+            queueIndex++;
+            LoadQuestion(queue[queueIndex], QuestionState.Dialogue);
+            Debug.Log(queueIndex);
+        }
+        else
+        { 
+            //Load next level
+        }
+    }
 
     public void LoadLevel()
     {
@@ -44,6 +58,7 @@ public class LevelManager : MonoBehaviour
         for (int i = 0; i < DialogueData.currentlyLoaded.levelData.Count; i++)
         {
             queue.Add(DialogueData.currentlyLoaded.levelData.ElementAt(i).Key);
+            Debug.Log(queue[i]);
         }
     }
 

@@ -6,8 +6,8 @@ public class Level
 {
     [Header("Attributes")]
     public string level;
-    public Dictionary<string, Dictionary<string, Dictionary<string, string>>> levelData = new Dictionary<string, Dictionary<string, Dictionary<string, string>>>
-    {
+    public Dictionary<string, Dictionary<string, Dictionary<string, string>>> levelData = new Dictionary<string, Dictionary<string, Dictionary<string, string>>>();
+    /*{
         {"Q115", new Dictionary<string, Dictionary<string, string>>
         {
             { "Dialogue", new Dictionary<string, string>
@@ -26,6 +26,6 @@ public class Level
                 {"Hannah", "Same"},
             } },
         } }
-    };
+    };*/
     public Dictionary<string, string> answers = new Dictionary<string, string>();
 }
