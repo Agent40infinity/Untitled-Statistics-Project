@@ -8,7 +8,6 @@ public class DialogueController : MonoBehaviour
     public GameObject dialogueSelection;
     public GameObject dialogueBox;
     public Dialogue dialogue;
-    public GameObject secretOption;
     public List<TextMeshProUGUI> options = new List<TextMeshProUGUI>();
     public string[] modifiers =
     {

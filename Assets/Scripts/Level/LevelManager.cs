@@ -6,7 +6,9 @@ using System.Linq;
 public class LevelManager : MonoBehaviour
 {
     public string identity;
-    public Dictionary<string, List<string>> queue = new Dictionary<string, List<string>>();
+    public List<string> queue = new List<string>();
+    public int queueIndex = 0;
+    public QuestionState lastState;
     public static bool queueWaiting = true;
 
     public DialogueController dialogueController;
@@ -14,22 +16,26 @@ public class LevelManager : MonoBehaviour
     public void Awake()
     {
         dialogueController = GameObject.FindWithTag("Dialogue").GetComponent<DialogueController>();
-
         LoadLevel();
+        LoadQuestion("Prelude", QuestionState.Dialogue);
     }
 
     public void Update()
     {
+
         switch (queueWaiting)
         { 
-            case true:
-                LoadQuestion("Prelude", QuestionState.Dialogue);
-                break;
             case false:
-
+                //QueueUpdate();
                 break;
         }
     }
+
+    /*public void QueueUpdate()
+    {
+        if (DialogueData.currentlyLoaded.levelData[queue[queueIndex]])
+        queue[queueIndex] (PerkType)System.Enum.GetValues(typeof(PerkType)).GetValue(index)
+    }*/
 
     public void LoadLevel()
     {
@@ -37,17 +43,14 @@ public class LevelManager : MonoBehaviour
 
         for (int i = 0; i < DialogueData.currentlyLoaded.levelData.Count; i++)
         {
-            for (int j = 0; j < DialogueData.currentlyLoaded.levelData.Count; j++)
-            {
-
-            }
-            /*queue.Add(DialogueData.currentlyLoaded.levelData.ElementAt(i).Key, DialogueData.currentlyLoaded.levelData.ElementAt(i).Key.ElementAt().Value);*/
+            queue.Add(DialogueData.currentlyLoaded.levelData.ElementAt(i).Key);
         }
     }
 
     public void LoadQuestion(string question, QuestionState state)
     {
         dialogueController.QuestionSetup(question, state);
+        lastState = state;
         queueWaiting = true;
     }
 }
