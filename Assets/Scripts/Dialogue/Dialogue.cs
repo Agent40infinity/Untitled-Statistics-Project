@@ -21,7 +21,7 @@ public class Dialogue : MonoBehaviour
     {
         if (dialogueState == DialogueState.Load)
         {
-            StartCoroutine(DisplayText(dialogue.ElementAt(index).Value));
+            StartCoroutine(DisplayText(dialogue.ElementAt(index).Value)); // Theres a problem here
             DisplayName(dialogue.ElementAt(index).Key);
             dialogueState = DialogueState.Normal;
         }
@@ -75,6 +75,7 @@ public class Dialogue : MonoBehaviour
             display = sentence.Substring(0, i);
             UpdateText();
             yield return new WaitForSeconds(interval[intervalIndex]);
+            
         }
 
         index++;
