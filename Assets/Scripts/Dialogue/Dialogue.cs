@@ -22,7 +22,7 @@ public class Dialogue : MonoBehaviour
         if (dialogueState == DialogueState.Load)
         {
             StartCoroutine(DisplayText(dialogue.ElementAt(index).Value)); // Theres a problem here
-            DisplayName(dialogue.ElementAt(index).Key);
+            DisplayName(DialogueController.DialogueFilter(dialogue.ElementAt(index).Key, true));
             dialogueState = DialogueState.Normal;
         }
 
@@ -34,7 +34,7 @@ public class Dialogue : MonoBehaviour
                 {
                     case DialogueState.Idle:
                         StartCoroutine(DisplayText(dialogue.ElementAt(index).Value));
-                        DisplayName(dialogue.ElementAt(index).Key);
+                        DisplayName(DialogueController.DialogueFilter(dialogue.ElementAt(index).Key, true));
                         dialogueState = DialogueState.Normal;
                         break;
                     case DialogueState.Normal:

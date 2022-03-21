@@ -3,16 +3,16 @@
   "LevelData": {
     "Prelude": {
       "Dialogue": {
-        "Zoe": "Hi today we talk about Statistics",
-        "Hannah": "Same",
-        "Zoe": "And this is my useless assistant, Hannah!",
-        "Hannah": "Yes"
+        "Zoe#1": "Hi today we talk about Statistics",
+        "Hannah#1": "Same",
+        "Zoe#2": "And this is my useless assistant, Hannah!",
+        "Hannah#2": "Yes"
       }
     },
     "Q115": {
       "Dialogue": {
-        "Zoe": "Hi my name is Zoe",
-        "Hannah": "Same"
+        "Zoe#1": "This is question 115!",
+        "Hannah#2": "Same"
       },
       "Questions": {
         "1": "Her name is Zoe",

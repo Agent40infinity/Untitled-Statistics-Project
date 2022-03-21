@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.Linq;
 
 public class DialogueController : MonoBehaviour
 {
@@ -39,7 +40,6 @@ public class DialogueController : MonoBehaviour
 
         for (int i = 0; i < decompiledTitle.Length; i++)
         {
-            //Debug.Log(DialogueData.currentlyLoaded[question["Questions"[]]]);
             decompiledTitle[i] = DialogueData.currentlyLoaded.levelData[currentQuestion]["Questions"][(i + 1).ToString()];
         }
 
@@ -55,7 +55,7 @@ public class DialogueController : MonoBehaviour
     {
         DialogueActivation();
 
-        Dictionary<string, string> loadedDialogue = loadedDialogue = DialogueData.currentlyLoaded.levelData[currentQuestion][state.ToString()];
+        Dictionary<string, string> loadedDialogue = DialogueData.currentlyLoaded.levelData[currentQuestion][state.ToString()];
 
         switch (state)
         {
@@ -96,6 +96,21 @@ public class DialogueController : MonoBehaviour
     {
         dialogueSelection.SetActive(false);
         dialogueBox.SetActive(true);
+    }
+
+    public static string DialogueFilter(string data, bool isKey)
+    {
+        switch (isKey)
+        {
+            case true:
+                if (data.Contains("#"))
+                {
+                    return data.Split('#')[0];
+                }
+                break;
+        }
+
+        return null;
     }
 }
 
