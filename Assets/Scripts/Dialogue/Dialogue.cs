@@ -21,7 +21,7 @@ public class Dialogue : MonoBehaviour
     {
         if (dialogueState == DialogueState.Load)
         {
-            StartCoroutine(DisplayText(dialogue.ElementAt(index).Value)); // Theres a problem here
+            StartCoroutine(DisplayText(dialogue.ElementAt(index).Value));
             DisplayName(DialogueController.DialogueFilter(dialogue.ElementAt(index).Key, true));
             dialogueState = DialogueState.Normal;
         }
