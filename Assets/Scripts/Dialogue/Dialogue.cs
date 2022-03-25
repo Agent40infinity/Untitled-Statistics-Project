@@ -10,6 +10,7 @@ public class Dialogue : MonoBehaviour
     public int intervalIndex;
     public List<string> dialogue = new List<string>();
     public List<string> title = new List<string>();
+    public float delay;
     public int index;
     public string display;
     public DialogueState dialogueState = DialogueState.Idle;
@@ -46,13 +47,15 @@ public class Dialogue : MonoBehaviour
             }
             else
             {
-                ClearDialogue();
+                StartCoroutine(ClearDialogue());
             }
         }
     }
 
-    public void ClearDialogue()
+    public IEnumerator ClearDialogue()
     {
+        yield return new WaitForSeconds(delay);
+
         dialogue.Clear();
         intervalIndex = 0;
         index = 0;

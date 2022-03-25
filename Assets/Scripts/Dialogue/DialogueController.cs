@@ -105,7 +105,7 @@ public class DialogueController : MonoBehaviour
         dialogueBox.SetActive(true);
     }
 
-    public static string DialogueFilter(string data, bool isKey)
+    public string DialogueFilter(string data, bool isKey)
     {
         switch (isKey)
         {
@@ -113,6 +113,13 @@ public class DialogueController : MonoBehaviour
                 if (data.Contains("#"))
                 {
                     return data.Split('#')[0];
+                }
+                break;
+            case false:
+                if (data.Contains("$T"))
+                {
+                    dialogue.delay;
+                    //return data.Split
                 }
                 break;
         }
