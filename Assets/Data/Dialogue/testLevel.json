@@ -23,8 +23,8 @@
         "4": "Her name is Ashley"
       },
       "Responses": {
-        "Correct": "Yes my name is Zoe!",
-        "Incorrect": "No my name was Zoe!"
+        "Correct_Zoe#1": "Yes my name is Zoe!",
+        "Incorrect_Zoe#1": "No my name was Zoe!"
       },
     },   
   },
