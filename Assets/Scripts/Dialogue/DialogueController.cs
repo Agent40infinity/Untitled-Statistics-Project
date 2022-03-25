@@ -12,7 +12,9 @@ public class DialogueController : MonoBehaviour
     public List<TextMeshProUGUI> options = new List<TextMeshProUGUI>();
     public string[] modifiers =
     {
-        "$c"
+        "#",
+        "$T",
+        "$CE"
     };
 
     public string currentQuestion;
@@ -60,29 +62,34 @@ public class DialogueController : MonoBehaviour
         switch (state)
         {
             case QuestionState.Responses:
-                if (int.Parse(DialogueData.currentlyLoaded.answers[currentQuestion]) == optionIndex)
+                string answer;
+
+                if (DialogueData.currentlyLoaded.answers[currentQuestion] == optionIndex)
                 {
-                    loadedDialogue.Remove("Incorrect");
+                    answer = "Incorrect";
                 }
                 else
                 {
-                    loadedDialogue.Remove("Correct");
+                    answer = "Correct";
                 }
-               /* if (loadedDialogue["Correct"].Contains(modifiers[0]))
-                {
-                    string[] processedDialogue = loadedDialogue["Correct"].Split(new string[] { modifiers[0] }, System.StringSplitOptions.None);
-                    loadedDialogue["Correct"] = processedDialogue[1];
 
-                    if (int.Parse(processedDialogue[0]) == optionIndex)
-                    { 
-                        
+                for (int i = 0; i < loadedDialogue.Count; i++)
+                {
+                    if (loadedDialogue.ElementAt(i).Key.Contains(answer))
+                    {
+                        loadedDialogue.Remove(loadedDialogue.ElementAt(i).Key);
                     }
-                    
-                }*/
+                }
+
+                LevelManager.lastState = QuestionState.Responses;
                 break;
         }
 
-        dialogue.dialogue = loadedDialogue;
+        for (int i = 0; i < loadedDialogue.Count; i++)
+        {
+            dialogue.dialogue.Add(loadedDialogue.ElementAt(i).Value);
+            dialogue.title.Add(DialogueFilter(loadedDialogue.ElementAt(i).Key, true));
+        }
 
         dialogue.dialogueState = DialogueState.Load;
     }
@@ -112,6 +119,18 @@ public class DialogueController : MonoBehaviour
 
         return null;
     }
+
+    /* if (loadedDialogue["Correct"].Contains(modifiers[0]))
+    {
+        //string[] processedDialogue = loadedDialogue["Correct"].Split(new string[] { modifiers[0] }, System.StringSplitOptions.None);
+        loadedDialogue["Correct"] = processedDialogue[1];
+
+        if (int.Parse(processedDialogue[0]) == optionIndex)
+        { 
+
+        }
+
+    }*/
 }
 
 public enum QuestionState

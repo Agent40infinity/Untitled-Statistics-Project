@@ -8,7 +8,8 @@ public class Dialogue : MonoBehaviour
 {
     public float[] interval = new float[2];
     public int intervalIndex;
-    public Dictionary<string, string> dialogue = new Dictionary<string, string>();
+    public List<string> dialogue = new List<string>();
+    public List<string> title = new List<string>();
     public int index;
     public string display;
     public DialogueState dialogueState = DialogueState.Idle;
@@ -21,8 +22,16 @@ public class Dialogue : MonoBehaviour
     {
         if (dialogueState == DialogueState.Load)
         {
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+            StartCoroutine(DisplayText(dialogue[index])); // Theres a problem here
+            DisplayName(title[index]);
+=======
+>>>>>>> Stashed changes
             StartCoroutine(DisplayText(dialogue.ElementAt(index).Value));
             DisplayName(DialogueController.DialogueFilter(dialogue.ElementAt(index).Key, true));
+>>>>>>> 739ac809ccde320ebc8be76ae7191eb4d8ab34fd
             dialogueState = DialogueState.Normal;
         }
 
@@ -33,8 +42,8 @@ public class Dialogue : MonoBehaviour
                 switch (dialogueState)
                 {
                     case DialogueState.Idle:
-                        StartCoroutine(DisplayText(dialogue.ElementAt(index).Value));
-                        DisplayName(DialogueController.DialogueFilter(dialogue.ElementAt(index).Key, true));
+                        StartCoroutine(DisplayText(dialogue[index]));
+                        DisplayName(title[index]);
                         dialogueState = DialogueState.Normal;
                         break;
                     case DialogueState.Normal:

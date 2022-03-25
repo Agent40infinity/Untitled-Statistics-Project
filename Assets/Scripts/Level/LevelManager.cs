@@ -8,7 +8,7 @@ public class LevelManager : MonoBehaviour
     public string identity;
     public List<string> queue = new List<string>();
     public int queueIndex = 0;
-    public QuestionState lastState;
+    public static QuestionState lastState;
     public static bool queueWaiting = true;
 
     public DialogueController dialogueController;
