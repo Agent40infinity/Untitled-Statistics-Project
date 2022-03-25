@@ -22,16 +22,8 @@ public class Dialogue : MonoBehaviour
     {
         if (dialogueState == DialogueState.Load)
         {
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
             StartCoroutine(DisplayText(dialogue[index])); // Theres a problem here
             DisplayName(title[index]);
-=======
->>>>>>> Stashed changes
-            StartCoroutine(DisplayText(dialogue.ElementAt(index).Value));
-            DisplayName(DialogueController.DialogueFilter(dialogue.ElementAt(index).Key, true));
->>>>>>> 739ac809ccde320ebc8be76ae7191eb4d8ab34fd
             dialogueState = DialogueState.Normal;
         }
 

@@ -1480,6 +1480,8 @@ MonoBehaviour:
   - 0.03
   - 0
   intervalIndex: 0
+  dialogue: []
+  title: []
   index: 0
   display: 
   dialogueState: 1
@@ -2149,7 +2151,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1510326995
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2188,7 +2190,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1689288870
 RectTransform:
   m_ObjectHideFlags: 0
