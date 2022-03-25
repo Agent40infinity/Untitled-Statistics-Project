@@ -57,6 +57,7 @@ public class Dialogue : MonoBehaviour
         yield return new WaitForSeconds(delay);
 
         dialogue.Clear();
+        title.Clear();
         intervalIndex = 0;
         index = 0;
         dialogueParent.SetActive(false);

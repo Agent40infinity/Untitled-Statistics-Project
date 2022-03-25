@@ -88,7 +88,7 @@ public class DialogueController : MonoBehaviour
         for (int i = 0; i < loadedDialogue.Count; i++)
         {
             dialogue.dialogue.Add(loadedDialogue.ElementAt(i).Value);
-            dialogue.title.Add(DialogueFilter(loadedDialogue.ElementAt(i).Key, true));
+            dialogue.title.Add(DialogueFilter(loadedDialogue.ElementAt(i).Key, true, state));
         }
 
         dialogue.dialogueState = DialogueState.Load;
@@ -105,29 +105,48 @@ public class DialogueController : MonoBehaviour
         dialogueBox.SetActive(true);
     }
 
-    public string DialogueFilter(string data, bool isKey)
+    public string DialogueFilter(string data, bool isKey, QuestionState state)
     {
+        string output = "";
+
         switch (isKey)
         {
             case true:
                 if (data.Contains("#"))
                 {
-                    return data.Split('#')[0];
+                    output = data.Split('#')[0];
                 }
+
+                switch (state)
+                {
+                    case QuestionState.Responses:
+                        switch (output.Contains("Correct"))
+                        {
+                            case true:
+                                output = output.Split(new string[] { "Correct_" }, System.StringSplitOptions.None)[1];
+                                break;
+                            case false:
+                                output = output.Split(new string[] { "Incorrect_" }, System.StringSplitOptions.None)[1];
+                                break;
+                        }
+                        break;
+                }
+
+                Debug.Log(output);
                 break;
             case false:
                 if (data.Contains("$T"))
                 {
-                    dialogue.delay;
+                    //dialogue.delay;
                     //return data.Split
                 }
                 break;
         }
 
-        return null;
+        return output;
     }
 
-    /* if (loadedDialogue["Correct"].Contains(modifiers[0]))
+    /*if (loadedDialogue["Correct"].Contains(modifiers[0]))
     {
         //string[] processedDialogue = loadedDialogue["Correct"].Split(new string[] { modifiers[0] }, System.StringSplitOptions.None);
         loadedDialogue["Correct"] = processedDialogue[1];

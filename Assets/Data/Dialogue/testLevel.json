@@ -8,13 +8,12 @@
         "The Professor#3":"Come one, let us begin right away!",
         "The Professor#4":"Today we will be voyaging through the life of two siblings, Tim and Amanda, who are feeling uncertain about their educational situations.",
         "The Professor#5":"I have pulled some strings with the timekeeper of the universe, and a discussion with the parents will be brought up involving some pretty neat stats that will influence Tim and Amanda to have a bit more faith in their education.",
-        
       }
     },
     "Q115": {
       "Dialogue": {
         "Zoe#1": "This is test question 115!",
-        "Zoe#1": "What is my name?",
+        "Zoe#2": "What is my name?",
       },
       "Questions": {
         "1": "Her name is Zoe",
@@ -28,8 +27,7 @@
       },
     },   
   },
-    
   "answers": {
-    "Q115": "1",
+    "Q115": "1"
   },
 }
