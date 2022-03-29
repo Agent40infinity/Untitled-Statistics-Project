@@ -1,6 +1,62 @@
 {
-    "Option1": "Name of Option1$t#Test Character worked",
-    "Option2": "Name of Option2$t#Please tell me this works$s#Hopefully if it does, that means the split system works correctly",
-    "Option3": "Name of Option3$t#Another test",
-    "Option4": "Name of Option4$t#Secret Option, should only appear if special item has been obtained.",
+  "level": null,
+  "LevelData": {
+    "Prelude": {
+      "Dialogue": {
+        "The Professor#1":"Hello friends, I am called by many names, but you may call me 'The Professor'.",
+        "The Professor#2":"Together we will go on a journey to learn many new things about the United Nations and the UN Sustainability Goals (UNSDG) that have been set for humanity to transition to a much better world. And we'll also learn some statistics along the way!",
+        "The Professor#3":"The first UNSDG we will be learning is 'Quality Education'",
+        "The Professor#4":"Education is an important part of life and is usually the backbone of an individual's career.",
+        "The Professor#5":"Today we will be voyaging through the life of two siblings, Tim and Amanda, who are feeling uncertain about their educational situations.",
+        "The Professor#6":"I have pulled some strings with the timekeeper of the universe, and a discussion with the parents will be brought up involving some pretty neat stats that will influence Tim and Amanda to have a bit more faith in their education.",
+        "#1":"(Tim is a year 10 student in an Australian public school and plans to join TAFE to pursue a trade in plumbing in the near future. His parents however disagree with this and urge Tim to enroll in a University for his higher education.)",
+        "Tim#1":"I don't get why you want me to finish my HSC and go to University, it just sounds so much harder than what I plan on doing.",
+        "Tim's Father#1":"We want you to complete your HSC and enroll in a university for your further education because education is important and Australian education is considered to be of a higher standard as compared to countries in Africa such as Ghana.",
+        "Tim#2":"I understand that, but if I get my qualifications for plumbing I can head right into the workforce and start earning money without such a huge student debt looming over me.",
+        "Tim's Mother#1":"Of course there will be student debt, but gaining a job through a university degree will provide you much more stability and you won't have to rely on physical labour.",
+        "Tim#3":"Well I don't believe you!",
+        "#2":"(The professor teleports instantaneously to the scene leaving a trail of light!)",
+        "Everyone#1":"Who are you?!",
+        "The Professor#7":"I am The Professor, and I am here to assist you in decision making for your education.",
+        "Tim#4":"Cool, so what should I do?",
+      }
+    },
+    "Q111": {
+      "Dialogue": {
+        "Professor#1": "Let's find out! When making important decisions like this, you need to make sure you get your information from a good source. We can test your parents claim about the income difference between tertiary and non-tertiary workers. Sort through this table I got from the ABS and tell me, what do you notice?",
+      },
+      "Questions": {
+        "1": "Postgraduates",
+        "2": "Bachelor Degree",
+        "3": "Advanced diploma/ Diploma",
+        "4": "Certificate"
+      },
+      "Responses": {
+        "Correct_Professor#1": "Correct! The highest education level is most likely to earn a higher income.",
+        "Incorrect_Professor#2": "Incorrect! The correct answer is the highest education level 'Postgraduates."
+      },
+    },  
+    "Q112":{
+       "Dialogue":{
+        "Tim#1":"So Bachelor degree holders generally earn more than their non-tertiary counterparts. But that's just one observation, I don’t think it’s fair to make a huge decision based on this alone.",
+        "Professor#1":"Of course, you should investigate this as much as possible, we can move to the other sections now.",
+        "Tim#2":"Well could you say that plumber/labourers would earn less because I have mates that are buying so much stuff and they seem like they’re earning a lot of money.",
+        "Professor#2":"Take a look at this graph and tell me how much a labourer/plumber would earn?",
+	   },
+       "Questions":{
+        "1":"Labourers have the lowest median per/hour income.",
+        "2":"Managers have the highest median per/hour income.",
+        "3":"Professionals have the lowest median per/hour income.",
+        "4":"None.",
+	   },
+       "Responses":{
+        "Correct_Professor#1":"Correct!, Labourers have the lowest median per/hour income",
+        "Incorrect_Professor#2":"Incorrect!, Labourers have the lowest median per/hour income",
+	   },
+	},
+  },
+  "answers": {
+    "Q111": "1",
+    "Q112": "1",
+  },
 }
