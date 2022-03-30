@@ -34,24 +34,29 @@ public class LevelManager : MonoBehaviour
     {
         int questionIndex = (int)lastState + 1;
 
+        Debug.Log(questionIndex);
+        Debug.Log(questionIndex < System.Enum.GetValues(typeof(QuestionState)).Length);
         if (questionIndex < System.Enum.GetValues(typeof(QuestionState)).Length)
         {
-
             QuestionState state = (QuestionState)System.Enum.GetValues(typeof(QuestionState)).GetValue(questionIndex);
 
             if (DialogueData.currentlyLoaded.levelData[queue[queueIndex]].ContainsKey(state.ToString()))
             {
                 LoadQuestion(queue[queueIndex], state);
             }
-            else if (queueIndex < queue.Count)
+            else
             {
                 queueIndex++;
                 LoadQuestion(queue[queueIndex], QuestionState.Dialogue);
-                Debug.Log(queueIndex);
             }
         }
-        else
+        else if (queueIndex < queue.Count - 1)
         {
+            queueIndex++;
+            LoadQuestion(queue[queueIndex], QuestionState.Dialogue);
+        }
+        else
+        { 
             //Load next level
         }
     }

@@ -25,9 +25,26 @@
         "Correct_Zoe#1": "Yes my name is Zoe!",
         "Incorrect_Zoe#1": "No my name was Zoe!"
       },
-    },   
+    },
+    "Q116": {
+      "Dialogue": {
+        "Tim#1":"So Bachelor degree holders generally earn more than their non-tertiary counterparts. But that's just one observation, I don’t think it’s fair to make a huge decision based on this alone.",
+        "Professor#1":"Of course, you should investigate this as much as possible, we can move to the other sections now."
+	  },
+      "Questions":{
+        "1":"Labourers have the lowest median per/hour income.",
+        "2":"Managers have the highest median per/hour income.",
+        "3":"Professionals have the lowest median per/hour income.",
+        "4":"None."
+	  },
+      "Responses":{
+        "Correct_Professor#1":"Correct!, Labourers have the lowest median per/hour income",
+        "Incorrect_Professor#2":"Incorrect!, Labourers have the lowest median per/hour income"
+	  },
+    },
   },
   "answers": {
-    "Q115": "1"
+    "Q115":"1",
+    "Q116":"1",
   },
 }

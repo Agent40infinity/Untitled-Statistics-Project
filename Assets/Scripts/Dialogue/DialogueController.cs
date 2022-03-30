@@ -131,8 +131,6 @@ public class DialogueController : MonoBehaviour
                         }
                         break;
                 }
-
-                Debug.Log(output);
                 break;
             case false:
                 if (data.Contains("$T"))
