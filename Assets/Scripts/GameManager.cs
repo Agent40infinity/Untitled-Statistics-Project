@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public int levelIndex;
     public FadeController fade;
     public static PlayerData playerData;
+    public SceneIndex startingScene;
 
     [Header("Settings")]
     public static AudioMixer masterMixer; //Creates reference for the menu musi
@@ -44,8 +45,8 @@ public class GameManager : MonoBehaviour
         masterMixer = Resources.Load("Music/Mixers/Master") as AudioMixer; //Loads the MasterMixer for renference.
         playerData = new PlayerData();
 
-        SceneManager.LoadSceneAsync((int)SceneIndex.Information, LoadSceneMode.Additive);
-        levelIndex = 1;
+        SceneManager.LoadSceneAsync((int)startingScene, LoadSceneMode.Additive);
+        levelIndex = (int)startingScene;
     }
 
     public void SwapLevel()

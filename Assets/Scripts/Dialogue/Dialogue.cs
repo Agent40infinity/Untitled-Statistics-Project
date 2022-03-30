@@ -11,6 +11,7 @@ public class Dialogue : MonoBehaviour
     public List<string> dialogue = new List<string>();
     public List<string> title = new List<string>();
     public float delay;
+    public bool dialoguePaused;
     public int index;
     public string display;
     public DialogueState dialogueState = DialogueState.Idle;
@@ -28,7 +29,7 @@ public class Dialogue : MonoBehaviour
             dialogueState = DialogueState.Normal;
         }
 
-        if (Input.GetMouseButtonDown(0) && dialogueParent.activeInHierarchy)
+        if (Input.GetMouseButtonDown(0) && dialogueParent.activeInHierarchy && !dialoguePaused)
         {
             if (index < dialogue.Count)
             {
@@ -66,7 +67,9 @@ public class Dialogue : MonoBehaviour
 
     public IEnumerator DialogueDelay()
     {
+        dialoguePaused = true;
         yield return new WaitForSeconds(delay);
+        dialoguePaused = false;
         delay = 0;
     }
 

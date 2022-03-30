@@ -3,7 +3,7 @@
   "LevelData": {
     "Prelude": {
       "Dialogue": {
-        "The Professor#1": "$T0|Hello friends, I am called by many names, but you may call me 'The Professor'.",
+        "The Professor#1": "$T1|Hello friends, I am called by many names, but you may call me 'The Professor'.",
         "The Professor#2": "Ooga Booga",
       }
     },
