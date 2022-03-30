@@ -54,7 +54,7 @@ public class Dialogue : MonoBehaviour
 
     public IEnumerator ClearDialogue()
     {
-        yield return new WaitForSeconds(delay);
+        yield return StartCoroutine(DialogueDelay());
 
         dialogue.Clear();
         title.Clear();
@@ -62,6 +62,12 @@ public class Dialogue : MonoBehaviour
         index = 0;
         dialogueParent.SetActive(false);
         LevelManager.queueWaiting = false;
+    }
+
+    public IEnumerator DialogueDelay()
+    {
+        yield return new WaitForSeconds(delay);
+        delay = 0;
     }
 
     public void UpdateText()

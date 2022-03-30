@@ -12,7 +12,9 @@ public class GameManager : MonoBehaviour
     public LoadingScreen loadingScreen;
     public static string loadedSaveFile;
     public static Animator saveIcon;
+    public int levelIndex;
     public FadeController fade;
+    public static PlayerData playerEntry;
 
     [Header("Settings")]
     public static AudioMixer masterMixer; //Creates reference for the menu musi
@@ -40,17 +42,37 @@ public class GameManager : MonoBehaviour
         instance = this;
         saveIcon = GameObject.FindWithTag("SaveIcon").GetComponent<Animator>();
         masterMixer = Resources.Load("Music/Mixers/Master") as AudioMixer; //Loads the MasterMixer for renference.
+        playerEntry = new PlayerData();
 
         SceneManager.LoadSceneAsync((int)SceneIndex.Test, LoadSceneMode.Additive);
+        levelIndex = 1;
     }
 
-    public void SwapLevel(SceneIndex loadingIndex, SceneIndex previousIndex)
+    public void SwapLevel()
     {
         loadingScreen.Visibility(true);
 
         List<AsyncOperation> scenesLoading = new List<AsyncOperation>();
-        scenesLoading.Add(SceneManager.UnloadSceneAsync((int)previousIndex));
-        scenesLoading.Add(SceneManager.LoadSceneAsync((int)loadingIndex, LoadSceneMode.Additive));
+
+        for (int i = 0; i < SceneManager.sceneCount; i++)
+        {
+            int buildIndex = SceneManager.GetSceneAt(i).buildIndex;
+
+            switch (buildIndex)
+            {
+                case (int)SceneIndex.Persistent:
+                    break;
+                default:
+                    scenesLoading.Add(SceneManager.UnloadSceneAsync(buildIndex));
+                    break;
+            }
+        }
+
+        levelIndex++;
+        if (levelIndex < System.Enum.GetValues(typeof(SceneIndex)).Length)
+        {
+            scenesLoading.Add(SceneManager.LoadSceneAsync(levelIndex, LoadSceneMode.Additive));
+        }
 
         StartCoroutine(SceneLoadProgress(scenesLoading));
     }
@@ -64,6 +86,11 @@ public class GameManager : MonoBehaviour
                 yield return null;
             }
         }
+
+        yield return new WaitForSeconds(3);
+
+        yield return fade.FadeOut();
+        loadingScreen.Visibility(false);
     }
 
     public void OnApplicationQuit()

@@ -12,10 +12,12 @@ public class LevelManager : MonoBehaviour
     public static bool queueWaiting = true;
 
     public DialogueController dialogueController;
+    public FadeController fade;
 
     public void Awake()
     {
         dialogueController = GameObject.FindWithTag("Dialogue").GetComponent<DialogueController>();
+        fade = GameObject.FindWithTag("FadeController").GetComponent<FadeController>();
         LoadLevel();
         LoadQuestion("Prelude", QuestionState.Dialogue);
     }
@@ -56,9 +58,16 @@ public class LevelManager : MonoBehaviour
             LoadQuestion(queue[queueIndex], QuestionState.Dialogue);
         }
         else
-        { 
-            //Load next level
+        {
+            queueWaiting = true;
+            StartCoroutine(NextLevel());
         }
+    }
+
+    public IEnumerator NextLevel()
+    {
+        yield return fade.FadeOut();
+        GameManager.instance.SwapLevel();
     }
 
     public void LoadLevel()

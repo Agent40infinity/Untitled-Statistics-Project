@@ -12,7 +12,6 @@ public class DialogueController : MonoBehaviour
     public List<TextMeshProUGUI> options = new List<TextMeshProUGUI>();
     public string[] modifiers =
     {
-        "#",
         "$T",
         "$CE"
     };
@@ -87,7 +86,7 @@ public class DialogueController : MonoBehaviour
 
         for (int i = 0; i < loadedDialogue.Count; i++)
         {
-            dialogue.dialogue.Add(loadedDialogue.ElementAt(i).Value);
+            dialogue.dialogue.Add(DialogueFilter(loadedDialogue.ElementAt(i).Value, false, state));
             dialogue.title.Add(DialogueFilter(loadedDialogue.ElementAt(i).Key, true, state));
         }
 
@@ -124,6 +123,7 @@ public class DialogueController : MonoBehaviour
                         {
                             case true:
                                 output = output.Split(new string[] { "Correct_" }, System.StringSplitOptions.None)[1];
+                                GameManager.playerEntry.score++;
                                 break;
                             case false:
                                 output = output.Split(new string[] { "Incorrect_" }, System.StringSplitOptions.None)[1];
@@ -133,28 +133,24 @@ public class DialogueController : MonoBehaviour
                 }
                 break;
             case false:
-                if (data.Contains("$T"))
+                List<string> keySeparation = data.Split(new string[] { "|" }, System.StringSplitOptions.None).ToList();
+
+                for (int i = 0; i < keySeparation.Count; i++)
                 {
-                    //dialogue.delay;
-                    //return data.Split
+                    if (keySeparation[i].Contains("$T"))
+                    {
+                        string delay = keySeparation[i].Split(new string[] { "$T" }, System.StringSplitOptions.None)[1];
+                        dialogue.delay = float.Parse(delay);
+                        keySeparation.RemoveAt(i);
+                    }
                 }
+
+                output = keySeparation[0];
                 break;
         }
 
         return output;
     }
-
-    /*if (loadedDialogue["Correct"].Contains(modifiers[0]))
-    {
-        //string[] processedDialogue = loadedDialogue["Correct"].Split(new string[] { modifiers[0] }, System.StringSplitOptions.None);
-        loadedDialogue["Correct"] = processedDialogue[1];
-
-        if (int.Parse(processedDialogue[0]) == optionIndex)
-        { 
-
-        }
-
-    }*/
 }
 
 public enum QuestionState

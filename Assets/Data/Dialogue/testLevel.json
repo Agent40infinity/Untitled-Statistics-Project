@@ -3,11 +3,8 @@
   "LevelData": {
     "Prelude": {
       "Dialogue": {
-        "The Professor#1":"Hello friends, I am called by many names, but you may call me 'The Professor'.",
-        "The Professor#2":"Together we will go on a journey to learn many new things about the United Nations and the UN Sustainability Goals (UNSDG) that have been set for humanity to transition to a much better world. And we'll also learn some statistics along the way!",
-        "The Professor#3":"Come one, let us begin right away!",
-        "The Professor#4":"Today we will be voyaging through the life of two siblings, Tim and Amanda, who are feeling uncertain about their educational situations.",
-        "The Professor#5":"I have pulled some strings with the timekeeper of the universe, and a discussion with the parents will be brought up involving some pretty neat stats that will influence Tim and Amanda to have a bit more faith in their education.",
+        "The Professor#1": "$T0|Hello friends, I am called by many names, but you may call me 'The Professor'.",
+        "The Professor#2": "Ooga Booga",
       }
     },
     "Q115": {
@@ -19,32 +16,32 @@
         "1": "Her name is Zoe",
         "2": "Her name is Hannah",
         "3": "Her name is Anna",
-        "4": "Her name is Ashley"
+        "4": "Her name is Ashley",
       },
       "Responses": {
         "Correct_Zoe#1": "Yes my name is Zoe!",
-        "Incorrect_Zoe#1": "No my name was Zoe!"
+        "Incorrect_Zoe#1": "No my name was Zoe!",
       },
     },
     "Q116": {
       "Dialogue": {
-        "Tim#1":"So Bachelor degree holders generally earn more than their non-tertiary counterparts. But that's just one observation, I don’t think it’s fair to make a huge decision based on this alone.",
-        "Professor#1":"Of course, you should investigate this as much as possible, we can move to the other sections now."
+        "Zoe#1": "This is test question 116!",
+        "Zoe#2": "How poor am I?",
 	  },
-      "Questions":{
-        "1":"Labourers have the lowest median per/hour income.",
-        "2":"Managers have the highest median per/hour income.",
-        "3":"Professionals have the lowest median per/hour income.",
-        "4":"None."
+      "Questions": {
+        "1": "Very poor",
+        "2": "Not poor",
+        "3": "Drunk poor",
+        "4": "Rich af",
 	  },
       "Responses":{
-        "Correct_Professor#1":"Correct!, Labourers have the lowest median per/hour income",
-        "Incorrect_Professor#2":"Incorrect!, Labourers have the lowest median per/hour income"
+        "Correct_Professor#1": "Correct!, I am drunk!",
+        "Incorrect_Professor#2": "Incorrect!, Sadly I'm drunk",
 	  },
     },
   },
   "answers": {
-    "Q115":"1",
-    "Q116":"1",
+    "Q115": "1",
+    "Q116": "3",
   },
 }
