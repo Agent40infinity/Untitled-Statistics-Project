@@ -5,11 +5,12 @@ using TMPro;
 
 public class ResultDisplay : MonoBehaviour
 {
-    public TextMeshProUGUI score;
+    public TextMeshProUGUI results;
+
 
     public void Start()
     {
-        string output = GameManager.playerEntry.score.ToString() + "/" + GameManager.playerEntry.maxScore.ToString();
-        score.text = output;
+        string output = GameManager.playerData.playerName + ": " + GameManager.playerData.playerID + "\n" + GameManager.playerData.score.ToString() + "/" + GameManager.playerData.maxScore.ToString();
+        results.text = output;
     }
 }

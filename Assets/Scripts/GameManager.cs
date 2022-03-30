@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     public static Animator saveIcon;
     public int levelIndex;
     public FadeController fade;
-    public static PlayerData playerEntry;
+    public static PlayerData playerData;
 
     [Header("Settings")]
     public static AudioMixer masterMixer; //Creates reference for the menu musi
@@ -42,9 +42,9 @@ public class GameManager : MonoBehaviour
         instance = this;
         saveIcon = GameObject.FindWithTag("SaveIcon").GetComponent<Animator>();
         masterMixer = Resources.Load("Music/Mixers/Master") as AudioMixer; //Loads the MasterMixer for renference.
-        playerEntry = new PlayerData();
+        playerData = new PlayerData();
 
-        SceneManager.LoadSceneAsync((int)SceneIndex.Test, LoadSceneMode.Additive);
+        SceneManager.LoadSceneAsync((int)SceneIndex.Information, LoadSceneMode.Additive);
         levelIndex = 1;
     }
 
