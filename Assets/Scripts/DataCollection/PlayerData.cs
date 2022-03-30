@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerData
 {
-    public string playerName;
+    public string firstName;
+    public string lastName;
     public int playerID;
     public int score;
     public int maxScore = 2;

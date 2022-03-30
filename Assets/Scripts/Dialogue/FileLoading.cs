@@ -10,6 +10,7 @@ public class DialogueLoading : MonoBehaviour
     public static Dictionary<string, string> fileType = new Dictionary<string, string>()
     {
         {"Default", "/Data/Dialogue/"},
+        {"Player", "/Data/Dialogue/"},
     };
 
     public static void LoadDialogue(string name)
@@ -18,6 +19,11 @@ public class DialogueLoading : MonoBehaviour
         string data = reader.ReadToEnd();
         DialogueData dialogueData = new DialogueData(data);
         Debug.Log("loaded");
+    }
+
+    public static void SavePlayerData()
+    { 
+        //if (Application.dataPath + fileType["Default"])
     }
 
     public static void SaveLevel(Level level)

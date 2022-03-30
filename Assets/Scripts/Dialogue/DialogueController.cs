@@ -143,6 +143,10 @@ public class DialogueController : MonoBehaviour
                         dialogue.delay = float.Parse(delay);
                         keySeparation.RemoveAt(i);
                     }
+                    if (keySeparation.Contains("$CE"))
+                    { 
+                        
+                    }
                 }
 
                 output = keySeparation[0];
