@@ -38,9 +38,9 @@
     },  
     "Q112":{
        "Dialogue":{
-        "Tim#1":"So Bachelor degree holders generally earn more than their non-tertiary counterparts. But that's just one observation, I don’t think it’s fair to make a huge decision based on this alone.",
+        "Tim#1":"So Bachelor degree holders generally earn more than their non-tertiary counterparts. But that's just one observation, I don't think it's fair to make a huge decision based on this alone.",
         "Professor#1":"Of course, you should investigate this as much as possible, we can move to the other sections now.",
-        "Tim#2":"Well could you say that plumber/labourers would earn less because I have mates that are buying so much stuff and they seem like they’re earning a lot of money.",
+        "Tim#2":"Well could you say that plumber/labourers would earn less because I have mates that are buying so much stuff and they seem like they're earning a lot of money.",
         "Professor#2":"Take a look at this graph and tell me how much a labourer/plumber would earn?",
 	   },
        "Questions":{
@@ -54,9 +54,25 @@
         "Incorrect_Professor#2":"Incorrect!, Labourers have the lowest median per/hour income",
 	   },
 	},
+    "Q113":{
+       "Dialogue":{
+        "Professor#1": "Yes this is that in general labourers earn less, but is it exactly true?",
+	   },
+       "Questions":{
+        "1":"True",
+        "2":"False",
+        "3":"",
+        "4":"",
+	   },
+       "Responses":{
+        "Correct_Professor#1":"Correct!, It is false, there could always be someone that earns above the median and could possibly earn more than a professional or manager.",
+        "Incorrect_Professor#2":"Incorrect!, It is false, there could always be someone that earns above the median and could possibly earn more than a professional or manager.",
+	   },
+	},
   },
   "answers": {
     "Q111": "1",
     "Q112": "1",
+    "Q113": "2",
   },
 }

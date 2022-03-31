@@ -164,7 +164,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 551aef3386f497b42ab947a500608c48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  identity: testLevel
+  identity: levelTest
   queue: []
   queueIndex: 0
   dialogueController: {fileID: 0}
+  fade: {fileID: 0}
