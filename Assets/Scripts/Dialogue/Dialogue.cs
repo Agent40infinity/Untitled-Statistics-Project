@@ -2,42 +2,49 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 using System.Linq;
 
 public class Dialogue : MonoBehaviour
 {
+    [Header("Dialogue")]
     public float[] interval = new float[2];
     public int intervalIndex;
-    public List<string> dialogue = new List<string>();
-    public List<string> title = new List<string>();
-    public float delay;
+    public ProcessedDialogue dialogue; 
     public bool dialoguePaused;
     public int index;
     public string display;
     public DialogueState dialogueState = DialogueState.Idle;
 
+    [Header("Dialogue References")]
     public TextMeshProUGUI characterText;
     public TextMeshProUGUI dialogueText;
     public GameObject dialogueParent;
+
+    [Header("Sprite References")]
+    public Image background;
+    public Image[] characters = new Image[2];
+    private string[] lastCharacter = new string[2];
 
     public void Update()
     {
         if (dialogueState == DialogueState.Load)
         {
-            StartCoroutine(DisplayText(dialogue[index])); // Theres a problem here
-            DisplayName(title[index]);
+            StartCoroutine(DisplayText(dialogue.dialogue[index])); // Theres a problem here
+            DisplayName(dialogue.title[index]);
             dialogueState = DialogueState.Normal;
         }
 
         if (Input.GetMouseButtonDown(0) && dialogueParent.activeInHierarchy && !dialoguePaused)
         {
-            if (index < dialogue.Count)
+            if (index < dialogue.dialogue.Count)
             {
                 switch (dialogueState)
                 {
                     case DialogueState.Idle:
-                        StartCoroutine(DisplayText(dialogue[index]));
-                        DisplayName(title[index]);
+                        StartCoroutine(DisplayText(dialogue.dialogue[index]));
+                        DisplayName(dialogue.title[index]);
+                        DisplaySprites();
                         dialogueState = DialogueState.Normal;
                         break;
                     case DialogueState.Normal:
@@ -57,8 +64,7 @@ public class Dialogue : MonoBehaviour
     {
         yield return StartCoroutine(DialogueDelay());
 
-        dialogue.Clear();
-        title.Clear();
+        dialogue = null;
         intervalIndex = 0;
         index = 0;
         dialogueParent.SetActive(false);
@@ -68,9 +74,8 @@ public class Dialogue : MonoBehaviour
     public IEnumerator DialogueDelay()
     {
         dialoguePaused = true;
-        yield return new WaitForSeconds(delay);
+        yield return new WaitForSeconds(dialogue.delay[index - 1]);
         dialoguePaused = false;
-        delay = 0;
     }
 
     public void UpdateText()
@@ -96,6 +101,36 @@ public class Dialogue : MonoBehaviour
         index++;
         intervalIndex = 0;
         dialogueState = DialogueState.Idle;
+    }
+
+    public void DisplaySprites()
+    {
+        if (dialogue.expression[index] != null)
+        {
+            int position = 0;
+            if (dialogue.position[index] == null)
+            {
+                for (int i = 0; i < lastCharacter.Length; i++)
+                {
+                    if (lastCharacter[i] == dialogue.title[index])
+                    {
+                        position = i;
+                    }
+                }
+            }
+            else
+            { 
+                position = System.Convert.ToInt32(dialogue.position[index]);
+                lastCharacter[position] = dialogue.title[index];
+            }
+
+            characters[position].sprite = Resources.Load("Sprites/Characters/" + dialogue.title[index] + "/" + dialogue.title[index] + "_" + dialogue.expression[index]) as Sprite;
+        }
+
+        if (dialogue.background[index] != null)
+        {
+            background.sprite = Resources.Load("Sprites/Backgrounds/" + dialogue.background[index]) as Sprite;
+        }
     }
 }
 

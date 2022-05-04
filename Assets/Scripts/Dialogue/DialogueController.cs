@@ -6,6 +6,7 @@ using System.Linq;
 
 public class DialogueController : MonoBehaviour
 {
+    [Header("")]
     public GameObject dialogueSelection;
     public GameObject dialogueBox;
     public Dialogue dialogue;
@@ -17,6 +18,8 @@ public class DialogueController : MonoBehaviour
     };
 
     public string currentQuestion;
+
+    ProcessedDialogue processedDialogue;
 
     public void QuestionSetup(string question, QuestionState state)
     {
@@ -84,11 +87,17 @@ public class DialogueController : MonoBehaviour
                 break;
         }
 
+        processedDialogue = new ProcessedDialogue();
+
         for (int i = 0; i < loadedDialogue.Count; i++)
         {
-            dialogue.dialogue.Add(DialogueFilter(loadedDialogue.ElementAt(i).Value, false, state));
-            dialogue.title.Add(DialogueFilter(loadedDialogue.ElementAt(i).Key, true, state));
+            processedDialogue.dialogue.Add(DialogueFilter(loadedDialogue.ElementAt(i).Value, false, state));
+            processedDialogue.title.Add(DialogueFilter(loadedDialogue.ElementAt(i).Key, true, state));
+
+            ProcessedNullCheck();
         }
+
+        dialogue.dialogue = processedDialogue;
 
         dialogue.dialogueState = DialogueState.Load;
     }
@@ -140,12 +149,39 @@ public class DialogueController : MonoBehaviour
                     if (keySeparation[i].Contains("$T"))
                     {
                         string delay = keySeparation[i].Split(new string[] { "$T" }, System.StringSplitOptions.None)[1];
-                        dialogue.delay = float.Parse(delay);
+                        processedDialogue.delay.Add(float.Parse(delay));
                         keySeparation.RemoveAt(i);
+                        continue;
                     }
-                    if (keySeparation.Contains("$CE"))
-                    { 
-                        
+                    else if (keySeparation[i].Contains("$CE"))
+                    {
+                        string expression = keySeparation[i].Split(new string[] { "$CE" }, System.StringSplitOptions.None)[1];
+                        processedDialogue.expression.Add(expression);
+                        keySeparation.RemoveAt(i);
+                        continue;
+                    }
+                    else if (keySeparation[i].Contains("$BG"))
+                    {
+                        string background = keySeparation[i].Split(new string[] { "$BG" }, System.StringSplitOptions.None)[1];
+                        processedDialogue.background.Add(background);
+                        keySeparation.RemoveAt(i);
+                        continue;
+                    }
+                    else if (keySeparation[i].Contains("$POS"))
+                    {
+                        string position = keySeparation[i].Split(new string[] { "$POS" }, System.StringSplitOptions.None)[1];
+                        bool pos = true;
+
+                        switch (int.Parse(position))
+                        {
+                            case 0: pos = true; break;
+                            case 1: pos = false; break;
+                        }
+
+                        processedDialogue.position.Add(pos);
+
+                        keySeparation.RemoveAt(i);
+                        continue;
                     }
                 }
 
@@ -154,6 +190,26 @@ public class DialogueController : MonoBehaviour
         }
 
         return output;
+    }
+
+    public void ProcessedNullCheck()
+    {
+        int index = processedDialogue.dialogue.Count;
+
+        if (processedDialogue.delay.Count != index)
+        {
+            processedDialogue.delay.Add(0);
+        }
+
+        if (processedDialogue.expression.Count != index)
+        {
+            processedDialogue.background.Add(null);
+        }
+
+        if (processedDialogue.expression.Count != index)
+        {
+            processedDialogue.expression.Add(null);
+        }
     }
 }
 
