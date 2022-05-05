@@ -34,7 +34,16 @@
         "Professor#5": "Yes, yes. If you would've let me finish my sentence I would've said what you just said. BUT I can sense within you a tinge of uncertainty…",
         "#4": "*Samantha cuts Professor off again*",
         "Samantha#2" : "Why am I even doing this? This is laughable considering I already AM thinking of studying in a university. ",
-
+        "Professor#6": "Are you now? Then you will have nothing to worry about then, this will just be right up your alley. Now if you don't mind answering my question.",
+        "Samantha#3" :"As a matter of fact I DO mind answering your question actually. Maybe if you would just let me OUT of this stupid-",
+        "#5": "*Professor cuts Samantha off*",
+        "Professor#7":"Great. Glad to hear such ardor from you. Now from what I understand, you are already considering pursuing a higher education BUT now I understand your uncertainty. You think it might not be worth it for you to study any further and you don't think pursuing an education in a male-dominated field will be worth it.",
+        "Samantha#4":"I never said anything about that. Are you reading my mind? You are ridiculous. I am not the one that thinks studying any further could be a waste of time. My brother is the one that's thinking that. And of course he would think that too. He almost didn't make it out of year 9 and now he is talking about how he should just join TAFE to pursue a 'trade' in plumbing. ",
+        "Samantha#5":"Talk about being the family failure. This is why I HAD to consider studying in STEM in the first place. Somebody's gotta make the family proud.",
+        "Professor#8":"Well aren't you the best sister in the world huh. Let's not persecute your brother right away. From what I can observe, your brother isn't doing that badly in terms of his grades, he can even choose to pursue a university degree if he puts his mind to it. ",
+        "Professor#9":"The problem stems from him thinking that it's pointless as if he gets his qualification from TAFE he can join the workforce and start earning money right away, rather than having to incur student debt. Well, let's go ahead and find out whether his way of thinking is true or not.",
+        "Samantha#6":"Sorry but why am I the one that's getting put through this trying to find out whether my BROTHER is making the right choice or not?",
+        "Professor#10":"That's because you are just an oh-so-loving and concerned sister for your brother that you are just so concerned about his life choices. Anyways, since you are such a know-it-all, why don't you use that brain of yours to sort through this table and tell me your observations huh?",
       },
       "Questions": {
         "1": "Postgraduates",
@@ -49,10 +58,13 @@
     },  
     "Q112":{
        "Dialogue":{
-        "Tim#1":"So Bachelor degree holders generally earn more than their non-tertiary counterparts. But that's just one observation, I don't think it's fair to make a huge decision based on this alone.",
-        "Professor#1":"Of course, you should investigate this as much as possible, we can move to the other sections now.",
-        "Tim#2":"Well could you say that plumber/labourers would earn less because I have mates that are buying so much stuff and they seem like they're earning a lot of money.",
-        "Professor#2":"Take a look at this graph and tell me how much a labourer/plumber would earn?",
+        "Samantha#1": "And here I thought it was supposed to be hard, guess I could be getting out of this dumb dream soon after all. (in a mocking tone) From my observation, this table shows that workers with the highest education level tend to earn a higher income hurr durr.",
+        "Professor#1": "Congratulations Samantha. You have answered the hardest question I can conjure up, I am so happy to announce to you that I will be releasing you from your dream now.",
+        "Samantha#2": "Wait, really?!",
+        "Professor#2": "No.",
+        "Professor#3": "I thought you were smarter than this Samantha. Can't tell sarcasm apart from me being serious? We still have to scrutinize other facets of our topic, otherwise I would be making it way too easy for you. Onwards!",
+        "Samantha#2": "I swear if I could call you names right now I would. Luckily for you, you somehow censored all those words from being able to be uttered in this space. ",
+        "Professor#4": "I appreciate the compliment. Have to make this space as comfortable and safe for everyone. Anyways, have a look at this graph, and give me your observations, particularly around how much a labourer/plumber, an occupation your brother is looking to become, would earn.",
 	   },
        "Questions":{
         "1":"Labourers have the lowest median per/hour income.",
@@ -67,7 +79,9 @@
 	},
     "Q113":{
        "Dialogue":{
-        "Professor#1": "Yes this is that in general labourers earn less, but is it exactly true?",
+       "Samantha#1": ".....",
+       "Samantha#2" : "My brother would be earning way less than everyone else ...",
+       "Professor#1": "Not to anyone's surprise really, in general laborers earn less. But here is the question, is that always the case and is it exactly true?",
 	   },
        "Questions":{
         "1":"True",
