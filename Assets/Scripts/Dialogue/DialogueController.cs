@@ -98,6 +98,7 @@ public class DialogueController : MonoBehaviour
         }
 
         dialogue.dialogue = processedDialogue;
+        Debug.Log(DialogueDebug.CheckDialogue(processedDialogue));
 
         dialogue.dialogueState = DialogueState.Load;
     }
@@ -144,48 +145,48 @@ public class DialogueController : MonoBehaviour
             case false:
                 List<string> keySeparation = data.Split(new string[] { "|" }, System.StringSplitOptions.None).ToList();
 
-                for (int i = 0; i < keySeparation.Count; i++)
+                foreach (string entry in keySeparation)
                 {
-                    if (keySeparation[i].Contains("$T"))
+                    if (entry.Contains("$T"))
                     {
-                        string delay = keySeparation[i].Split(new string[] { "$T" }, System.StringSplitOptions.None)[1];
+                        string delay = entry.Split(new string[] { "$T" }, System.StringSplitOptions.None)[1];
                         processedDialogue.delay.Add(float.Parse(delay));
-                        keySeparation.RemoveAt(i);
                         continue;
                     }
-                    else if (keySeparation[i].Contains("$CE"))
+                    else if (entry.Contains("$CE"))
                     {
-                        string expression = keySeparation[i].Split(new string[] { "$CE" }, System.StringSplitOptions.None)[1];
+                        string expression = entry.Split(new string[] { "$CE" }, System.StringSplitOptions.None)[1];
                         processedDialogue.expression.Add(expression);
-                        keySeparation.RemoveAt(i);
                         continue;
                     }
-                    else if (keySeparation[i].Contains("$BG"))
+                    else if (entry.Contains("$BG"))
                     {
-                        string background = keySeparation[i].Split(new string[] { "$BG" }, System.StringSplitOptions.None)[1];
+                        string background = entry.Split(new string[] { "$BG" }, System.StringSplitOptions.None)[1];
                         processedDialogue.background.Add(background);
-                        keySeparation.RemoveAt(i);
                         continue;
                     }
-                    else if (keySeparation[i].Contains("$POS"))
+                    else if (entry.Contains("$POS"))
                     {
-                        string position = keySeparation[i].Split(new string[] { "$POS" }, System.StringSplitOptions.None)[1];
+                        Debug.Log("WOW");
+                        string position = entry.Split(new string[] { "$POS" }, System.StringSplitOptions.None)[1];
+                        Debug.Log(position);
                         bool pos = true;
 
                         switch (int.Parse(position))
                         {
-                            case 0: pos = true; break;
-                            case 1: pos = false; break;
+                            case 1: pos = true; break;
+                            case 0: pos = false; break;
                         }
-
+                        ;
+                        Debug.Log(pos);
                         processedDialogue.position.Add(pos);
-
-                        keySeparation.RemoveAt(i);
+                        Debug.Log(processedDialogue.position[processedDialogue.position.Count - 1]);
+                        Debug.Log(processedDialogue.position.Count);
                         continue;
                     }
                 }
 
-                output = keySeparation[0];
+                output = keySeparation[keySeparation.Count - 1];
                 break;
         }
 
@@ -195,13 +196,14 @@ public class DialogueController : MonoBehaviour
     public void ProcessedNullCheck()
     {
         int index = processedDialogue.dialogue.Count;
+        Debug.Log(index);
 
         if (processedDialogue.delay.Count != index)
         {
             processedDialogue.delay.Add(0);
         }
 
-        if (processedDialogue.expression.Count != index)
+        if (processedDialogue.background.Count != index)
         {
             processedDialogue.background.Add(null);
         }
@@ -209,6 +211,19 @@ public class DialogueController : MonoBehaviour
         if (processedDialogue.expression.Count != index)
         {
             processedDialogue.expression.Add(null);
+        }
+
+        if (processedDialogue.position.Count != index)
+        {
+            if (processedDialogue.position.Count == 0)
+            {
+                processedDialogue.position.Add(true);
+            }
+            else
+            {
+                processedDialogue.position.Add(processedDialogue.position[processedDialogue.position.Count - 1]);
+            }
+
         }
     }
 }

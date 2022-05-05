@@ -9,5 +9,5 @@ public class ProcessedDialogue
 
     public List<string> expression = new List<string>();
     public List<string> background = new List<string>();
-    public List<bool?> position = new List<bool?>();
+    public List<bool> position = new List<bool>();
 }

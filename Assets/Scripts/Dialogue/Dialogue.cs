@@ -105,10 +105,12 @@ public class Dialogue : MonoBehaviour
 
     public void DisplaySprites()
     {
+        Debug.Log(dialogue.position[index].ToString());
+        Debug.Log(System.Convert.ToInt32(dialogue.position[index]));
         if (dialogue.expression[index] != null)
         {
-            int position = 0;
-            if (dialogue.position[index] == null)
+            int position = 0;   
+            /*if (dialogue.position[index] == null)
             {
                 for (int i = 0; i < lastCharacter.Length; i++)
                 {
@@ -119,10 +121,10 @@ public class Dialogue : MonoBehaviour
                 }
             }
             else
-            { 
+            { */
                 position = System.Convert.ToInt32(dialogue.position[index]);
                 lastCharacter[position] = dialogue.title[index];
-            }
+            //}
             characters[position].sprite = Resources.Load<Sprite>("Sprites/Characters/" + dialogue.title[index] + "/" + dialogue.title[index] + "_" + dialogue.expression[index]);
         }
 
