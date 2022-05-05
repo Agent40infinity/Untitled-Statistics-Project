@@ -128,7 +128,7 @@ public class Dialogue : MonoBehaviour
             characters[position].sprite = Resources.Load<Sprite>("Sprites/Characters/" + dialogue.title[index] + "/" + dialogue.title[index] + "_" + dialogue.expression[index]);
         }
 
-        if (dialogue.background[index] != null)
+        if (dialogue.background[index] != null || dialogue.background[index] != "")
         {
             background.sprite = Resources.Load("Sprites/Backgrounds/" + dialogue.background[index]) as Sprite;
         }
