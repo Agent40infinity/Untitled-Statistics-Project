@@ -123,8 +123,7 @@ public class Dialogue : MonoBehaviour
                 position = System.Convert.ToInt32(dialogue.position[index]);
                 lastCharacter[position] = dialogue.title[index];
             }
-
-            characters[position].sprite = Resources.Load("Sprites/Characters/" + dialogue.title[index] + "/" + dialogue.title[index] + "_" + dialogue.expression[index]) as Sprite;
+            characters[position].sprite = Resources.Load<Sprite>("Sprites/Characters/" + dialogue.title[index] + "/" + dialogue.title[index] + "_" + dialogue.expression[index]);
         }
 
         if (dialogue.background[index] != null)
