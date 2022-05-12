@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.Video;
 using System.Linq;
 
 public class Dialogue : MonoBehaviour
@@ -24,7 +25,13 @@ public class Dialogue : MonoBehaviour
     [Header("Sprite References")]
     public Image background;
     public Image[] characters = new Image[2];
-    private string[] lastCharacter = new string[2];
+
+    [Header("Feedback Reference")]
+    public VideoPlayer feedback;
+
+    [Header("Audio References")]
+    public AudioSource sfx;
+    public AudioSource bgm;
 
     public void Update()
     {
@@ -45,6 +52,8 @@ public class Dialogue : MonoBehaviour
                         StartCoroutine(DisplayText(dialogue.dialogue[index]));
                         DisplayName(dialogue.title[index]);
                         DisplaySprites();
+                        DisplayEffects();
+                        ActiveSound();
                         dialogueState = DialogueState.Normal;
                         break;
                     case DialogueState.Normal:
@@ -105,32 +114,52 @@ public class Dialogue : MonoBehaviour
 
     public void DisplaySprites()
     {
-        Debug.Log(dialogue.position[index].ToString());
-        Debug.Log(System.Convert.ToInt32(dialogue.position[index]));
         if (dialogue.expression[index] != null)
         {
-            int position = 0;   
-            /*if (dialogue.position[index] == null)
-            {
-                for (int i = 0; i < lastCharacter.Length; i++)
-                {
-                    if (lastCharacter[i] == dialogue.title[index])
-                    {
-                        position = i;
-                    }
-                }
-            }
-            else
-            { */
-                position = System.Convert.ToInt32(dialogue.position[index]);
-                lastCharacter[position] = dialogue.title[index];
-            //}
+            int position = System.Convert.ToInt32(dialogue.position[index]);
             characters[position].sprite = Resources.Load<Sprite>("Sprites/Characters/" + dialogue.title[index] + "/" + dialogue.title[index] + "_" + dialogue.expression[index]);
         }
 
-        if (dialogue.background[index] != null || dialogue.background[index] != "")
+        if (dialogue.background[index] != null)
         {
             background.sprite = Resources.Load("Sprites/Backgrounds/" + dialogue.background[index]) as Sprite;
+        }
+    }
+
+    public void DisplayEffects()
+    {
+        if (dialogue.feedback[index] != null)
+        {
+            feedback.url = "https://www.youtube.com/watch?v=" + dialogue.feedback[index];
+            feedback.gameObject.SetActive(true);
+            feedback.Play();
+        }
+        else
+        {
+            if (feedback.gameObject.activeInHierarchy)
+            {
+                feedback.gameObject.SetActive(false);
+            }
+        }
+    }
+
+    public void ActiveSound()
+    {
+        if (dialogue.sfx[index] != null)
+        {
+            sfx.clip = Resources.Load("Audio/SFX/" + dialogue.sfx[index]) as AudioClip;
+            sfx.Play();
+        }
+
+        if (dialogue.bgm[index] != null)
+        {
+            bgm.clip = Resources.Load("Audio/Background/" + dialogue.bgm[index]) as AudioClip;
+            sfx.Play();
+        }
+        else if (dialogue.bgm[index] == "none")
+        {
+            bgm.Stop();
+            bgm.clip = null;
         }
     }
 }

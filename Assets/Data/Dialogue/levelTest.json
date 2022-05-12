@@ -1,99 +1,101 @@
 {
   "level": null,
   "LevelData": {
-    "Prelude": {
-      "Dialogue": {
-        "Player#1": "Hello?! Where the hell am I?! What in the world am I doing here?!",
-        "#1": "*Poof*",
-        "Professor#1": "$CEIdle|$POS0|Hello Player, I go by many names, but you can just call me 'The Professor', or just professor is also enough. You are currently here with me because our agents at our totally secret organization have realized that you've led a rather comfortable life. So comfortable that you've made statements in your life that completely disregards the misfortune of others in the world.",
-        "Professor#2": "Therefore in order to shape you into a better global citizen, we will go on a journey to learn many new things about the United Nations and the UN Sustainability Goals (UNSDG) that have been set for humanity to transition to a much better world. And we'll also learn some statistics along the way!",
-        "Player#2": "In conclusion, you've kidnapped me. What's your organization's name? I will be filing an official report with the police the second I get out of-",
-        "Professor#2": "Calm down. We didn't kidnap you. At least not your physical body, we didn't. When you went to sleep, our agents activated a device to help us capture your consciousness and place us in a dream world where we can learn about the UNSDG goals in a perfectly simulated, safe and yet realistic world.",
-        "Player#3" : "I literally could care less. Let me out! If I want to have a dream, it's gotta be something better than this. I don't need a patronizing dude called 'The Professor' to tell me how 'I have it easy'.",
-        "Professor#3" : "Well, I am not patronizing you. And if you want out of this, the fastest way is to just cooperate with us and go on this journey with me. Whinging is just going to make this unnecessarily longer.",
-        "Professor#4" : "Now, back to the topic at hand. The UNSDG is an important part of transitioning the world to be a better place. I have created a path for those who are lost and seek guidance on their journey. ",
-        "Professor#5" : "And now I'll be guiding you through the memories of other individuals that I have had the honour to interview, and therefore can provide with you a sort of simulated interview for you to proceed with. Personally I call them memoram(s), but there is a longer and more technical name for it that I will not be using.",
-        "Professor#6" : "Noow, in some cases, you will proceed with the simulation in a first-person perspective, meaning that you will have direct control over the person's behaviour and way of talking, and you will temporarily share their memories and thoughts, meaning you will be able to understand their background as if they are yours. ",
-        "Professor#7" : "And in other simulations you will proceed in a third-person perspective, where you will experience the interview as if you are in the room with them, and you will only have partial control over their speeches, but in reality most of the dialogues are already predetermined.",
-        "Professor#8" : "Now, since you want out of this as quickly as possible, why not also quickly choose which goals you want to learn first and go through it as quickly as you can. It will save you a lot of time not to be too hesitant about this.",
-      }
+    "Poverty": {
+      "Prelude": {
+        "Dialogue": {
+          "Player#1": "Hello?! Where the hell am I?! What in the world am I doing here?!",
+          "#1": "*Poof*",
+          "Professor#1": "$CEIdle|$POS0|Hello Player, I go by many names, but you can just call me 'The Professor', or just professor is also enough. You are currently here with me because our agents at our totally secret organization have realized that you've led a rather comfortable life. So comfortable that you've made statements in your life that completely disregards the misfortune of others in the world.",
+          "Professor#2": "$VIDcl_NE_Si7hI|Therefore in order to shape you into a better global citizen, we will go on a journey to learn many new things about the United Nations and the UN Sustainability Goals (UNSDG) that have been set for humanity to transition to a much better world. And we'll also learn some statistics along the way!",
+          "Player#2": "In conclusion, you've kidnapped me. What's your organization's name? I will be filing an official report with the police the second I get out of-",
+          "Professor#3": "Calm down. We didn't kidnap you. At least not your physical body, we didn't. When you went to sleep, our agents activated a device to help us capture your consciousness and place us in a dream world where we can learn about the UNSDG goals in a perfectly simulated, safe and yet realistic world.",
+          "Player#3" : "I literally could care less. Let me out! If I want to have a dream, it's gotta be something better than this. I don't need a patronizing dude called 'The Professor' to tell me how 'I have it easy'.",
+          "Professor#4" : "Well, I am not patronizing you. And if you want out of this, the fastest way is to just cooperate with us and go on this journey with me. Whinging is just going to make this unnecessarily longer.",
+          "Professor#5" : "Now, back to the topic at hand. The UNSDG is an important part of transitioning the world to be a better place. I have created a path for those who are lost and seek guidance on their journey. ",
+          "Professor#6" : "And now I'll be guiding you through the memories of other individuals that I have had the honour to interview, and therefore can provide with you a sort of simulated interview for you to proceed with. Personally I call them memoram(s), but there is a longer and more technical name for it that I will not be using.",
+          "Professor#7" : "Noow, in some cases, you will proceed with the simulation in a first-person perspective, meaning that you will have direct control over the person's behaviour and way of talking, and you will temporarily share their memories and thoughts, meaning you will be able to understand their background as if they are yours. ",
+          "Professor#8" : "And in other simulations you will proceed in a third-person perspective, where you will experience the interview as if you are in the room with them, and you will only have partial control over their speeches, but in reality most of the dialogues are already predetermined.",
+          "Professor#9" : "Now, since you want out of this as quickly as possible, why not also quickly choose which goals you want to learn first and go through it as quickly as you can. It will save you a lot of time not to be too hesitant about this.",
+        }
+      },
+      "Q111": {
+        "Dialogue": {
+          "Professor#1": "Choosing Quality Education as our current topic now, are we? Good good. As per my observation you do seem to carry with you a sort of arrogance in the way you speak, which means you most likely chose this because….",
+          "#1": "*Samantha cuts Professor off*",
+          "Samantha#1" :"$CEIdle|$POS1|Of COURSE I would've received quality education, you have to be one of the stupidest things my head could ever make up in my entire life. You claim to be all-knowing but you don't even know about how I graduated top of my class.",
+          "#2": "*Professor pauses time*",
+          "Professor#2": "Now you are currently within the body of a person we have previously interviewed, Samantha Higgins. She is, as you can most likely guess since you currently inherit all her personalities and memories with how the memoram works, that she comes from a very comfortable background, and is top of her class in a prestigious high school and can also be very arrogant at times.",
+          "Professor#3": "Now since you are doing this memoram in her perspective, you will have full access to her way of speaking, however, I would also highly recommend seeking more… polite alternatives when you are allowed the choices in your dialogue.",
+          "Player#1": "But why?",
+          "Professor#4": "Makes my life easier is all. Now, whenever you are ready. I will unpause and our conversation will start.",
+          "Player#2": "Now why would I-",
+          "Player#3": "Sure, let's get this over with I guess.",
+          "#3": "*Professor unpause the time*",
+          "Professor#5": "Yes, yes. If you would've let me finish my sentence I would've said what you just said. BUT I can sense within you a tinge of uncertainty…",
+          "#4": "*Samantha cuts Professor off again*",
+          "Samantha#2" : "Why am I even doing this? This is laughable considering I already AM thinking of studying in a university. ",
+          "Professor#6": "Are you now? Then you will have nothing to worry about then, this will just be right up your alley. Now if you don't mind answering my question.",
+          "Samantha#3" :"As a matter of fact I DO mind answering your question actually. Maybe if you would just let me OUT of this stupid-",
+          "#5": "*Professor cuts Samantha off*",
+          "Professor#7":"Great. Glad to hear such ardor from you. Now from what I understand, you are already considering pursuing a higher education BUT now I understand your uncertainty. You think it might not be worth it for you to study any further and you don't think pursuing an education in a male-dominated field will be worth it.",
+          "Samantha#4":"I never said anything about that. Are you reading my mind? You are ridiculous. I am not the one that thinks studying any further could be a waste of time. My brother is the one that's thinking that. And of course he would think that too. He almost didn't make it out of year 9 and now he is talking about how he should just join TAFE to pursue a 'trade' in plumbing. ",
+          "Samantha#5":"Talk about being the family failure. This is why I HAD to consider studying in STEM in the first place. Somebody's gotta make the family proud.",
+          "Professor#8":"Well aren't you the best sister in the world huh. Let's not persecute your brother right away. From what I can observe, your brother isn't doing that badly in terms of his grades, he can even choose to pursue a university degree if he puts his mind to it. ",
+          "Professor#9":"The problem stems from him thinking that it's pointless as if he gets his qualification from TAFE he can join the workforce and start earning money right away, rather than having to incur student debt. Well, let's go ahead and find out whether his way of thinking is true or not.",
+          "Samantha#6":"Sorry but why am I the one that's getting put through this trying to find out whether my BROTHER is making the right choice or not?",
+          "Professor#10":"That's because you are just an oh-so-loving and concerned sister for your brother that you are just so concerned about his life choices. Anyways, since you are such a know-it-all, why don't you use that brain of yours to sort through this table and tell me your observations huh?",
+        },
+        "Questions": {
+          "1": "Postgraduates",
+          "2": "Bachelor Degree",
+          "3": "Advanced diploma/ Diploma",
+          "4": "Certificate"
+        },
+        "Responses": {
+          "Correct_Professor#1": "Correct! The highest education level is most likely to earn a higher income.",
+          "Incorrect_Professor#2": "Incorrect! The correct answer is the highest education level 'Postgraduates."
+        },
+      },  
+      "Q112":{
+        "Dialogue":{
+          "Samantha#1": "And here I thought it was supposed to be hard, guess I could be getting out of this dumb dream soon after all. (in a mocking tone) From my observation, this table shows that workers with the highest education level tend to earn a higher income hurr durr.",
+          "Professor#1": "Congratulations Samantha. You have answered the hardest question I can conjure up, I am so happy to announce to you that I will be releasing you from your dream now.",
+          "Samantha#2": "Wait, really?!",
+          "Professor#2": "No.",
+          "Professor#3": "I thought you were smarter than this Samantha. Can't tell sarcasm apart from me being serious? We still have to scrutinize other facets of our topic, otherwise I would be making it way too easy for you. Onwards!",
+          "Samantha#2": "I swear if I could call you names right now I would. Luckily for you, you somehow censored all those words from being able to be uttered in this space. ",
+          "Professor#4": "I appreciate the compliment. Have to make this space as comfortable and safe for everyone. Anyways, have a look at this graph, and give me your observations, particularly around how much a labourer/plumber, an occupation your brother is looking to become, would earn.",
+	    },
+        "Questions":{
+          "1":"Labourers have the lowest median per/hour income.",
+          "2":"Managers have the highest median per/hour income.",
+          "3":"Professionals have the lowest median per/hour income.",
+          "4":"None.",
+	    },
+        "Responses":{
+          "Correct_Professor#1":"Correct!, Labourers have the lowest median per/hour income",
+          "Incorrect_Professor#2":"Incorrect!, Labourers have the lowest median per/hour income",
+	    },
+	  },
+      "Q113":{
+        "Dialogue":{
+          "Samantha#1": ".....",
+          "Samantha#2" : "My brother would be earning way less than everyone else ...",
+          "Professor#1": "Not to anyone's surprise really, in general laborers earn less. But here is the question, is that always the case and is it exactly true?",
+	  },
+        "Questions":{
+          "1":"True",
+          "2":"False",
+          "3":"",
+          "4":"",
+	    },
+        "Responses":{
+          "Correct_Professor#1":"Correct!, It is false, there could always be someone that earns above the median and could possibly earn more than a professional or manager.",
+          "Incorrect_Professor#2":"Incorrect!, It is false, there could always be someone that earns above the median and could possibly earn more than a professional or manager.",
+	    },
+	  },
     },
-    "Q111": {
-      "Dialogue": {
-        "Professor#1": "Choosing Quality Education as our current topic now, are we? Good good. As per my observation you do seem to carry with you a sort of arrogance in the way you speak, which means you most likely chose this because….",
-        "#1": "*Samantha cuts Professor off*",
-        "Samantha#1" :"$CEIdle|$POS1|Of COURSE I would've received quality education, you have to be one of the stupidest things my head could ever make up in my entire life. You claim to be all-knowing but you don't even know about how I graduated top of my class.",
-        "#2": "*Professor pauses time*",
-        "Professor#2": "Now you are currently within the body of a person we have previously interviewed, Samantha Higgins. She is, as you can most likely guess since you currently inherit all her personalities and memories with how the memoram works, that she comes from a very comfortable background, and is top of her class in a prestigious high school and can also be very arrogant at times.",
-        "Professor#3": "Now since you are doing this memoram in her perspective, you will have full access to her way of speaking, however, I would also highly recommend seeking more… polite alternatives when you are allowed the choices in your dialogue.",
-        "Player#1": "But why?",
-        "Professor#4": "Makes my life easier is all. Now, whenever you are ready. I will unpause and our conversation will start.",
-        "Player#2": "Now why would I-",
-        "Player#3": "Sure, let's get this over with I guess.",
-        "#3": "*Professor unpause the time*",
-        "Professor#5": "Yes, yes. If you would've let me finish my sentence I would've said what you just said. BUT I can sense within you a tinge of uncertainty…",
-        "#4": "*Samantha cuts Professor off again*",
-        "Samantha#2" : "Why am I even doing this? This is laughable considering I already AM thinking of studying in a university. ",
-        "Professor#6": "Are you now? Then you will have nothing to worry about then, this will just be right up your alley. Now if you don't mind answering my question.",
-        "Samantha#3" :"As a matter of fact I DO mind answering your question actually. Maybe if you would just let me OUT of this stupid-",
-        "#5": "*Professor cuts Samantha off*",
-        "Professor#7":"Great. Glad to hear such ardor from you. Now from what I understand, you are already considering pursuing a higher education BUT now I understand your uncertainty. You think it might not be worth it for you to study any further and you don't think pursuing an education in a male-dominated field will be worth it.",
-        "Samantha#4":"I never said anything about that. Are you reading my mind? You are ridiculous. I am not the one that thinks studying any further could be a waste of time. My brother is the one that's thinking that. And of course he would think that too. He almost didn't make it out of year 9 and now he is talking about how he should just join TAFE to pursue a 'trade' in plumbing. ",
-        "Samantha#5":"Talk about being the family failure. This is why I HAD to consider studying in STEM in the first place. Somebody's gotta make the family proud.",
-        "Professor#8":"Well aren't you the best sister in the world huh. Let's not persecute your brother right away. From what I can observe, your brother isn't doing that badly in terms of his grades, he can even choose to pursue a university degree if he puts his mind to it. ",
-        "Professor#9":"The problem stems from him thinking that it's pointless as if he gets his qualification from TAFE he can join the workforce and start earning money right away, rather than having to incur student debt. Well, let's go ahead and find out whether his way of thinking is true or not.",
-        "Samantha#6":"Sorry but why am I the one that's getting put through this trying to find out whether my BROTHER is making the right choice or not?",
-        "Professor#10":"That's because you are just an oh-so-loving and concerned sister for your brother that you are just so concerned about his life choices. Anyways, since you are such a know-it-all, why don't you use that brain of yours to sort through this table and tell me your observations huh?",
-      },
-      "Questions": {
-        "1": "Postgraduates",
-        "2": "Bachelor Degree",
-        "3": "Advanced diploma/ Diploma",
-        "4": "Certificate"
-      },
-      "Responses": {
-        "Correct_Professor#1": "Correct! The highest education level is most likely to earn a higher income.",
-        "Incorrect_Professor#2": "Incorrect! The correct answer is the highest education level 'Postgraduates."
-      },
-    },  
-    "Q112":{
-       "Dialogue":{
-        "Samantha#1": "And here I thought it was supposed to be hard, guess I could be getting out of this dumb dream soon after all. (in a mocking tone) From my observation, this table shows that workers with the highest education level tend to earn a higher income hurr durr.",
-        "Professor#1": "Congratulations Samantha. You have answered the hardest question I can conjure up, I am so happy to announce to you that I will be releasing you from your dream now.",
-        "Samantha#2": "Wait, really?!",
-        "Professor#2": "No.",
-        "Professor#3": "I thought you were smarter than this Samantha. Can't tell sarcasm apart from me being serious? We still have to scrutinize other facets of our topic, otherwise I would be making it way too easy for you. Onwards!",
-        "Samantha#2": "I swear if I could call you names right now I would. Luckily for you, you somehow censored all those words from being able to be uttered in this space. ",
-        "Professor#4": "I appreciate the compliment. Have to make this space as comfortable and safe for everyone. Anyways, have a look at this graph, and give me your observations, particularly around how much a labourer/plumber, an occupation your brother is looking to become, would earn.",
-	   },
-       "Questions":{
-        "1":"Labourers have the lowest median per/hour income.",
-        "2":"Managers have the highest median per/hour income.",
-        "3":"Professionals have the lowest median per/hour income.",
-        "4":"None.",
-	   },
-       "Responses":{
-        "Correct_Professor#1":"Correct!, Labourers have the lowest median per/hour income",
-        "Incorrect_Professor#2":"Incorrect!, Labourers have the lowest median per/hour income",
-	   },
-	},
-    "Q113":{
-       "Dialogue":{
-       "Samantha#1": ".....",
-       "Samantha#2" : "My brother would be earning way less than everyone else ...",
-       "Professor#1": "Not to anyone's surprise really, in general laborers earn less. But here is the question, is that always the case and is it exactly true?",
-	   },
-       "Questions":{
-        "1":"True",
-        "2":"False",
-        "3":"",
-        "4":"",
-	   },
-       "Responses":{
-        "Correct_Professor#1":"Correct!, It is false, there could always be someone that earns above the median and could possibly earn more than a professional or manager.",
-        "Incorrect_Professor#2":"Incorrect!, It is false, there could always be someone that earns above the median and could possibly earn more than a professional or manager.",
-	   },
-	},
   },
   "answers": {
     "Q111": "1",

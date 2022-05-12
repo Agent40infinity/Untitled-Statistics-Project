@@ -1,43 +1,125 @@
 {
   "level": null,
   "LevelData": {
-    "Prelude": {
-      "Dialogue": {
-        "The Professor#1": "$T1|Hello friends, I am called by many names, but you may call me 'The Professor'.",
-        "The Professor#2": "Ooga Booga",
-      }
+    "Poverty": {
+      "Prelude": {
+        "Dialogue": {
+          "The Professor#1": "$T1|Hello friends, I am called by many names, but you may call me 'The Professor'.",
+          "The Professor#2": "Ooga Booga",
+        }
+      },
+      "Q115": {
+        "Dialogue": {
+          "Zoe#1": "This is test question 115!",
+          "Zoe#2": "What is my name?",
+        },
+        "Questions": {
+          "1": "Her name is Zoe",
+          "2": "Her name is Hannah",
+          "3": "Her name is Anna",
+          "4": "Her name is Ashley",
+        },
+        "Responses": {
+          "Correct_Zoe#1": "Yes my name is Zoe!",
+          "Incorrect_Zoe#1": "No my name was Zoe!",
+        },
+      },
+      "Q116": {
+        "Dialogue": {
+          "Zoe#1": "This is test question 116!",
+          "Zoe#2": "How poor am I?",
+	    },
+        "Questions": {
+          "1": "Very poor",
+          "2": "Not poor",
+          "3": "Drunk poor",
+          "4": "Rich af",
+	    },
+        "Responses":{
+          "Correct_Professor#1": "Correct!, I am drunk!",
+          "Incorrect_Professor#2": "Incorrect!, Sadly I'm drunk",
+	    },
+      },
     },
-    "Q115": {
-      "Dialogue": {
-        "Zoe#1": "This is test question 115!",
-        "Zoe#2": "What is my name?",
+    "Education": {
+      "Prelude": {
+        "Dialogue": {
+          "The Professor#1": "$T1|Hello friends, I am called by many names, but you may call me 'The Professor'.",
+          "The Professor#2": "Ooga Booga",
+        }
       },
-      "Questions": {
-        "1": "Her name is Zoe",
-        "2": "Her name is Hannah",
-        "3": "Her name is Anna",
-        "4": "Her name is Ashley",
+      "Q115": {
+        "Dialogue": {
+          "Zoe#1": "This is test question 115!",
+          "Zoe#2": "What is my name?",
+        },
+        "Questions": {
+          "1": "Her name is Zoe",
+          "2": "Her name is Hannah",
+          "3": "Her name is Anna",
+          "4": "Her name is Ashley",
+        },
+        "Responses": {
+          "Correct_Zoe#1": "Yes my name is Zoe!",
+          "Incorrect_Zoe#1": "No my name was Zoe!",
+        },
       },
-      "Responses": {
-        "Correct_Zoe#1": "Yes my name is Zoe!",
-        "Incorrect_Zoe#1": "No my name was Zoe!",
+      "Q116": {
+        "Dialogue": {
+          "Zoe#1": "This is test question 116!",
+          "Zoe#2": "How poor am I?",
+	    },
+        "Questions": {
+          "1": "Very poor",
+          "2": "Not poor",
+          "3": "Drunk poor",
+          "4": "Rich af",
+	    },
+        "Responses":{
+          "Correct_Professor#1": "Correct!, I am drunk!",
+          "Incorrect_Professor#2": "Incorrect!, Sadly I'm drunk",
+	    },
       },
     },
-    "Q116": {
-      "Dialogue": {
-        "Zoe#1": "This is test question 116!",
-        "Zoe#2": "How poor am I?",
-	  },
-      "Questions": {
-        "1": "Very poor",
-        "2": "Not poor",
-        "3": "Drunk poor",
-        "4": "Rich af",
-	  },
-      "Responses":{
-        "Correct_Professor#1": "Correct!, I am drunk!",
-        "Incorrect_Professor#2": "Incorrect!, Sadly I'm drunk",
-	  },
+    "Health": {
+      "Prelude": {
+        "Dialogue": {
+          "The Professor#1": "$T1|Hello friends, I am called by many names, but you may call me 'The Professor'.",
+          "The Professor#2": "Ooga Booga",
+        }
+      },
+      "Q115": {
+        "Dialogue": {
+          "Zoe#1": "This is test question 115!",
+          "Zoe#2": "What is my name?",
+        },
+        "Questions": {
+          "1": "Her name is Zoe",
+          "2": "Her name is Hannah",
+          "3": "Her name is Anna",
+          "4": "Her name is Ashley",
+        },
+        "Responses": {
+          "Correct_Zoe#1": "Yes my name is Zoe!",
+          "Incorrect_Zoe#1": "No my name was Zoe!",
+        },
+      },
+      "Q116": {
+        "Dialogue": {
+          "Zoe#1": "This is test question 116!",
+          "Zoe#2": "How poor am I?",
+	    },
+        "Questions": {
+          "1": "Very poor",
+          "2": "Not poor",
+          "3": "Drunk poor",
+          "4": "Rich af",
+	    },
+        "Responses":{
+          "Correct_Professor#1": "Correct!, I am drunk!",
+          "Incorrect_Professor#2": "Incorrect!, Sadly I'm drunk",
+	    },
+      },
     },
   },
   "answers": {

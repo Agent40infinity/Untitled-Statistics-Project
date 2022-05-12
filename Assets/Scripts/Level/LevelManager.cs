@@ -42,7 +42,7 @@ public class LevelManager : MonoBehaviour
         {
             QuestionState state = (QuestionState)System.Enum.GetValues(typeof(QuestionState)).GetValue(questionIndex);
 
-            if (DialogueData.currentlyLoaded.levelData[queue[queueIndex]].ContainsKey(state.ToString()))
+            if (DialogueData.currentlyLoaded.levelData[FieldManager.GetState][queue[queueIndex]].ContainsKey(state.ToString()))
             {
                 LoadQuestion(queue[queueIndex], state);
             }
@@ -74,9 +74,9 @@ public class LevelManager : MonoBehaviour
     {
         DialogueLoading.LoadDialogue(identity);
 
-        for (int i = 0; i < DialogueData.currentlyLoaded.levelData.Count; i++)
+        for (int i = 0; i < DialogueData.currentlyLoaded.levelData[FieldManager.GetState].Count; i++)
         {
-            queue.Add(DialogueData.currentlyLoaded.levelData.ElementAt(i).Key);
+            queue.Add(DialogueData.currentlyLoaded.levelData[FieldManager.GetState].ElementAt(i).Key);
             Debug.Log(queue[i]);
         }
     }
