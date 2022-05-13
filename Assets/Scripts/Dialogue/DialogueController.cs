@@ -137,7 +137,7 @@ public class DialogueController : MonoBehaviour
                         {
                             case true:
                                 output = output.Split(new string[] { "Correct_" }, System.StringSplitOptions.None)[1];
-                                GameManager.playerData.score++;
+                                //GameManager.playerData.score++;
                                 break;
                             case false:
                                 output = output.Split(new string[] { "Incorrect_" }, System.StringSplitOptions.None)[1];
