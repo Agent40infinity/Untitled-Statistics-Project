@@ -59,6 +59,7 @@ public class LevelManager : MonoBehaviour
         }
         else
         {
+            FieldManager.Completed = FieldManager.State;
             queueWaiting = true;
             StartCoroutine(NextLevel());
         }

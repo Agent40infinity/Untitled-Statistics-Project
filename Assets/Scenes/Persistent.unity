@@ -473,7 +473,7 @@ MonoBehaviour:
   loadingScreen: {fileID: 1959816737}
   levelIndex: 0
   fade: {fileID: 1769037665}
-  startingScene: 2
+  startingScene: 1
 --- !u!1 &206189632
 GameObject:
   m_ObjectHideFlags: 0

@@ -70,7 +70,12 @@ public class GameManager : MonoBehaviour
         }
 
         levelIndex++;
-        if (levelIndex < System.Enum.GetValues(typeof(SceneIndex)).Length)
+        if (!FieldManager.CheckComplete && levelIndex == System.Enum.GetValues(typeof(SceneIndex)).Length - 1)
+        {
+            scenesLoading.Add(SceneManager.LoadSceneAsync(FieldManager.selector, LoadSceneMode.Additive));
+            levelIndex = 1;
+        }
+        else if (levelIndex < System.Enum.GetValues(typeof(SceneIndex)).Length)
         {
             scenesLoading.Add(SceneManager.LoadSceneAsync(levelIndex, LoadSceneMode.Additive));
         }
