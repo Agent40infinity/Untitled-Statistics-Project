@@ -11,11 +11,8 @@ public class DialogueController : MonoBehaviour
     public GameObject dialogueBox;
     public Dialogue dialogue;
     public List<TextMeshProUGUI> options = new List<TextMeshProUGUI>();
-    public string[] modifiers =
-    {
-        "$T",
-        "$CE"
-    };
+
+    public string separator = "|";
 
     public string currentQuestion;
 
@@ -44,7 +41,7 @@ public class DialogueController : MonoBehaviour
 
         for (int i = 0; i < decompiledTitle.Length; i++)
         {
-            decompiledTitle[i] = DialogueData.currentlyLoaded.levelData[currentQuestion]["Questions"][(i + 1).ToString()];
+            decompiledTitle[i] = DialogueData.currentlyLoaded.levelData[FieldManager.GetState][currentQuestion]["Questions"][(i + 1).ToString()];
         }
 
         for (int i = 0; i < options.Count; i++)
@@ -59,7 +56,7 @@ public class DialogueController : MonoBehaviour
     {
         DialogueActivation();
 
-        Dictionary<string, string> loadedDialogue = DialogueData.currentlyLoaded.levelData[currentQuestion][state.ToString()];
+        Dictionary<string, string> loadedDialogue = DialogueData.currentlyLoaded.levelData[FieldManager.GetState][currentQuestion][state.ToString()];
 
         switch (state)
         {
@@ -98,6 +95,7 @@ public class DialogueController : MonoBehaviour
         }
 
         dialogue.dialogue = processedDialogue;
+        Debug.Log(DialogueDebug.CheckDialogue(processedDialogue));
 
         dialogue.dialogueState = DialogueState.Load;
     }
@@ -132,7 +130,7 @@ public class DialogueController : MonoBehaviour
                         {
                             case true:
                                 output = output.Split(new string[] { "Correct_" }, System.StringSplitOptions.None)[1];
-                                GameManager.playerData.score++;
+                                //snGameManager.playerData.score++;
                                 break;
                             case false:
                                 output = output.Split(new string[] { "Incorrect_" }, System.StringSplitOptions.None)[1];
@@ -142,50 +140,63 @@ public class DialogueController : MonoBehaviour
                 }
                 break;
             case false:
-                List<string> keySeparation = data.Split(new string[] { "|" }, System.StringSplitOptions.None).ToList();
+                List<string> keySeparation = data.Split(new string[] { separator }, System.StringSplitOptions.None).ToList();
 
-                for (int i = 0; i < keySeparation.Count; i++)
+                foreach (string entry in keySeparation)
                 {
-                    if (keySeparation[i].Contains("$T"))
+                    switch (entry)
                     {
-                        string delay = keySeparation[i].Split(new string[] { "$T" }, System.StringSplitOptions.None)[1];
-                        processedDialogue.delay.Add(float.Parse(delay));
-                        keySeparation.RemoveAt(i);
-                        continue;
-                    }
-                    else if (keySeparation[i].Contains("$CE"))
-                    {
-                        string expression = keySeparation[i].Split(new string[] { "$CE" }, System.StringSplitOptions.None)[1];
-                        processedDialogue.expression.Add(expression);
-                        keySeparation.RemoveAt(i);
-                        continue;
-                    }
-                    else if (keySeparation[i].Contains("$BG"))
-                    {
-                        string background = keySeparation[i].Split(new string[] { "$BG" }, System.StringSplitOptions.None)[1];
-                        processedDialogue.background.Add(background);
-                        keySeparation.RemoveAt(i);
-                        continue;
-                    }
-                    else if (keySeparation[i].Contains("$POS"))
-                    {
-                        string position = keySeparation[i].Split(new string[] { "$POS" }, System.StringSplitOptions.None)[1];
-                        bool pos = true;
+                        case string a when entry.Contains("$T"):
+                            string delay = entry.Split(new string[] { "$T" }, System.StringSplitOptions.None)[1];
+                            processedDialogue.delay.Add(float.Parse(delay));
+                            continue;
 
-                        switch (int.Parse(position))
-                        {
-                            case 0: pos = true; break;
-                            case 1: pos = false; break;
-                        }
+                        case string b when entry.Contains("$CE"):
+                            string expression = entry.Split(new string[] { "$CE" }, System.StringSplitOptions.None)[1];
+                            processedDialogue.expression.Add(expression);
+                            continue;
 
-                        processedDialogue.position.Add(pos);
+                        case string c when entry.Contains("$BG"):
+                            string background = entry.Split(new string[] { "$BG" }, System.StringSplitOptions.None)[1];
+                            processedDialogue.background.Add(background);
+                            continue;
 
-                        keySeparation.RemoveAt(i);
-                        continue;
+                        case string d when entry.Contains("$POS"):
+                            string position = entry.Split(new string[] { "$POS" }, System.StringSplitOptions.None)[1];
+                            bool pos = true;
+
+                            switch (int.Parse(position))
+                            {
+                                case 1: pos = true; break;
+                                case 0: pos = false; break;
+                            }
+
+                            processedDialogue.position.Add(pos);
+                            continue;
+                        case string e when entry.Contains("$VID"):
+                            string video = entry.Split(new string[] { "$VID" }, System.StringSplitOptions.None)[1];
+                            processedDialogue.feedback.Add(video);
+                            Debug.Log("Processed");
+                            continue;
+
+                        case string f when entry.Contains("$PT"):
+                            string particle = entry.Split(new string[] { "$PT" }, System.StringSplitOptions.None)[1];
+                            processedDialogue.particle.Add(particle);
+                            continue;
+
+                        case string g when entry.Contains("$SFX"):
+                            string sfx = entry.Split(new string[] { "$SFX" }, System.StringSplitOptions.None)[1];
+                            processedDialogue.sfx.Add(sfx);
+                            continue;
+
+                        case string h when entry.Contains("$BGM"):
+                            string bgm = entry.Split(new string[] { "$BGM" }, System.StringSplitOptions.None)[1];
+                            processedDialogue.bgm.Add(bgm);
+                            continue;
                     }
                 }
 
-                output = keySeparation[0];
+                output = keySeparation[keySeparation.Count - 1];
                 break;
         }
 
@@ -201,7 +212,7 @@ public class DialogueController : MonoBehaviour
             processedDialogue.delay.Add(0);
         }
 
-        if (processedDialogue.expression.Count != index)
+        if (processedDialogue.background.Count != index)
         {
             processedDialogue.background.Add(null);
         }
@@ -209,6 +220,39 @@ public class DialogueController : MonoBehaviour
         if (processedDialogue.expression.Count != index)
         {
             processedDialogue.expression.Add(null);
+        }
+
+        if (processedDialogue.position.Count != index)
+        {
+            if (processedDialogue.position.Count == 0)
+            {
+                processedDialogue.position.Add(true);
+            }
+            else
+            {
+                processedDialogue.position.Add(processedDialogue.position[processedDialogue.position.Count - 1]);
+            }
+
+        }
+
+        if (processedDialogue.feedback.Count != index)
+        {
+            processedDialogue.feedback.Add(null);
+        }
+
+        if (processedDialogue.particle.Count != index)
+        {
+            processedDialogue.particle.Add(null);
+        }
+
+        if (processedDialogue.sfx.Count != index)
+        {
+            processedDialogue.sfx.Add(null);
+        }
+
+        if (processedDialogue.bgm.Count != index)
+        {
+            processedDialogue.bgm.Add(null);
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 public enum SceneIndex
 { 
     Persistent,
-    Information,
-    Test,
+    Selection,
+    Level1,
     Results,
 }

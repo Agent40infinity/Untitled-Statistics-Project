@@ -121,7 +121,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &3312670926138488141
+--- !u!1001 &571425126
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -136,7 +136,7 @@ PrefabInstance:
     - target: {fileID: 3312670924926931814, guid: 1dce9a5e7d8cb14479c4cc7f242eaea8,
         type: 3}
       propertyPath: identity
-      value: testLevel
+      value: Level1
       objectReference: {fileID: 0}
     - target: {fileID: 3312670924926931815, guid: 1dce9a5e7d8cb14479c4cc7f242eaea8,
         type: 3}

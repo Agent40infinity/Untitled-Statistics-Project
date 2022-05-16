@@ -10,7 +10,7 @@ public class ResultDisplay : MonoBehaviour
 
     public void Start()
     {
-        string output = GameManager.playerData.firstName + " " + GameManager.playerData.lastName + ": " + GameManager.playerData.playerID + "\n" + GameManager.playerData.score.ToString() + "/" + GameManager.playerData.maxScore.ToString();
-        results.text = output;
+        //string output = GameManager.playerData.firstName + " " + GameManager.playerData.lastName + ": " + GameManager.playerData.playerID + "\n" + GameManager.playerData.score.ToString() + "/" + GameManager.playerData.maxScore.ToString();
+        //results.text = output;
     }
 }

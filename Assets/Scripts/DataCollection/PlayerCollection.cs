@@ -20,7 +20,7 @@ public class PlayerCollection : MonoBehaviour
     public void SubmitData()
     {
         Debug.Log(firstName.text.Length);
-        if (firstName.text.Length > 0 && lastName.text.Length > 0 && id.text.Length > 0)
+        /*if (firstName.text.Length > 0 && lastName.text.Length > 0 && id.text.Length > 0)
         {
             GameManager.playerData.firstName = firstName.text;
             GameManager.playerData.lastName = lastName.text;
@@ -31,7 +31,7 @@ public class PlayerCollection : MonoBehaviour
         else
         {
             warning.SetActive(true);
-        }
+        }*/
     }
 
     public IEnumerator NextLevel()

@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
 public class PlayerData
 {
-    public string firstName;
-    public string lastName;
-    public int playerID;
-    public int score;
-    public int maxScore = 2;
+    public float totalTime;
+    public bool completion;
+
+    public List<bool> questions;
+    public List<bool> requiredHelp;
+    public List<float> timeSpent;
+
+    public string feedback;
 }
