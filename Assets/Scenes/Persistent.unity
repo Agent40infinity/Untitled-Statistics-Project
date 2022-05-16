@@ -474,7 +474,7 @@ MonoBehaviour:
   levelIndex: 0
   fade: {fileID: 1769037665}
   startingScene: 1
-  dialogueController: {fileID: 0}
+  dialogueController: {fileID: 1057337227}
 --- !u!1 &206189632
 GameObject:
   m_ObjectHideFlags: 0
