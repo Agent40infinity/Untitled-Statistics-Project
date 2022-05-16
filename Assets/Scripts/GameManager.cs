@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public FadeController fade;
     public static PlayerData playerData;
     public SceneIndex startingScene;
+    public DialogueController dialogueController;
 
     [Header("Settings")]
     public static AudioMixer masterMixer; //Creates reference for the menu musi
@@ -43,8 +44,10 @@ public class GameManager : MonoBehaviour
         instance = this;
         saveIcon = GameObject.FindWithTag("SaveIcon").GetComponent<Animator>();
         masterMixer = Resources.Load("Music/Mixers/Master") as AudioMixer; //Loads the MasterMixer for renference.
+        dialogueController = GameObject.FindWithTag("Dialogue").GetComponent<DialogueController>();
         playerData = new PlayerData();
 
+        ToggleDialogue(false);
         SceneManager.LoadSceneAsync((int)startingScene, LoadSceneMode.Additive);
         levelIndex = (int)startingScene;
     }
@@ -72,11 +75,13 @@ public class GameManager : MonoBehaviour
         levelIndex++;
         if (!FieldManager.CheckComplete && levelIndex == System.Enum.GetValues(typeof(SceneIndex)).Length - 1)
         {
+            ToggleDialogue(false);
             scenesLoading.Add(SceneManager.LoadSceneAsync(FieldManager.selector, LoadSceneMode.Additive));
             levelIndex = 1;
         }
         else if (levelIndex < System.Enum.GetValues(typeof(SceneIndex)).Length)
         {
+            ToggleDialogue(true);
             scenesLoading.Add(SceneManager.LoadSceneAsync(levelIndex, LoadSceneMode.Additive));
         }
 
@@ -93,10 +98,20 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        yield return new WaitForSeconds(3);
+        if (!DialogueLoading.instance.HasLoaded())
+        {
+            yield return null;
+        }
+
+        yield return new WaitForSeconds(0.5f);
 
         yield return fade.FadeOut();
         loadingScreen.Visibility(false);
+    }
+
+    public void ToggleDialogue(bool toggle)
+    {
+        dialogueController.gameObject.SetActive(toggle);
     }
 
     public void OnApplicationQuit()

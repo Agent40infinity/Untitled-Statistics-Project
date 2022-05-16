@@ -6,6 +6,5 @@ public enum SceneIndex
     Persistent,
     Selection,
     Level1,
-    Test,
     Results,
 }

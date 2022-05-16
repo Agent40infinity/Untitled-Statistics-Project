@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
-
+using Newtonsoft.Json;
 public class LevelManager : MonoBehaviour
 {
     public string identity;
@@ -18,8 +18,7 @@ public class LevelManager : MonoBehaviour
     {
         dialogueController = GameObject.FindWithTag("Dialogue").GetComponent<DialogueController>();
         fade = GameObject.FindWithTag("FadeController").GetComponent<FadeController>();
-        LoadLevel();
-        LoadQuestion("Prelude", QuestionState.Dialogue);
+        StartCoroutine(LoadLevel());
     }
 
     public void Update()
@@ -71,15 +70,25 @@ public class LevelManager : MonoBehaviour
         GameManager.instance.SwapLevel();
     }
 
-    public void LoadLevel()
+    public IEnumerator LoadLevel()
     {
-        DialogueLoading.LoadDialogue(identity);
+        yield return DialogueLoading.instance.LoadDialogue(identity);
+
+        if (!DialogueLoading.instance.HasLoaded())
+        {
+            yield return null;
+        }
+
+        string json = JsonConvert.SerializeObject(DialogueData.currentlyLoaded.levelData, Formatting.Indented);
+        Debug.Log(json);
 
         for (int i = 0; i < DialogueData.currentlyLoaded.levelData[FieldManager.GetState].Count; i++)
         {
             queue.Add(DialogueData.currentlyLoaded.levelData[FieldManager.GetState].ElementAt(i).Key);
             Debug.Log(queue[i]);
         }
+
+        LoadQuestion("Prelude", QuestionState.Dialogue);
     }
 
     public void LoadQuestion(string question, QuestionState state)

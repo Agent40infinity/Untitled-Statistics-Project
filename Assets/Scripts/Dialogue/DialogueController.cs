@@ -11,14 +11,7 @@ public class DialogueController : MonoBehaviour
     public GameObject dialogueBox;
     public Dialogue dialogue;
     public List<TextMeshProUGUI> options = new List<TextMeshProUGUI>();
-    public string[] modifiers =
-    {
-        "$T",
-        "$CE",
-        "$BG",
-        "$POS",
-        ""
-    };
+
     public string separator = "|";
 
     public string currentQuestion;
@@ -137,7 +130,7 @@ public class DialogueController : MonoBehaviour
                         {
                             case true:
                                 output = output.Split(new string[] { "Correct_" }, System.StringSplitOptions.None)[1];
-                                //GameManager.playerData.score++;
+                                //snGameManager.playerData.score++;
                                 break;
                             case false:
                                 output = output.Split(new string[] { "Incorrect_" }, System.StringSplitOptions.None)[1];
