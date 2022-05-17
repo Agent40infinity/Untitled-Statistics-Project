@@ -2041,8 +2041,8 @@ MonoBehaviour:
   characters:
   - {fileID: 53195402}
   - {fileID: 1609178646}
-  videoFeedback: {fileID: 0}
-  imageFeedback: {fileID: 0}
+  videoFeedback: {fileID: 340591329}
+  imageFeedback: {fileID: 340591330}
   sfx: {fileID: 1571684560}
   bgm: {fileID: 549776749}
 --- !u!224 &1057337226
