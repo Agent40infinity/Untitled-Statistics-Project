@@ -29,6 +29,7 @@ public class Dialogue : MonoBehaviour
     [Header("Feedback Reference")]
     public VideoPlayer videoFeedback;
     public Image imageFeedback;
+    public GameObject slideshow;
 
     [Header("Audio References")]
     public AudioSource sfx;
@@ -109,6 +110,7 @@ public class Dialogue : MonoBehaviour
         }
 
         yield return StartCoroutine(DialogueDelay());
+        yield return StartCoroutine(FeedbackCheck());
 
         index++;
         intervalIndex = 0;
@@ -142,7 +144,7 @@ public class Dialogue : MonoBehaviour
         if (dialogue.feedback[index] != null)
         {
             string path = "/Feedback/" + dialogue.feedback[index];
-            videoFeedback.gameObject.SetActive(true);
+            slideshow.SetActive(true);
 
             if (dialogue.feedback[index].Contains(".mp4"))
             {
@@ -158,12 +160,18 @@ public class Dialogue : MonoBehaviour
                 imageFeedback.sprite = Resources.Load<Sprite>(path);
             }
         }
-        else
+    }
+
+    public void CloseSlideshow()
+    {
+        slideshow.SetActive(false);
+    }
+
+    public IEnumerator FeedbackCheck()
+    {
+        if (slideshow.activeInHierarchy)
         {
-            if (videoFeedback.gameObject.activeInHierarchy)
-            {
-                videoFeedback.gameObject.SetActive(false);
-            }
+            yield return null;
         }
     }
 
