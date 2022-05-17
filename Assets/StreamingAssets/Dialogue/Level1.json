@@ -4,7 +4,7 @@
     "Poverty": {
       "Prelude": {
         "Dialogue": {
-          "Player#1": "$CEIdle|$POS1|Hello?! Where the hell am I?! What in the world am I doing here?!",
+          "Player#1": "$CEIdle|$POS1|$BGSkyBackground|Hello?! Where the hell am I?! What in the world am I doing here?!",
           "Narrator#1": "$CEPoof|$POS0|Poof*",
           "Professor#1": "$CEIdle|$POS0|Hello Player, I go by many names, but you can just call me “The Professor”, or just professor is also enough.",
           "Professor#2": "You are currently here with me because our agents at our totally secret organization have realized that you've led a rather comfortable life.",
