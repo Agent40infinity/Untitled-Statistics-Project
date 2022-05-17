@@ -38,10 +38,7 @@ public class Dialogue : MonoBehaviour
     {
         if (dialogueState == DialogueState.Load)
         {
-            StartCoroutine(DisplayText(dialogue.dialogue[index])); // Theres a problem here
-            DisplayName(dialogue.title[index]);
-            DisplayModifiers();
-            dialogueState = DialogueState.Normal;
+            CallDialogue();
         }
 
         if (Input.GetMouseButtonDown(0) && dialogueParent.activeInHierarchy && !dialoguePaused)
@@ -51,10 +48,7 @@ public class Dialogue : MonoBehaviour
                 switch (dialogueState)
                 {
                     case DialogueState.Idle:
-                        StartCoroutine(DisplayText(dialogue.dialogue[index]));
-                        DisplayName(dialogue.title[index]);
-                        DisplayModifiers();
-                        dialogueState = DialogueState.Normal;
+                        CallDialogue();
                         break;
                     case DialogueState.Normal:
                         intervalIndex = 1;
@@ -67,6 +61,14 @@ public class Dialogue : MonoBehaviour
                 StartCoroutine(ClearDialogue());
             }
         }
+    }
+
+    public void CallDialogue()
+    {
+        StartCoroutine(DisplayText(dialogue.dialogue[index]));
+        DisplayName(dialogue.title[index]);
+        DisplayModifiers();
+        dialogueState = DialogueState.Normal;
     }
 
     public IEnumerator ClearDialogue()
