@@ -40,6 +40,7 @@ public class Dialogue : MonoBehaviour
         {
             StartCoroutine(DisplayText(dialogue.dialogue[index])); // Theres a problem here
             DisplayName(dialogue.title[index]);
+            DisplayModifiers();
             dialogueState = DialogueState.Normal;
         }
 
@@ -128,7 +129,8 @@ public class Dialogue : MonoBehaviour
 
         if (dialogue.background[index] != null)
         {
-            background.sprite = Resources.Load("Sprites/Backgrounds/" + dialogue.background[index]) as Sprite;
+            Debug.Log("Processing");
+            background.sprite = Resources.Load<Sprite>("Sprites/Backgrounds/" + dialogue.background[index]);
         }
     }
 
