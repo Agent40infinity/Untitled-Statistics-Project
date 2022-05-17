@@ -1082,8 +1082,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 122, y: 108}
-  m_SizeDelta: {x: 253.99203, y: 61.108154}
+  m_AnchoredPosition: {x: 123, y: 108.4}
+  m_SizeDelta: {x: 252.04181, y: 61.108154}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &429897659
 MonoBehaviour:
@@ -1104,8 +1104,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: 302b43e6b241ff54bac3beb2bebb5ded, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2041,8 +2041,8 @@ MonoBehaviour:
   characters:
   - {fileID: 53195402}
   - {fileID: 1609178646}
-  videoFeedback: {fileID: 0}
-  imageFeedback: {fileID: 0}
+  videoFeedback: {fileID: 340591329}
+  imageFeedback: {fileID: 340591330}
   sfx: {fileID: 1571684560}
   bgm: {fileID: 549776749}
 --- !u!224 &1057337226
@@ -2256,8 +2256,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 1.7001953, y: 41}
-  m_SizeDelta: {x: 717.2251, y: 82.00375}
+  m_AnchoredPosition: {x: -0.000015258789, y: 40}
+  m_SizeDelta: {x: 709.99994, y: 84}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1196678363
 MonoBehaviour:
@@ -2278,8 +2278,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: 302b43e6b241ff54bac3beb2bebb5ded, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2463,8 +2463,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -281, y: 38.2}
-  m_SizeDelta: {x: 100, y: 71.01892}
+  m_AnchoredPosition: {x: 1.36, y: 40}
+  m_SizeDelta: {x: 687.6692, y: 63.77899}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1302361013
 MonoBehaviour:
@@ -2548,7 +2548,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 1
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: -6.649185, z: -570.3129, w: 9.97377}
+  m_margin: {x: 0, y: 0.3961418, z: -0.022511242, w: 0.7199569}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -3009,7 +3009,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1689288870
 RectTransform:
   m_ObjectHideFlags: 0
