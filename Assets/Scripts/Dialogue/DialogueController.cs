@@ -173,13 +173,12 @@ public class DialogueController : MonoBehaviour
 
                             processedDialogue.position.Add(pos);
                             continue;
-                        case string e when entry.Contains("$VID"):
-                            string video = entry.Split(new string[] { "$VID" }, System.StringSplitOptions.None)[1];
-                            processedDialogue.feedback.Add(video);
-                            Debug.Log("Processed");
+                        case string e when entry.Contains("$VID"): case string i when entry.Contains("$PIC"):
+                            string feedback = entry.Split(new string[] { "$VID", "$PIC" }, System.StringSplitOptions.None)[1];
+                            processedDialogue.feedback.Add(feedback);
                             continue;
 
-                        case string f when entry.Contains("$PT"):
+                        case string f when entry.Contains("$PT"): 
                             string particle = entry.Split(new string[] { "$PT" }, System.StringSplitOptions.None)[1];
                             processedDialogue.particle.Add(particle);
                             continue;

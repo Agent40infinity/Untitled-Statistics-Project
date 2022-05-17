@@ -27,7 +27,8 @@ public class Dialogue : MonoBehaviour
     public Image[] characters = new Image[2];
 
     [Header("Feedback Reference")]
-    public VideoPlayer feedback;
+    public VideoPlayer videoFeedback;
+    public Image imageFeedback;
 
     [Header("Audio References")]
     public AudioSource sfx;
@@ -51,9 +52,7 @@ public class Dialogue : MonoBehaviour
                     case DialogueState.Idle:
                         StartCoroutine(DisplayText(dialogue.dialogue[index]));
                         DisplayName(dialogue.title[index]);
-                        DisplaySprites();
-                        DisplayEffects();
-                        ActiveSound();
+                        DisplayModifiers();
                         dialogueState = DialogueState.Normal;
                         break;
                     case DialogueState.Normal:
@@ -112,6 +111,13 @@ public class Dialogue : MonoBehaviour
         dialogueState = DialogueState.Idle;
     }
 
+    public void DisplayModifiers()
+    {
+        DisplaySprites();
+        DisplayEffects();
+        ActiveSound();
+    }
+
     public void DisplaySprites()
     {
         if (dialogue.expression[index] != null)
@@ -130,15 +136,28 @@ public class Dialogue : MonoBehaviour
     {
         if (dialogue.feedback[index] != null)
         {
-            feedback.url = "https://www.youtube.com/watch?v=" + dialogue.feedback[index];
-            feedback.gameObject.SetActive(true);
-            feedback.Play();
+            string path = "/Feedback/" + dialogue.feedback[index];
+            videoFeedback.gameObject.SetActive(true);
+
+            if (dialogue.feedback[index].Contains(".mp4"))
+            {
+                imageFeedback.enabled = false;
+                videoFeedback.enabled = true;
+                videoFeedback.clip = Resources.Load<VideoClip>(path);
+                videoFeedback.Play();
+            }
+            else
+            {
+                imageFeedback.enabled = true;
+                videoFeedback.enabled = false;
+                imageFeedback.sprite = Resources.Load<Sprite>(path);
+            }
         }
         else
         {
-            if (feedback.gameObject.activeInHierarchy)
+            if (videoFeedback.gameObject.activeInHierarchy)
             {
-                feedback.gameObject.SetActive(false);
+                videoFeedback.gameObject.SetActive(false);
             }
         }
     }
@@ -149,18 +168,32 @@ public class Dialogue : MonoBehaviour
         {
             sfx.clip = Resources.Load("Audio/SFX/" + dialogue.sfx[index]) as AudioClip;
             sfx.Play();
+            bgm.Stop();
+
+            StartCoroutine(CheckSFX());
         }
 
         if (dialogue.bgm[index] != null)
         {
             bgm.clip = Resources.Load("Audio/Background/" + dialogue.bgm[index]) as AudioClip;
-            sfx.Play();
+            bgm.Play();
         }
         else if (dialogue.bgm[index] == "none")
         {
             bgm.Stop();
             bgm.clip = null;
         }
+    }
+
+    public IEnumerator CheckSFX()
+    {
+        if (sfx.isPlaying)
+        {
+            yield return null;
+        }
+
+        yield return new WaitForSeconds(0.5f);
+        bgm.Play();
     }
 }
 
