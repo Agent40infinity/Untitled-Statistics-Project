@@ -73,19 +73,18 @@ public class Dialogue : MonoBehaviour
 
     public IEnumerator ClearDialogue()
     {
-        yield return StartCoroutine(DialogueDelay());
-
         dialogue = null;
         intervalIndex = 0;
         index = 0;
         dialogueParent.SetActive(false);
         LevelManager.queueWaiting = false;
+        yield return null;
     }
 
     public IEnumerator DialogueDelay()
     {
         dialoguePaused = true;
-        yield return new WaitForSeconds(dialogue.delay[index - 1]);
+        yield return new WaitForSeconds(dialogue.delay[index]);
         dialoguePaused = false;
     }
 
@@ -108,6 +107,8 @@ public class Dialogue : MonoBehaviour
             yield return new WaitForSeconds(interval[intervalIndex]);
             
         }
+
+        yield return StartCoroutine(DialogueDelay());
 
         index++;
         intervalIndex = 0;
