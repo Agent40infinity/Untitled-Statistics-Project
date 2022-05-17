@@ -15,7 +15,6 @@ public class DataManager : MonoBehaviour
 
     public void Awake()
     {
-        StartCoroutine(SendData());
     }
     public string GetPlayerData()
     {
@@ -32,11 +31,11 @@ public class DataManager : MonoBehaviour
         return id + "," + playerData.completion + "," + questions + "," + playerData.feedback;
     }
 
-    public IEnumerator SendData()
+    public IEnumerator RetrieveData()
     {
         if (Application.isEditor)
         {
-            url = Application.streamingAssetsPath + "/PlayerData/" + "Database.csv";
+            url = Application.streamingAssetsPath + "/PlayerData/" + "weather.data.csv";
         }
 
         UnityWebRequest www = UnityWebRequest.Get(url);
@@ -48,12 +47,8 @@ public class DataManager : MonoBehaviour
             yield return null;
         }
 
-        List<string> csv = www.downloadHandler.text.Split(new string[] { "," }, System.StringSplitOptions.None).ToList();
-        //TextWriter tw = new StreamWriter(www.downloadHandler.text);
-        for (int i = 0; i < csv.Count; i++)
-        {
-            Debug.Log(csv[i]);
-        }
-        //tw.WriteLine(GetPlayerData());
+        byte[] data = www.downloadHandler.data;
+        string unprocessed = System.Text.Encoding.Default.GetString(data);
+        List<string> csv = unprocessed.Split(new string[] { "," }, System.StringSplitOptions.None).ToList();
     }
 }
