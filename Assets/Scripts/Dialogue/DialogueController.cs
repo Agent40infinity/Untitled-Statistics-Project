@@ -55,7 +55,7 @@ public class DialogueController : MonoBehaviour
 
     public void DisplayDialogue(QuestionState state, int optionIndex)
     {
-        DialogueActivation();
+        DialogueActivation(true);
 
         Dictionary<string, string> loadedDialogue = DialogueData.currentlyLoaded.levelData[FieldManager.GetState][currentQuestion][state.ToString()];
 
@@ -112,10 +112,10 @@ public class DialogueController : MonoBehaviour
         DisplayDialogue(QuestionState.Responses, optionIndex);
     }
 
-    public void DialogueActivation()
+    public void DialogueActivation(bool toggle)
     {
-        dialogueSelection.SetActive(false);
-        dialogueBox.SetActive(true);
+        dialogueSelection.SetActive(!toggle);
+        dialogueBox.SetActive(toggle);
     }
 
     public string DialogueFilter(string data, bool isKey, QuestionState state)

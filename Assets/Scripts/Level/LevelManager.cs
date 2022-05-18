@@ -40,7 +40,6 @@ public class LevelManager : MonoBehaviour
 
         if (queue[0] == "Prelude")
         {
-            queueWaiting = true;
             StartCoroutine(NextLevel());
             return;
         }
@@ -67,13 +66,14 @@ public class LevelManager : MonoBehaviour
         else
         {
             FieldManager.Completed = FieldManager.State;
-            queueWaiting = true;
+
             StartCoroutine(NextLevel());
         }
     }
 
     public IEnumerator NextLevel()
     {
+        queueWaiting = true;
         yield return fade.FadeOut();
         GameManager.instance.SwapLevel();
     }
