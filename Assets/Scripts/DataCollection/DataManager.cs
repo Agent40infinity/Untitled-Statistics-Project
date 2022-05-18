@@ -105,4 +105,9 @@ public class DataManager : MonoBehaviour
             compiledData.Add(lineData);
         }*/
     }
+
+    public IEnumerator SendData(List<string> csv)
+    {
+        yield return null;
+    }
 }
