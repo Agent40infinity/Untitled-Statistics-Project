@@ -37,6 +37,14 @@ public class LevelManager : MonoBehaviour
 
         Debug.Log(questionIndex);
         Debug.Log(questionIndex < System.Enum.GetValues(typeof(QuestionState)).Length);
+
+        if (queue[0] == "Prelude")
+        {
+            queueWaiting = true;
+            StartCoroutine(NextLevel());
+            return;
+        }
+
         if (questionIndex < System.Enum.GetValues(typeof(QuestionState)).Length)
         {
             QuestionState state = (QuestionState)System.Enum.GetValues(typeof(QuestionState)).GetValue(questionIndex);
@@ -79,8 +87,8 @@ public class LevelManager : MonoBehaviour
             yield return null;
         }
 
-        string json = JsonConvert.SerializeObject(DialogueData.currentlyLoaded.levelData, Formatting.Indented);
-        Debug.Log(json);
+        /*string json = JsonConvert.SerializeObject(DialogueData.currentlyLoaded.levelData, Formatting.Indented);
+        Debug.Log(json);*/
 
         for (int i = 0; i < DialogueData.currentlyLoaded.levelData[FieldManager.GetState].Count; i++)
         {
@@ -88,11 +96,12 @@ public class LevelManager : MonoBehaviour
             Debug.Log(queue[i]);
         }
 
-        LoadQuestion("Prelude", QuestionState.Dialogue);
+        LoadQuestion(queue[0], QuestionState.Dialogue);
     }
 
     public void LoadQuestion(string question, QuestionState state)
     {
+        Debug.Log(question + " " + state.ToString());
         dialogueController.QuestionSetup(question, state);
         lastState = state;
         queueWaiting = true;

@@ -134,7 +134,6 @@ public class Dialogue : MonoBehaviour
 
         if (dialogue.background[index] != null)
         {
-            Debug.Log("Processing");
             background.sprite = Resources.Load<Sprite>("Sprites/Backgrounds/" + dialogue.background[index]);
         }
     }
