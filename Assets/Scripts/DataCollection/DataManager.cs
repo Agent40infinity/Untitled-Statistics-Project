@@ -39,7 +39,7 @@ public class DataManager : MonoBehaviour
 
     public string GetPlayerData()
     {
-        string id = "";
+        string id = System.Guid.NewGuid().ToString();
 
         string questions = "";
         for (int i = 0; i < playerData.questions.Count; i++)
@@ -71,14 +71,26 @@ public class DataManager : MonoBehaviour
         byte[] data = www.downloadHandler.data;
         string unprocessed = System.Text.Encoding.Default.GetString(data);
         Debug.Log(unprocessed);
-        List<string> csv = unprocessed.Split(new string[] { "," }, System.StringSplitOptions.None).ToList();
+        List<string> csv = unprocessed.Split(new string[] { "\n" }, System.StringSplitOptions.None).ToList();
 
         yield return CompileData(csv);
     }
 
     public IEnumerator CompileData(List<string> csv)
     {
-        string header = CompileDataHeader();
+        if (playerData.completion)
+        {
+            string header = CompileDataHeader();
+            csv[0] = header;
+        }
+
+        csv.Add(GetPlayerData());
+        yield return SendData(csv);
+
+
+        /*List<string> lastLine = csv[csv.Count - 1].Split(new string[] { "," }, System.StringSplitOptions.None).ToList();
+        int newID = int.Parse(lastLine[0]) + 1;
+
         List<List<string>> compiledData = new List<List<string>>();
 
         for (int i = 0; i < csv.Count / questionCount; i++)
@@ -91,8 +103,6 @@ public class DataManager : MonoBehaviour
             }
 
             compiledData.Add(lineData);
-        }
-
-        yield return null;
+        }*/
     }
 }
