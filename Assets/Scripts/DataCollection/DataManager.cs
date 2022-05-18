@@ -11,11 +11,32 @@ public class DataManager : MonoBehaviour
 
     [Header("Data Collection")]
     public string url;
+    private int questionCount = 4;
 
 
     public void Awake()
     {
+        playerData = new PlayerData();
     }
+
+    public void SaveData()
+    {
+        StartCoroutine(RetrieveData());
+    }
+
+    public string CompileDataHeader()
+    {
+        string header = "ID,Total Time,Completed?,Feedback";
+
+        for (int i = 0; i < playerData.questions.Count; i++)
+        {
+            header += ",Question " + (i + 1) + "Required Help on " + (i + 1) + "?,Time Spent on " + (i + 1);
+            questionCount++;
+        }
+
+        return header;
+    }
+
     public string GetPlayerData()
     {
         string id = "";
@@ -35,7 +56,7 @@ public class DataManager : MonoBehaviour
     {
         if (Application.isEditor)
         {
-            url = Application.streamingAssetsPath + "/PlayerData/" + "weather.data.csv";
+            url = Application.streamingAssetsPath + "/PlayerData/" + "Data.csv";
         }
 
         UnityWebRequest www = UnityWebRequest.Get(url);
@@ -49,6 +70,29 @@ public class DataManager : MonoBehaviour
 
         byte[] data = www.downloadHandler.data;
         string unprocessed = System.Text.Encoding.Default.GetString(data);
+        Debug.Log(unprocessed);
         List<string> csv = unprocessed.Split(new string[] { "," }, System.StringSplitOptions.None).ToList();
+
+        yield return CompileData(csv);
+    }
+
+    public IEnumerator CompileData(List<string> csv)
+    {
+        string header = CompileDataHeader();
+        List<List<string>> compiledData = new List<List<string>>();
+
+        for (int i = 0; i < csv.Count / questionCount; i++)
+        {
+            List<string> lineData = new List<string>();
+
+            for (int j = 0; j < questionCount; j++)
+            {
+                lineData.Add(csv[i * questionCount + j]);
+            }
+
+            compiledData.Add(lineData);
+        }
+
+        yield return null;
     }
 }
