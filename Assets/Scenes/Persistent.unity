@@ -3041,7 +3041,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbeea3b6092239f4eb0b1996123641c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  url: file:///C:/Users/agent/Documents/Oop.csv
+  url: 
 --- !u!114 &1473583273
 MonoBehaviour:
   m_ObjectHideFlags: 0

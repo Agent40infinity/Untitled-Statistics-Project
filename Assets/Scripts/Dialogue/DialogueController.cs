@@ -36,6 +36,7 @@ public class DialogueController : MonoBehaviour
     public IEnumerator DialogueSelection()
     {
         dialogueSelection.SetActive(true);
+        DataManager.instance.CallQuestionTimer();
 
         string[] decompiledTitle = new string[options.Count];
 
@@ -62,14 +63,17 @@ public class DialogueController : MonoBehaviour
         {
             case QuestionState.Responses:
                 string answer;
+                bool answerSwitch;
 
                 if (DialogueData.currentlyLoaded.answers[currentQuestion] == optionIndex)
                 {
                     answer = "Incorrect";
+                    answerSwitch = true;
                 }
                 else
                 {
                     answer = "Correct";
+                    answerSwitch = false;
                 }
 
                 for (int i = 0; i < loadedDialogue.Count; i++)
@@ -79,6 +83,9 @@ public class DialogueController : MonoBehaviour
                         loadedDialogue.Remove(loadedDialogue.ElementAt(i).Key);
                     }
                 }
+
+                DataManager.playerData.questions.Add(answerSwitch);
+                DataManager.playerData.requiredHelp.Add(!answerSwitch);
 
                 LevelManager.lastState = QuestionState.Responses;
                 break;
@@ -130,7 +137,6 @@ public class DialogueController : MonoBehaviour
                         {
                             case true:
                                 output = output.Split(new string[] { "Correct_" }, System.StringSplitOptions.None)[1];
-                                //snGameManager.playerData.score++;
                                 break;
                             case false:
                                 output = output.Split(new string[] { "Incorrect_" }, System.StringSplitOptions.None)[1];

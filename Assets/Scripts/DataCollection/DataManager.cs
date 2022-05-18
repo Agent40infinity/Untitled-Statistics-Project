@@ -7,20 +7,36 @@ using System.Linq;
 
 public class DataManager : MonoBehaviour
 {
+    public static DataManager instance;
     public static PlayerData playerData;
-
+    private List<string> csv;
+ 
     [Header("Data Collection")]
     public string url;
-    private int questionCount = 4;
+
+    [Header("Tracking")]
+    public TrackState gameState = TrackState.Tracking;
+    public TrackState questionState = TrackState.Complete;
 
 
     public void Awake()
     {
+        instance = this;
         playerData = new PlayerData();
+        StartCoroutine(playerData.GameTimer());
+    }
+
+    public void CallQuestionTimer()
+    {
+        playerData.timeSpent.Add(0);
+
+        questionState = TrackState.Tracking;
+        StartCoroutine(playerData.QuestionTimer(playerData.timeSpent.Count - 1));
     }
 
     public void SaveData()
     {
+        gameState = TrackState.Complete;
         StartCoroutine(RetrieveData());
     }
 
@@ -30,8 +46,7 @@ public class DataManager : MonoBehaviour
 
         for (int i = 0; i < playerData.questions.Count; i++)
         {
-            header += ",Question " + (i + 1) + "Required Help on " + (i + 1) + "?,Time Spent on " + (i + 1);
-            questionCount++;
+            header += ",Question " + (i + 1) + ",Required Help on " + (i + 1) + "?,Time Spent on " + (i + 1);
         }
 
         return header;
@@ -44,12 +59,12 @@ public class DataManager : MonoBehaviour
         string questions = "";
         for (int i = 0; i < playerData.questions.Count; i++)
         {
-            questions += playerData.questions[i] 
+            questions += "," + playerData.questions[i] 
                 + "," + playerData.requiredHelp[i]
                 + "," + playerData.timeSpent[i];
         }
 
-        return id + "," + playerData.completion + "," + questions + "," + playerData.feedback;
+        return id + "," + playerData.totalTime + "," + playerData.completion + "," + playerData.feedback + questions;
     }
 
     public IEnumerator RetrieveData()
@@ -71,43 +86,57 @@ public class DataManager : MonoBehaviour
         byte[] data = www.downloadHandler.data;
         string unprocessed = System.Text.Encoding.Default.GetString(data);
         Debug.Log(unprocessed);
-        List<string> csv = unprocessed.Split(new string[] { "\n" }, System.StringSplitOptions.None).ToList();
+        csv = unprocessed.Split(new string[] { "\n" }, System.StringSplitOptions.None).ToList();
 
-        yield return CompileData(csv);
+        yield return CompileData();
     }
 
-    public IEnumerator CompileData(List<string> csv)
+    public IEnumerator CompileData()
     {
-        if (playerData.completion)
+
+        string header = CompileDataHeader();
+        csv.Add(GetPlayerData());
+
+        string compiled = header;
+
+        for (int i = 1; i < csv.Count; i++)
         {
-            string header = CompileDataHeader();
-            csv[0] = header;
+            compiled += "\n" + csv[i];
         }
 
-        csv.Add(GetPlayerData());
-        yield return SendData(csv);
+        Debug.Log(compiled);
 
-
-        /*List<string> lastLine = csv[csv.Count - 1].Split(new string[] { "," }, System.StringSplitOptions.None).ToList();
-        int newID = int.Parse(lastLine[0]) + 1;
-
-        List<List<string>> compiledData = new List<List<string>>();
-
-        for (int i = 0; i < csv.Count / questionCount; i++)
-        {
-            List<string> lineData = new List<string>();
-
-            for (int j = 0; j < questionCount; j++)
-            {
-                lineData.Add(csv[i * questionCount + j]);
-            }
-
-            compiledData.Add(lineData);
-        }*/
+        yield return SendData(compiled);
     }
 
-    public IEnumerator SendData(List<string> csv)
+    public IEnumerator SendData(string compiledData)
     {
-        yield return null;
+        if (Application.isEditor)
+        {
+            StreamWriter writer = File.CreateText(url);
+            writer.Close();
+
+            File.WriteAllText(url, compiledData);
+        }
+
+        UnityWebRequest www = UnityWebRequest.Post(url, compiledData);
+        yield return www.SendWebRequest();
+
+        if (www.isNetworkError || www.isHttpError)
+        {
+            Debug.Log(www.error);
+            yield return null;
+        }
     }
+
+    public void OnApplicationQuit()
+    {
+        SaveData();
+    }
+}
+
+public enum TrackState
+{ 
+    Tracking,
+    Complete
 }

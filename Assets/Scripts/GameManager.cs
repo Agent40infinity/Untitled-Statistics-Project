@@ -113,9 +113,4 @@ public class GameManager : MonoBehaviour
     {
         dialogueController.gameObject.SetActive(toggle);
     }
-
-    public void OnApplicationQuit()
-    {
-        //Send Notification for incon
-    }
 }
