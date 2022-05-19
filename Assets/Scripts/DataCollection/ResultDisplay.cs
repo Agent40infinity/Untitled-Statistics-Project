@@ -5,13 +5,12 @@ using TMPro;
 
 public class ResultDisplay : MonoBehaviour
 {
-    public TextMeshProUGUI results;
+    public TMP_InputField results;
 
 
-    public void Start()
+    public void Submit()
     {
+        DataManager.playerData.feedback = results.text;
         DataManager.instance.SaveData();
-        //string output = GameManager.playerData.firstName + " " + GameManager.playerData.lastName + ": " + GameManager.playerData.playerID + "\n" + GameManager.playerData.score.ToString() + "/" + GameManager.playerData.maxScore.ToString();
-        //results.text = output;
     }
 }
