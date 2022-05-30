@@ -142,7 +142,7 @@ public class Dialogue : MonoBehaviour
     {
         if (dialogue.feedback[index] != null)
         {
-            string path = "/Feedback/" + dialogue.feedback[index];
+            string path = "Feedback/" + dialogue.feedback[index];
             slideshow.SetActive(true);
 
             if (dialogue.feedback[index].Contains(".mp4"))

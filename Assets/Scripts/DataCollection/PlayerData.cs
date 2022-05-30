@@ -8,9 +8,9 @@ public class PlayerData
     public bool completion = false;
     public string feedback;
 
-    public List<bool> questions = new List<bool>();
-    public List<bool> requiredHelp = new List<bool>();
-    public List<float> timeSpent = new List<float>();
+    public Dictionary<string, bool> questions = new Dictionary<string, bool>();
+    public Dictionary<string, bool> requiredHelp = new Dictionary<string, bool>();
+    public Dictionary<string, float> timeSpent = new Dictionary<string, float>();
 
     public IEnumerator GameTimer()
     {
@@ -21,7 +21,7 @@ public class PlayerData
         }
     }
 
-    public IEnumerator QuestionTimer(int index)
+    public IEnumerator QuestionTimer(string index)
     {
         while (DataManager.instance.questionState == TrackState.Tracking)
         {

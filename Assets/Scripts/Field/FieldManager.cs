@@ -5,7 +5,7 @@ public class FieldManager
 {
     private static FieldState state = FieldState.Poverty;
     public static List<FieldState> complete = new List<FieldState>();
-    public static int selector = 1;
+    public static int selector = 2;
 
     public static string GetState
     {

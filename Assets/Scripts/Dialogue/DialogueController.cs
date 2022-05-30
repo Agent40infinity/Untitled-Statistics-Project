@@ -36,7 +36,7 @@ public class DialogueController : MonoBehaviour
     public IEnumerator DialogueSelection()
     {
         dialogueSelection.SetActive(true);
-        DataManager.instance.CallQuestionTimer();
+        DataManager.instance.CallQuestionTimer(currentQuestion);
 
         string[] decompiledTitle = new string[options.Count];
 
@@ -84,8 +84,9 @@ public class DialogueController : MonoBehaviour
                     }
                 }
 
-                DataManager.playerData.questions.Add(answerSwitch);
-                DataManager.playerData.requiredHelp.Add(!answerSwitch);
+                DataManager.playerData.questions.Add(currentQuestion, answerSwitch);
+                DataManager.playerData.requiredHelp.Add(currentQuestion, !answerSwitch);
+                DataManager.instance.questionState = TrackState.Complete;
 
                 LevelManager.lastState = QuestionState.Responses;
                 break;
@@ -179,9 +180,14 @@ public class DialogueController : MonoBehaviour
 
                             processedDialogue.position.Add(pos);
                             continue;
-                        case string e when entry.Contains("$VID"): case string i when entry.Contains("$PIC"):
-                            string feedback = entry.Split(new string[] { "$VID", "$PIC" }, System.StringSplitOptions.None)[1];
-                            processedDialogue.feedback.Add(feedback);
+                        case string e when entry.Contains("$VID"):
+                            string vid = entry.Split(new string[] { "$VID" }, System.StringSplitOptions.None)[1];
+                            processedDialogue.feedback.Add(vid);
+                            continue;
+
+                        case string i when entry.Contains("$PIC"):
+                            string pic = entry.Split(new string[] { "$PIC" }, System.StringSplitOptions.None)[1];
+                            processedDialogue.feedback.Add(pic);
                             continue;
 
                         case string f when entry.Contains("$PT"): 

@@ -26,12 +26,12 @@ public class DataManager : MonoBehaviour
         StartCoroutine(playerData.GameTimer());
     }
 
-    public void CallQuestionTimer()
+    public void CallQuestionTimer(string question)
     {
-        playerData.timeSpent.Add(0);
+        playerData.timeSpent.Add(question, 0);
 
         questionState = TrackState.Tracking;
-        StartCoroutine(playerData.QuestionTimer(playerData.timeSpent.Count - 1));
+        StartCoroutine(playerData.QuestionTimer(question));
     }
 
     public void SaveData()
@@ -44,24 +44,24 @@ public class DataManager : MonoBehaviour
     {
         string header = "ID,Total Time,Completed?,Feedback";
 
-        for (int i = 0; i < playerData.questions.Count; i++)
+        foreach (var question in playerData.questions)
         {
-            header += ",Question " + (i + 1) + ",Required Help on " + (i + 1) + "?,Time Spent on " + (i + 1);
+            header += ",Question " + question.Key + ",Required Help on " + question.Key + "?,Time Spent on " + question.Key;
         }
 
         return header;
     }
 
-    public string GetPlayerData()
+    public string GetPlayerData()   
     {
         string id = System.Guid.NewGuid().ToString();
 
         string questions = "";
-        for (int i = 0; i < playerData.questions.Count; i++)
+        foreach (var question in playerData.questions)
         {
-            questions += "," + playerData.questions[i] 
-                + "," + playerData.requiredHelp[i]
-                + "," + playerData.timeSpent[i];
+            questions += "," + playerData.questions[question.Key]
+                + "," + playerData.requiredHelp[question.Key]
+                + "," + playerData.timeSpent[question.Key];
         }
 
         return id + "," + playerData.totalTime + "," + playerData.completion + "," + playerData.feedback + questions;
