@@ -49,7 +49,8 @@
           "Professor#24": "Well, let's go ahead and find out whether his way of thinking is true or not.",
           "Samantha#12": "Sorry but why am I getting put through this trying to find out whether my BROTHER is making the right choice or not?",        
           "Professor#25": "Because you are just a loving and concerned sister for your brother and you are just so concerned about his life choices.",
-          "Professor#26": "$PTQ111.jpg|Anyways, since you are such a know-it-all, why don't you sort through this table and tell me your observations huh?"
+          "Professor#26": "Anyways, since you are such a know-it-all, why don't you sort through this table and tell me your observations huh?",
+          "Graph#1": "$PICQ111|"
         },
         "Questions": {
           "1": "Postgraduates",
@@ -350,13 +351,14 @@
           "Correct_Elijah#4": "And a lack of shelter in our day and age can prove to be very problematic.",
           "Correct_Professor#1": "Absolutely correct, Elijah. Those are extremely good answers you’ve provided.",
           "Correct_Professor#2": "However, income is definitely the best numerical indicator for poverty as most definitions of poverty are mostly based on income.",
-          "Incorrect_Elijah#5": "Yikes!"
+          "Incorrect_Elijah#1": "Yikes!"
         }
       },
       "Q212": {
         "Dialogue": {
           "Professor#1": "Now comes another question, this is a graph that’s obtained from careful observations from my colleague.",
-          "Professor#2": "$PICQ212|From this graph, can you tell me the global percentage of people that are making less than $5.49 per day?"
+          "Professor#2": "From this graph, can you tell me the global percentage of people that are making less than $5.49 per day?",
+          "Graph#1": "$PICQ212|"
         },
         "Questions": {
           "1": "37.1%",
@@ -364,18 +366,18 @@
           "3": "25.9%",
           "4": "36%"
         },
-        "Responses":{
+        "Responses": {
           "Correct_Elijah#1": "That is absolutely terrible…… 37.1% of people globally are making less than $5 per day?!",
           "Correct_Elijah#2": "Living in Australia, I would’ve never heard of that, I can’t even imagine what that would feel like.",
           "Correct_Professor#1": "That’s okay Elijah, you don’t have to panic just yet.",
           "Correct_Professor#2": "I know it can feel very disheartening but that’s what I am here for, are you feeling okay?",
-          "Correc_Elijah#3": "I feel okay to proceed, I just feel a bit sad to hear that people can still earn less than what they deserve.",
+          "Correct_Elijah#3": "I feel okay to proceed, I just feel a bit sad to hear that people can still earn less than what they deserve.",
           "Correct_Player#1": "Well it is quite saddening to hear that.",
           "Correct_Player#2": "But what’s even more disheartening is that I am stuck here with an annoying know-it-all and a crybaby.",
           "Correct_Narrator#1": "*Professor stares at Player briefly and looks back at Elijah*",
           "Correct_Professor#3": "That’s okay, Elijah. It means you have basic sympathy.",
 
-          "Incorrect_Professor#4": "Incorrect! Yikes."
+          "Incorrect_Professor#1": "Incorrect! Yikes."
         }
       },
       "Q213": {
@@ -390,10 +392,137 @@
         "Questions": {
           "1": "Mean:5   Median: 4.5",
           "2": "Mean:8   Median: 4.5",
-          "3": "Mean:8   Median: 6.5"
+          "3": "Mean:8   Median: 6.5",
+          "4": "-"
         },
         "Responses": {
+          "Correct_Elijah#1": "The difference between the mean and the median is so huge. Wait, what’s causing this gap?",
+          "Correct_Professor#1": "Incredible calculation and observational skill Elijah!",
+          "Correct_Professor#2": "The reason why there is a big difference between the mean and median is because of the extreme variables within the dataset.",
+          "Correct_Professor#3": "So this means depending on the subject, we need to actually consider which measurement is most useful to your current conclusion."
+        }
+      },
+      "Q214": {
+        "Dialogue": {
+          "Elijah#1": "Oh! That is so interesting. Can I-",
+          "Narrator#1": "*Player pauses the simulation by themselves*",
+          "Player#1": "I am sorry, how is this question actually relevant to what Elijah is trying to understand?",
+          "Player#2": "From what I understand about him, he is trying to obtain more understanding on the reality of poverty.",
+          "Player#3": "So how is learning any of these yip-yaps about statistics supposed to help him?",
+          "Professor#1": "Well, if you have simply allowed the <b>memoram</b> to play through,...",
+          "Professor#2": "…you would’ve gotten to know how Elijah will gain an understanding of how poverty is in Australia.",
+          "Professor#3": "But unfortunately, you just rudely interrupted our conversation and just paused the <b>memoram</b>.",
+          "Player#4": "Well sorry for just wanting to gain some understanding and find relevance in these questions I guess.",
+          "Narrator#2":"*Professor glares at Player and unpause*",
+          "Elijah#2": "Can I then just choose the most appropriate measurement according to what’s required here?",
+          "Professor#4": "That is correct!",
+          "Professor#5": "Now think about this, if you are trying to carry out a study on the poverty rate in Australia with the data of everyone’s income, which measurement should we look at? The mean or the median?"
+        },
+        "Questions": {
+          "1": "Mean",
+          "2": "Median",
+          "3": "-",
+          "4": "-"
+        },
+        "Responses": {
+          "Correct_Elijah#1": "Oh! That makes so much more sense.",
+          "Correct_Elijah#2": "Since our datasets will be based on income, it’s normal to have some extremely low or high values,...",
+          "Correct_Elijah#3": "…and therefore it will be much more appropriate to use median income as a reference to poverty.",
+          
+          "Incorrect_Professor#1": "Sorry, that's wrong!"
+        }
+      },
+      "Q215": {
+        "Dialogue": {
+          "Player#1": "Wow. We got a smart cookie over here.",
+          "Player#2": "Now if he only knew that I am the one answering the questions and not him.",
+          "Player#3": "How surprised do you reckon he would be.",
+          "Narrator#1": "*Professor glares at Player momentarily before continuing*",
+          "Professor#1": "That's right. We might think that poverty shouldn't be a serious problem here in Australia.",
+          "Professor#2": "But if we take a look at the study by ACOSS(Australian Council of Social Service) and UNSW on the poverty issue in Australia 2021.",
+          "Professor#3": "The study is based on the global standard poverty measurement which is 50% of the median income.",
+          "Professor#4": "Now let’s think about it together. Which data should we be using as the measurement for poverty rate?",
+          "Table#1": "$PICQ215|"
 
+        },
+        "Questions": {
+          "1": "25% of Median income cost",
+          "2": "50% of Median income cost",
+          "3": "35% of Median income cost",
+          "4": "65% of Median income cost"
+        },
+        "Responses": {
+          "Correct_Elijah#1": "I guess we would be looking at the 50% of median income cost?",
+          "Correct_Elijah#2": "Simply because housing costs can be different for every individual.",
+          "Correct_Professor#1": "Absolutely spot on!"
+        }
+      },
+
+      "Q216": {
+        "Dialogue": {
+          "Professor#1": "According to their studies and surveys.",
+          "Professor#2": "ACOSS and UNSW were able to estimate that 3,239,000 people in Australia are under the poverty line.",
+          "Professor#3": "The population in Australia is around 23,810,000 in 2018.",
+          "Professor#4": "Can you now work out the poverty rate from these numbers?"
+        },
+        "Questions": {
+          "1": "13.6%",
+          "2": "15.5%",
+          "3": "12.9%",
+          "4": "13.4%"
+        },
+        "Responses": {
+          "Correct_Elijah#1": "The poverty rate is 13.6%. That’s still quite high.",
+          "Correct_Professor#1": "You got it!",
+
+          "Incorrect_Professor#1": "Yikes"
+        }
+      },
+
+      "Q217": {
+        "Dialogue": {
+          "Professor#1": "The calculation of poverty rate is simply using the number of people below the poverty line divided by the total population.",
+          "Professor#2": "Now go ahead and have a look at this plot of the trends in median household disposable incomes, before and after deducting housing costs.",
+          "Professor#3": "Does this data suggest a positive relationship? What does this mean?",
+          "Graph#1": "$PICQ217|"
+        },
+        "Questions": {
+          "1": "Yes",
+          "2": "No",
+          "3": "-",
+          "4": "-"
+        },
+        "Responses": {
+          "Correct_Elijah#1": "This feels quite depressing.",
+          "Correct_Elijah#2": "The graph suggests a positive relationship, which means the poverty rate is increasing in Australia every year.",
+          "Correct_Professor#1": "It is quite depressing just to look at the graph by itself, yes. ",
+          "Correct_Professor#2": "But this is exactly why volunteering work coming from young people like you can help make a difference."
+        }
+      },
+
+      "Q218": {
+        "Dialogue": {
+          "Professor#1": "Hopefully these statistics have helped you gain clarity in the current situation surrounding poverty in Australia.",
+          "Elijah#1": "It has. Thank you so much for your help.",
+          "Elijah#2": "When I first signed up for this program to try and gain more understanding on this subject matter…",
+          "Elijah#3": "…I thought I would be scammed, I am very glad to have gotten to meet you now.",
+          "Professor#2": "Likewise Elijah.",
+          "Narrator#1": "*Your surrounding seems to freeze in place now and Elijah also seems to be frozen in place too*",
+          "Player#1": "At least someone was glad to have met you I guess.",
+          "Professor#3": "Well, that makes one of you guys.",
+          "Professor#4": "Now I will also be asking you the same question.",
+          "Professor#5": "Have you also obtained more understanding around poverty now that you’ve gone through Elijah’s memoram?",
+          "Player#2": "If I say sure would you just let me out of here?"
+        },
+        "Questions": {
+          "1": "Yes",
+          "2": "No",
+          "3": "-",
+          "4": "-"
+        },
+        "Responses": {
+          "Correct_Professor#1": "Hmm.",
+          "Incorrect_Professor#1": "Sure."
         }
       }
     },
@@ -425,6 +554,10 @@
     "Q1110": "2",
     "Q211": "4",
     "Q212": "1",
-    "Q213": "2"
+    "Q213": "2",
+    "Q214": "2",
+    "Q215": "2",
+    "Q216": "1",
+    "Q217": "1"
   }
 }
