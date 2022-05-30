@@ -356,7 +356,7 @@
       "Q212": {
         "Dialogue": {
           "Professor#1": "Now comes another question, this is a graph that’s obtained from careful observations from my colleague.",
-          "Professor#2": "$PICQ212.jpg|From this graph, can you tell me the global percentage of people that are making less than $5.49 per day?"
+          "Professor#2": "$PICQ212|From this graph, can you tell me the global percentage of people that are making less than $5.49 per day?"
         },
         "Questions": {
           "1": "37.1%",
