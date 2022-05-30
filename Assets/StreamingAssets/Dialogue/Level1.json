@@ -1,44 +1,6 @@
 {
   "level": null,
   "LevelData": {
-    "Poverty": {
-      "Q115": {
-        "Dialogue": {
-          "Zoe#1": "This is test question 115!",
-          "Zoe#2": "What is my name?",
-        },
-        "Questions": {
-          "1": "Her name is Zoe",
-          "2": "Her name is Hannah",
-          "3": "Her name is Anna",
-          "4": "Her name is Ashley",
-        },
-        "Responses": {
-          "Correct_Zoe#1": "Yes my name is Zoe!",
-          "Incorrect_Zoe#1": "No my name was Zoe!",
-        },
-      },
-      "Q116": {
-        "Dialogue": {
-          "Zoe#1": "This is test question 116!",
-          "Zoe#2": "How poor am I?",
-        },
-        "Questions": {
-          "1": "Very poor",
-          "2": "Not poor",
-          "3": "Drunk poor",
-          "4": "Rich af",
-        },
-        "Responses":{
-          "Correct_Professor#1": "Correct!, I am drunk!",
-          "Incorrect_Professor#2": "Incorrect!, Sadly I'm drunk",
-        },
-      },
-    },
-    "answers": {
-      "Q115": "1",
-      "Q116": "3",
-    },
     "Education": {
       "Q111": {
         "Dialogue": {
@@ -87,7 +49,7 @@
           "Professor#24": "Well, let's go ahead and find out whether his way of thinking is true or not.",
           "Samantha#12": "Sorry but why am I getting put through this trying to find out whether my BROTHER is making the right choice or not?",        
           "Professor#25": "Because you are just a loving and concerned sister for your brother and you are just so concerned about his life choices.",
-          "Professor#26": "$PTQ111.jpg|Anyways, since you are such a know-it-all, why don't you sort through this table and tell me your observations huh?",
+          "Professor#26": "$PTQ111.jpg|Anyways, since you are such a know-it-all, why don't you sort through this table and tell me your observations huh?"
         },
         "Questions": {
           "1": "Postgraduates",
@@ -97,8 +59,8 @@
         },
         "Responses": {
           "Correct_Professor#1": "Correct! The highest education level is most likely to earn a higher income.",
-          "Incorrect_Professor#2": "Incorrect! The correct answer is the highest education level 'Postgraduates."
-        },
+          "Incorrect_Professor#1": "Incorrect! The correct answer is the highest education level 'Postgraduates."
+        }
       },  
       "Q112":{
         "Dialogue":{
@@ -115,18 +77,18 @@
           "Samantha#4": "I swear if I could call you names right now I would.",
           "Samantha#5": "Luckily for you, you somehow censored all those words from being able to be uttered in this space.",
           "Professor#8": "I appreciate the compliment.Have to make this space as comfortable and safe for everyone.",
-          "Professor#9": "Well, have a look at this graph, give me your observations around how much a laborer/plumber would earn.",
+          "Professor#9": "Well, have a look at this graph, give me your observations around how much a laborer/plumber would earn."
         },
         "Questions":{
           "1": "Labourers have the lowest median per/hour income.",
           "2": "Managers have the highest median per/hour income.",
           "3": "Professionals have the lowest median per/hour income.",
-          "4": "None.",
+          "4": "None."
 	      },
         "Responses":{
           "Correct_Professor#1": "Correct!, Labourers have the lowest median per/hour income",
-          "Incorrect_Professor#2": "Incorrect!, Labourers have the lowest median per/hour income",
-	      },
+          "Incorrect_Professor#1": "Incorrect!, Labourers have the lowest median per/hour income"
+	      }
 	    },
       "Q113":{
         "Dialogue":{
@@ -138,18 +100,18 @@
           "Samantha#4": "I am not a statistics degree student now, am I?",
           "Professor#3" :"Well isn't it just so convenient that the answers are now suddenly available to you like some thoughts in your head.",
           "Samantha#5": "I hate you, first you trap me in this hellscape.",
-          "Samantha#6": "Now I find out you can just stuff whatever you want inside my head without asking me? When is this gonna end....",
+          "Samantha#6": "Now I find out you can just stuff whatever you want inside my head without asking me? When is this gonna end...."
         },
         "Questions":{
           "1": "True",
           "2": "False",
           "3": "wrong c",
-          "4": "wrond d",
+          "4": "wrond d"
 	      },
         "Responses":{
           "Correct_Professor#1": "Correct!, It is false, there could always be someone that earns above the median and could possibly earn more than a professional or manager.",
-          "Incorrect_Professor#2": "Incorrect!, It is false, there could always be someone that earns above the median and could possibly earn more than a professional or manager.",
-	      },
+          "Incorrect_Professor#1": "Incorrect!, It is false, there could always be someone that earns above the median and could possibly earn more than a professional or manager."
+	      }
 	    },
       "Q114":{
         "Dialogue":{
@@ -165,20 +127,20 @@
           "Professor#3" :"Oh my god wow.That is such a good question, Samantha.",
           "Professor#4" :"Why don't you answer that question for yourself with these answers I am about to provide you.",
           "Professor#5" :"The hint is that only one of them is the correct answer~~",
-          "Samantha#7": "You-",
+          "Samantha#7": "You-"
         },
         "Questions":{
           "1": "wrong a",
           "2": "wrong b",
           "3": "The median is more accurate than the mean because it disregards the outliers",
-          "4": "wrong d",
+          "4": "wrong d"
 	      },
         "Responses":{
           "Correct_Professor#1": "The median is more accurate than the mean because it disregards the outliers.",
           "Correct_Professor#2": "So the representation of what each profession will earn becomes less skewed.",
           "Correct_Professor#3": "The disadvantage of this is that it doesn't take all the data into account.",
-          "Incorrect_Professor#2": "Incorrect!, It is false, there could always be someone that earns above the median and could possibly earn more than a professional or manager.",
-	      },
+          "Incorrect_Professor#1": "Incorrect!, It is false, there could always be someone that earns above the median and could possibly earn more than a professional or manager."
+	      }
 	    },
       "Q115":{
         "Dialogue":{
@@ -213,18 +175,18 @@
           "Samantha#16": "Not to concern you, but you look real stupid right now.What graph are you talking abou-",
           "Narrator#2": "*Professor snaps his fingers and a graph pops into Samantha's mind*",
           "Samantha#17": "You wha- STOP! I can't.You keep putting things into my head, this is so disgusting.",
-          "Professor#13": "Now now, chill out.It's just a graph, analyze the graph and tell me exactly what your observation is.",
+          "Professor#13": "Now now, chill out.It's just a graph, analyze the graph and tell me exactly what your observation is."
         },
         "Questions":{
           "1": "wrong a",
           "2": "wrong b",
           "3": "wrong c",
-          "4": "The graph shows that more females have obtained a higher education than males.",
+          "4": "The graph shows that more females have obtained a higher education than males."
 	      },
         "Responses":{
           "Correct_Professor#1": "Correct!, The graph shows that more females have obtained a higher education than males.",
-          "Incorrect_Professor#2": "Incorrect!, The graph shows that more females have obtained a higher education than males.",
-	      },
+          "Incorrect_Professor#1": "Incorrect!, The graph shows that more females have obtained a higher education than males."
+	      }
 	    },
       "Q116":{
         "Dialogue":{
@@ -235,19 +197,19 @@
           "Professor#3": "Then you can decide for yourself how you can go about navigating your pathway towards higher education.",
           "Professor#4": "Now, can you answer me exactly how has education changed over the years?",
           "Samantha#3": "Okay, how am I supposed to answer that without...",
-          "Samantha#4": "Actually nevermind, you are gonna do the thing that you do again, aren't you? Alright...hit me with it.",
+          "Samantha#4": "Actually nevermind, you are gonna do the thing that you do again, aren't you? Alright...hit me with it."
         },
         "Questions":{
           "1": "wrong a",
           "2": "Correct",
           "3": "wrong c",
-          "4": "wrong d",
+          "4": "wrong d"
 	      },
         "Responses":{
           "Correct_Professor#1": "Correct!, Average years of education has increased by generation, ...",
           "Correct_Professor#2": "...which means that future generations will be even more educated than the previous generation because more people are pursuing a bachelor's degree.",
-          "Incorrect_Professor#2": "Incorrect!, ",
-	      },
+          "Incorrect_Professor#1": "Incorrect!, "
+	      }
 	    },
       "Q117":{
         "Dialogue":{
@@ -268,40 +230,40 @@
           "Samantha#11": "One, I am trapped here regardless of my willingness in the situation, might as well make the most out of it.",
           "Samantha#12": "Two, this concerns how I perceive pursuing a path of tertiary education, therefore please show me the data without the extra fuss.",
           "Professor#5": "Alright, whatever floats your boat.",
-          "Narrator#1": "*snaps fingers*",
+          "Narrator#1": "*snaps fingers*"
         },
         "Questions":{
           "1": "wrong a",
           "2": "wrong b",
           "3": "Correct",
-          "4": "wrong d",
+          "4": "wrong d"
 	      },
         "Responses":{
           "Correct_Professor#1": "Correct!, Males recorded “no longer interested as to why they stopped 28.7% and females recorded that as their second highest reason.",
           "Correct_Professor#2": "Males second highest is “employment or financial reasons” at 26.1%, and females highest is “family, health or other personal reasons” at 29.6%.",
-          "Incorrect_Professor#2": "Incorrect!",
-	      },
+          "Incorrect_Professor#1": "Incorrect!"
+	      }
 	    },
       "Q118":{
         "Dialogue":{
           "Samantha#1": "Interesting.So each demographic of people records different reasons for why they no longer study.",
           "Samantha#2": "So I am going to take a guess and say that the data would be different for my age group?",
           "Professor#1": "That is so correct! And that is because the mean years of education have increased over generations.",
-          "Professor#2": "But here is another question for you, why do you think things are so different for you and your brother today?",
+          "Professor#2": "But here is another question for you, why do you think things are so different for you and your brother today?"
         },
         "Questions":{
           "1": "wrong a",
           "2": "wrong b",
           "3": "wrong c",
-          "4": "Correct",
+          "4": "Correct"
 	      },
         "Responses":{
           "Correct_Professor#1": "Correct!, The male and females range from 15-64 which could include a large number of older generations that record less education.",
           "Correct_Professor#2": "Meaning maybe there was a higher pressure for men to focus on earning a living..., ",
           "Correct_Professor#3": "...whereas females were more focused on having a family.",
           "Correct_Professor#4": "Whereas today there is higher value on education and qualifications.",
-          "Incorrect_Professor#2": "Incorrect!, ",
-	      },
+          "Incorrect_Professor#1": "Incorrect!, "
+	      }
 	    },
       "Q119":{
         "Dialogue":{
@@ -312,20 +274,20 @@
           "Professor#1": "That is absolutely wonderful Samantha.Perfect analysis on the subject matter.",
           "Professor#2": "Now to answer the most important question of it all, the one that you have been dying to know.",
           "Professor#3": "Are there many women who study STEM in university?",
-          "Narrator#1": "*snaps fingers*",
+          "Narrator#1": "*snaps fingers*"
         },
         "Questions":{
           "1": "Correct",
           "2": "wrong b",
           "3": "wrong c",
-          "4": "wrong d",
+          "4": "wrong d"
 	      },
         "Responses":{
           "Correct_Professor#1": "Correct!, Women are more prevalent in science than men, but in engineering, men have a significantly higher population.",
-          "Incorrect_Professor#2": "Incorrect!, ",
-	      },
+          "Incorrect_Professor#1": "Incorrect!, "
+	      }
 	    },
-      "Q120":{
+      "Q1110":{
         "Dialogue":{
           "Samantha#1": "That's quite relieving to see that there are quite a number of women who choose to study STEM subjects.",
           "Samantha#2": "I guess that gives me some sort of comfort seeing so many women study in the science side of STEM subjects.",
@@ -336,20 +298,120 @@
           "Professor#4": "And as more and more people choose to pursue higher education, this data can change over time.",
           "Professor#5": "You can be part of that change too if you would like, it is ultimately up to you as to what you want to study though.",
           "Samantha#4": "Alright well, that was quite eye-opening and educational, I have a slight grasp as to my own future now.",
-          "Samantha#5": "But I won't have a future to pursue, if you won't let me out.",
+          "Samantha#5": "But I won't have a future to pursue, if you won't let me out."
         },
         "Questions":{
           "1": "wrong a",
           "2": "Correct",
           "3": "wrong c",
-          "4": "wrong d",
+          "4": "wrong d"
 	      },
         "Responses":{
           "Correct_Professor#1": "Correct!, ",
-          "Incorrect_Professor#2": "Incorrect!, ",
-	      },
-	    },
+          "Incorrect_Professor#1": "Incorrect!, "
+	      }
+	    }
     },
+
+    "Poverty": {
+      "Q211": {
+        "Dialogue": {
+          "Professor#1": "Alright. Since you’ve chosen this level, you will experience this and answer my questions through the mindset of one of my favorite memoram, Elijah.",
+          "Professor#2": "Now, if we may, we shall start right away.",
+          "Player#1":"I can’t get used to this experience at all to be quite honest.",
+          "Professor#3":"You will get used to it eventually.",
+          "Professor#4":"For this topic, we will be using the memoram we obtained when Elijah signed up for one of our programs. ",
+          "Professor#5":"I have to say he was one of the more pleasant interviewees I have had the pleasure to do this program with, unlike yourself.",
+          "Professor#6":"And therefore for my sake, I will be making this a third person memoram experience, just so you can’t ruin this for me.",
+          "Player#2":"How fair. You absolute coward. If you are going to trap me, at least let me have some way to retaliate at you.",
+          "Professor#7":"In your dreams. Now let’s begin, shall we?",
+          "Narrator#1":"*Professor snaps their fingers and Elijah seems to come to life and starts animating*",
+          "Professor#8":"Hello there. Elijah, correct? How are you doing? And what can I do for you today?",
+          "Elijah#1":"Hello there sir! I am doing absolutely fantastic. It is such an honor to meet you.",
+          "Elijah#2":"Since you asked, I will just go straight to the point then.",
+          "Elijah#3":"I have been thinking about volunteering for support work to further develop my resume and grow my experience as a member of society,...",
+          "Elijah#4":"…but I am currently struggling to search up relevant resources to develop my views on the reality of poverty within Australia.",
+          "Professor#9":"Oh you are too kind.",
+          "Narrator#2":" *winks at Player, and you roll your eyes*",
+          "Professor#10":"The pleasure is all mine.",
+          "Professor#11":"Now since you got straight to the point that you need more information on the current situation of poverty within Australia.",
+          "Professor#12":"Let’s take a step back and observe the meaning of poverty. Can you tell me what would be some indicators of poverty?"
+        },
+        "Questions": {
+          "1": "A lack of money",
+          "2": "Hunger and unclean water",
+          "3": "Inadequate shelter",
+          "4": "All of the above"
+        },
+        "Responses": {
+          "Correct_Elijah#1": "From my observation, all of the answers seem to be indicators of poverty.",
+          "Correct_Elijah#2": "Lacking money in a capitalist world is a very big indicator.",
+          "Correct_Elijah#3": "Having limited to no access to food and clean water is also a big indicator.",
+          "Correct_Elijah#4": "And a lack of shelter in our day and age can prove to be very problematic.",
+          "Correct_Professor#1": "Absolutely correct, Elijah. Those are extremely good answers you’ve provided.",
+          "Correct_Professor#2": "However, income is definitely the best numerical indicator for poverty as most definitions of poverty are mostly based on income.",
+          "Incorrect_Elijah#5": "Yikes!"
+        }
+      },
+      "Q212": {
+        "Dialogue": {
+          "Professor#1": "Now comes another question, this is a graph that’s obtained from careful observations from my colleague.",
+          "Professor#2": "From this graph, can you tell me the global percentage of people that are making less than $5.49 per day?",
+          "Graph#1": "$PICQ212.jpg"
+        },
+        "Questions": {
+          "1": "37.1%",
+          "2": "45%",
+          "3": "25.9%",
+          "4": "36%"
+        },
+        "Responses":{
+          "Correct_Elijah#1": "That is absolutely terrible…… 37.1% of people globally are making less than $5 per day?!",
+          "Correct_Elijah#2": "Living in Australia, I would’ve never heard of that, I can’t even imagine what that would feel like.",
+          "Correct_Professor#1": "That’s okay Elijah, you don’t have to panic just yet.",
+          "Correct_Professor#2": "I know it can feel very disheartening but that’s what I am here for, are you feeling okay?",
+          "Correc_Elijah#3": "I feel okay to proceed, I just feel a bit sad to hear that people can still earn less than what they deserve.",
+          "Correct_Player#1": "Well it is quite saddening to hear that.",
+          "Correct_Player#2": "But what’s even more disheartening is that I am stuck here with an annoying know-it-all and a crybaby.",
+          "Correct_Narrator#1": "*Professor stares at Player briefly and looks back at Elijah*",
+          "Correct_Professor#3": "That’s okay, Elijah. It means you have basic sympathy.",
+
+          "Incorrect_Professor#4": "Incorrect! Yikes."
+        }
+      },
+      "Q213": {
+        "Dialogue": {
+          "Professor#1": "Now I will say that sometimes the percentage does not represent the actual poverty rate.",
+          "Professor#2": "Let’s try and understand that better shall we?",
+          "Professor#3": "Now here is some dud data for you to practice on.",
+          "Professor#4": "Can you please find out the mean and the median for the data that’s currently before you?",
+          "Professor#5": "1, 1, 3, 6, 15, 22"
+
+        },
+        "Questions": {
+          "1": "Mean:5   Median: 4.5",
+          "2": "Mean:8   Median: 4.5",
+          "3": "Mean:8   Median: 6.5"
+        },
+        "Responses": {
+
+        }
+      }
+    },
+
+    "Health": {
+      "Q311": {
+        "Dialogue": {
+
+        },
+        "Questions": {
+
+        },
+        "Responses": {
+
+        }
+      }
+    }
   },
   "answers": {
     "Q111": "1",
@@ -361,6 +423,9 @@
     "Q117": "3",
     "Q118": "4",
     "Q119": "1",
-    "Q120": "2",
-  },
+    "Q1110": "2",
+    "Q211": "4",
+    "Q212": "1",
+    "Q213": "2"
+  }
 }
