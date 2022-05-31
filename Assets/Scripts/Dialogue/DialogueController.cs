@@ -76,12 +76,20 @@ public class DialogueController : MonoBehaviour
                     answerSwitch = false;
                 }
 
+                List<string> toRemove = new List<string>();
+
                 for (int i = 0; i < loadedDialogue.Count; i++)
                 {
+                    Debug.Log(answer + " | " + loadedDialogue.ElementAt(i).Key + "Contains Answer? " + loadedDialogue.ElementAt(i).Key.Contains(answer));
                     if (loadedDialogue.ElementAt(i).Key.Contains(answer))
                     {
-                        loadedDialogue.Remove(loadedDialogue.ElementAt(i).Key);
+                        toRemove.Add(loadedDialogue.ElementAt(i).Key);
                     }
+                }
+
+                foreach (var key in toRemove)
+                {
+                    loadedDialogue.Remove(key);
                 }
 
                 DataManager.playerData.questions.Add(currentQuestion, answerSwitch);
