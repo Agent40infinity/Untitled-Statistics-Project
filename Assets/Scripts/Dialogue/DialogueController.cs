@@ -38,7 +38,9 @@ public class DialogueController : MonoBehaviour
         dialogueSelection.SetActive(true);
         DataManager.instance.CallQuestionTimer(currentQuestion);
 
-        string[] decompiledTitle = new string[options.Count];
+        int dialogueOptions = DialogueData.currentlyLoaded.levelData[FieldManager.GetState][currentQuestion]["Questions"].Count;
+
+        string[] decompiledTitle = new string[dialogueOptions];
 
         for (int i = 0; i < decompiledTitle.Length; i++)
         {
@@ -47,7 +49,16 @@ public class DialogueController : MonoBehaviour
 
         for (int i = 0; i < options.Count; i++)
         {
-            options[i].text = decompiledTitle[i];
+            if (dialogueOptions > 0)
+            {
+                options[i].transform.parent.gameObject.SetActive(true);
+                options[i].text = decompiledTitle[i];
+                dialogueOptions--;
+            }
+            else 
+            {
+                options[i].transform.parent.gameObject.SetActive(false);
+            }
         }
 
         yield return null;

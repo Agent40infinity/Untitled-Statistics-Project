@@ -48,6 +48,8 @@ public class GameManager : MonoBehaviour
 
         SceneManager.LoadSceneAsync((int)startingScene, LoadSceneMode.Additive);
         levelIndex = (int)startingScene;
+
+        Exclusion();
     }
 
     public void SwapLevel()
@@ -81,18 +83,7 @@ public class GameManager : MonoBehaviour
             scenesLoading.Add(SceneManager.LoadSceneAsync(levelIndex, LoadSceneMode.Additive));
         }
 
-        bool exclude = true;
-
-        for (int j = 0; j < exclusionScenes.Count; j++)
-        {
-            if (levelIndex == (int)exclusionScenes[j])
-            {
-                exclude = false;
-                break;
-            }
-        }
-
-        ToggleDialogue(exclude);
+        Exclusion();
 
         StartCoroutine(SceneLoadProgress(scenesLoading));
     }
@@ -116,6 +107,22 @@ public class GameManager : MonoBehaviour
 
         yield return fade.FadeOut();
         loadingScreen.Visibility(false);
+    }
+
+    public void Exclusion()
+    {
+        bool exclude = true;
+
+        for (int j = 0; j < exclusionScenes.Count; j++)
+        {
+            if (levelIndex == (int)exclusionScenes[j])
+            {
+                exclude = false;
+                break;
+            }
+        }
+
+        ToggleDialogue(exclude);
     }
 
     public void ToggleDialogue(bool toggle)
