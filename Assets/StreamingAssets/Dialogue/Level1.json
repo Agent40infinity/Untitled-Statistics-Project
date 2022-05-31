@@ -351,7 +351,7 @@
           "Correct_Elijah#4": "And a lack of shelter in our day and age can prove to be very problematic.",
           "Correct_Professor#1": "Absolutely correct, Elijah. Those are extremely good answers you’ve provided.",
           "Correct_Professor#2": "However, income is definitely the best numerical indicator for poverty as most definitions of poverty are mostly based on income.",
-          "Incorrect_Elijah#1": "Yikes!",
+          "Incorrect_Elijah#1": "Yikes!"
         }
       },
       "Q212": {
@@ -399,7 +399,9 @@
           "Correct_Elijah#1": "The difference between the mean and the median is so huge. Wait, what’s causing this gap?",
           "Correct_Professor#1": "Incredible calculation and observational skill Elijah!",
           "Correct_Professor#2": "The reason why there is a big difference between the mean and median is because of the extreme variables within the dataset.",
-          "Correct_Professor#3": "So this means depending on the subject, we need to actually consider which measurement is most useful to your current conclusion."
+          "Correct_Professor#3": "So this means depending on the subject, we need to actually consider which measurement is most useful to your current conclusion.",
+
+          "Incorrect_Professor#1": "Incorrect! Yikes."
         }
       },
       "Q214": {
@@ -454,7 +456,9 @@
         "Responses": {
           "Correct_Elijah#1": "I guess we would be looking at the 50% of median income cost?",
           "Correct_Elijah#2": "Simply because housing costs can be different for every individual.",
-          "Correct_Professor#1": "Absolutely spot on!"
+          "Correct_Professor#1": "Absolutely spot on!",
+
+          "Incorrect_Professor#1": "Incorrect! Yikes."
         }
       },
 
@@ -496,7 +500,9 @@
           "Correct_Elijah#1": "This feels quite depressing.",
           "Correct_Elijah#2": "The graph suggests a positive relationship, which means the poverty rate is increasing in Australia every year.",
           "Correct_Professor#1": "It is quite depressing just to look at the graph by itself, yes. ",
-          "Correct_Professor#2": "But this is exactly why volunteering work coming from young people like you can help make a difference."
+          "Correct_Professor#2": "But this is exactly why volunteering work coming from young people like you can help make a difference.",
+
+          "Incorrect_Professor#1": "Incorrect! Yikes."
         }
       },
 
