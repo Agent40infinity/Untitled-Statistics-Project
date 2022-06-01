@@ -182,6 +182,11 @@ public class DialogueController : MonoBehaviour
                             processedDialogue.expression.Add(expression);
                             continue;
 
+                        case string h when entry.Contains("$BGM"):
+                            string bgm = entry.Split(new string[] { "$BGM" }, System.StringSplitOptions.None)[1];
+                            processedDialogue.bgm.Add(bgm);
+                            continue;
+
                         case string c when entry.Contains("$BG"):
                             string background = entry.Split(new string[] { "$BG" }, System.StringSplitOptions.None)[1];
                             processedDialogue.background.Add(background);
@@ -217,11 +222,6 @@ public class DialogueController : MonoBehaviour
                         case string g when entry.Contains("$SFX"):
                             string sfx = entry.Split(new string[] { "$SFX" }, System.StringSplitOptions.None)[1];
                             processedDialogue.sfx.Add(sfx);
-                            continue;
-
-                        case string h when entry.Contains("$BGM"):
-                            string bgm = entry.Split(new string[] { "$BGM" }, System.StringSplitOptions.None)[1];
-                            processedDialogue.bgm.Add(bgm);
                             continue;
                     }
                 }

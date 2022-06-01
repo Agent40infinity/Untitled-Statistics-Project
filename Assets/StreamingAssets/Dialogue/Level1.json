@@ -4,7 +4,7 @@
     "Education": {
       "Q111": {
         "Dialogue": {
-          "Professor#1": "Choosing Quality Education as our current topic now, are we?",
+          "Professor#1": "$BGMEducation_BGM|Choosing Quality Education as our current topic now, are we?",
           "Professor#2": "Good good.As per my observation you do seem to carry with you a sort of arrogance in the way you speak,...",
           "Professor#3": "...which means you most likely chose this because...",
           "Narrator#1": "$BGRoomBackground|*Samantha cuts Professor off*",
@@ -317,7 +317,7 @@
     "Poverty": {
       "Q211": {
         "Dialogue": {
-          "Professor#1": "Alright. Since you’ve chosen this level, you will experience this and answer my questions through the mindset of one of my favorite memoram, Elijah.",
+          "Professor#1": "$BGMPoverty_BGM|Alright. Since you’ve chosen this level, you will experience this and answer my questions through the mindset of one of my favorite memoram, Elijah.",
           "Professor#2": "Now, if we may, we shall start right away.",
           "Player#1":"I can’t get used to this experience at all to be quite honest.",
           "Professor#3":"You will get used to it eventually.",
