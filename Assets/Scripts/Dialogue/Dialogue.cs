@@ -178,7 +178,7 @@ public class Dialogue : MonoBehaviour
     {
         if (dialogue.sfx[index] != null)
         {
-            sfx.clip = Resources.Load("Audio/SFX/" + dialogue.sfx[index]) as AudioClip;
+            sfx.clip = Resources.Load<AudioClip>("Audio/SFX/" + dialogue.sfx[index]);
             sfx.Play();
             bgm.Stop();
 
@@ -187,7 +187,7 @@ public class Dialogue : MonoBehaviour
 
         if (dialogue.bgm[index] != null)
         {
-            bgm.clip = Resources.Load("Audio/Background/" + dialogue.bgm[index]) as AudioClip;
+            bgm.clip = Resources.Load<AudioClip>("Audio/Background/" + dialogue.bgm[index]);
             bgm.Play();
         }
         else if (dialogue.bgm[index] == "none")
