@@ -317,9 +317,9 @@
     "Poverty": {
       "Q211": {
         "Dialogue": {
-          "Professor#1": "$BGMPoverty_BGM|Alright. Since you’ve chosen this level, you will experience this and answer my questions through the mindset of one of my favorite memoram, Elijah.",
+          "Professor#1": "$CEIdle|$POS0|$BGPovertyBackground|$BGMPoverty_BGM|Alright. Since you’ve chosen this level, you will experience this and answer my questions through the mindset of one of my favorite memoram, Elijah.",
           "Professor#2": "Now, if we may, we shall start right away.",
-          "Player#1":"I can’t get used to this experience at all to be quite honest.",
+          "Player#1":"$CEIdle|$POS1|I can’t get used to this experience at all to be quite honest.",
           "Professor#3":"You will get used to it eventually.",
           "Professor#4":"For this topic, we will be using the memoram we obtained when Elijah signed up for one of our programs. ",
           "Professor#5":"I have to say he was one of the more pleasant interviewees I have had the pleasure to do this program with, unlike yourself.",
@@ -328,7 +328,7 @@
           "Professor#7":"In your dreams. Now let’s begin, shall we?",
           "Narrator#1":"*Professor snaps their fingers and Elijah seems to come to life and starts animating*",
           "Professor#8":"Hello there. Elijah, correct? How are you doing? And what can I do for you today?",
-          "Elijah#1":"Hello there sir! I am doing absolutely fantastic. It is such an honor to meet you.",
+          "Elijah#1":"$CEIdle|$POS1|Hello there sir! I am doing absolutely fantastic. It is such an honor to meet you.",
           "Elijah#2":"Since you asked, I will just go straight to the point then.",
           "Elijah#3":"I have been thinking about volunteering for support work to further develop my resume and grow my experience as a member of society,...",
           "Elijah#4":"…but I am currently struggling to search up relevant resources to develop my views on the reality of poverty within Australia.",
@@ -408,7 +408,7 @@
         "Dialogue": {
           "Elijah#1": "Oh! That is so interesting. Can I-",
           "Narrator#1": "*Player pauses the simulation by themselves*",
-          "Player#1": "I am sorry, how is this question actually relevant to what Elijah is trying to understand?",
+          "Player#1": "$CEIdle|$POS1|I am sorry, how is this question actually relevant to what Elijah is trying to understand?",
           "Player#2": "From what I understand about him, he is trying to obtain more understanding on the reality of poverty.",
           "Player#3": "So how is learning any of these yip-yaps about statistics supposed to help him?",
           "Professor#1": "Well, if you have simply allowed the <b>memoram</b> to play through,...",
@@ -416,7 +416,7 @@
           "Professor#3": "But unfortunately, you just rudely interrupted our conversation and just paused the <b>memoram</b>.",
           "Player#4": "Well sorry for just wanting to gain some understanding and find relevance in these questions I guess.",
           "Narrator#2":"*Professor glares at Player and unpause*",
-          "Elijah#2": "Can I then just choose the most appropriate measurement according to what’s required here?",
+          "Elijah#2": "$CEIdle|$POS1|Can I then just choose the most appropriate measurement according to what’s required here?",
           "Professor#4": "That is correct!",
           "Professor#5": "Now think about this, if you are trying to carry out a study on the poverty rate in Australia with the data of everyone’s income, which measurement should we look at? The mean or the median?"
         },
@@ -436,7 +436,7 @@
       },
       "Q215": {
         "Dialogue": {
-          "Player#1": "Wow. We got a smart cookie over here.",
+          "Player#1": "$CEIdle|$POS1|Wow. We got a smart cookie over here.",
           "Player#2": "Now if he only knew that I am the one answering the questions and not him.",
           "Player#3": "How surprised do you reckon he would be.",
           "Narrator#1": "*Professor glares at Player momentarily before continuing*",
@@ -454,7 +454,7 @@
           "4": "65% of Median income cost"
         },
         "Responses": {
-          "Correct_Elijah#1": "I guess we would be looking at the 50% of median income cost?",
+          "Correct_Elijah#1": "$CEIdle|$POS1|I guess we would be looking at the 50% of median income cost?",
           "Correct_Elijah#2": "Simply because housing costs can be different for every individual.",
           "Correct_Professor#1": "Absolutely spot on!",
 
