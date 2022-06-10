@@ -6,11 +6,14 @@ public class PlayerData
 {
     public float totalTime;
     public bool completion = false;
-    public string feedback;
+    public string feedback = "Hello I have feedback";
 
-    public Dictionary<string, bool> questions = new Dictionary<string, bool>();
-    public Dictionary<string, bool> requiredHelp = new Dictionary<string, bool>();
-    public Dictionary<string, float> timeSpent = new Dictionary<string, float>();
+    public Dictionary<string, bool> questions = new Dictionary<string, bool>()
+    { { "Q1", true }, { "Q2", false }, { "Q3", true }};
+    public Dictionary<string, bool> requiredHelp = new Dictionary<string, bool>()
+    { { "Q1", true }, { "Q2", false }, { "Q3", true }};
+    public Dictionary<string, float> timeSpent = new Dictionary<string, float>()
+    { { "Q1", 100 }, { "Q2", 200 }, { "Q3", 300 }};
 
     public IEnumerator GameTimer()
     {

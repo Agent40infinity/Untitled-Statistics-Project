@@ -1,8 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Networking;
-using System.IO;
 using System.Linq;
 
 public class DataManager : MonoBehaviour
@@ -10,9 +8,11 @@ public class DataManager : MonoBehaviour
     public static DataManager instance;
     public static PlayerData playerData;
     private List<string> csv;
- 
+
     [Header("Data Collection")]
-    public string url;
+    public string spreadsheetId = "1_IZo5MzTXkgZSyTK8tM9iIsWnkhxjMQYCci60fCArdY";
+    public string jsonPath = "/PlayerData/statistics-project-345715-8b6c8278d652.json";
+    public string sheetRange = "Player Data";
 
     [Header("Tracking")]
     public TrackState gameState = TrackState.Tracking;
@@ -23,7 +23,23 @@ public class DataManager : MonoBehaviour
     {
         instance = this;
         playerData = new PlayerData();
+        GoogleAuth();
         StartCoroutine(playerData.GameTimer());
+    }
+
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            SaveData();
+        }
+    }
+
+    public void GoogleAuth()
+    {
+        SheetReader.spreadsheetId = spreadsheetId;
+        SheetReader.jsonPath = jsonPath;
+        SheetReader.sheetRange = sheetRange;
     }
 
     public void CallQuestionTimer(string question)
@@ -37,96 +53,57 @@ public class DataManager : MonoBehaviour
     public void SaveData()
     {
         gameState = TrackState.Complete;
-        StartCoroutine(RetrieveData());
+        StartCoroutine(RetrieveAndSendData());
     }
 
-    public string CompileDataHeader()
+    public RowList CompileHeaderData()
     {
-        string header = "ID,Total Time,Completed?,Feedback";
+        RowList rowList = new RowList();
+        Row row = new Row();
+
+        row.cellData = new List<string>("ID,Total Time,Completed?,Feedback".Split(',').ToList());
 
         foreach (var question in playerData.questions)
         {
-            header += ",Question " + question.Key + ",Required Help on " + question.Key + "?,Time Spent on " + question.Key;
+            string node = ",Question " + question.Key + ",Required Help on " + question.Key + "?,Time Spent on " + question.Key;
+            row.cellData.Concat(node.Split(',').ToList());
         }
 
-        return header;
+        rowList.rows.Add(row);
+
+        return rowList;
     }
 
-    public string GetPlayerData()   
+    public RowList GetPlayerData()
     {
-        string id = System.Guid.NewGuid().ToString();
+        RowList rowList = new RowList();
+        Row row = new Row();
 
-        string questions = "";
+        row.cellData = new List<string>()
+        {
+            { System.Guid.NewGuid().ToString() },
+            { playerData.totalTime.ToString() },
+            { playerData.completion.ToString() },
+            { playerData.feedback },
+        };
+        
         foreach (var question in playerData.questions)
         {
-            questions += "," + playerData.questions[question.Key]
-                + "," + playerData.requiredHelp[question.Key]
-                + "," + playerData.timeSpent[question.Key];
+            string questions = playerData.questions[question.Key] + "," + playerData.requiredHelp[question.Key] + "," + playerData.timeSpent[question.Key];
+            row.cellData.Concat(questions.Split(',').ToList());
         }
 
-        return id + "," + playerData.totalTime + "," + playerData.completion + "," + playerData.feedback + questions;
+        rowList.rows.Add(row);
+
+        return rowList;
     }
 
-    public IEnumerator RetrieveData()
+    public IEnumerator RetrieveAndSendData()
     {
-        if (Application.isEditor || url == "" || url == null)
-        {
-            url = Application.streamingAssetsPath + "/PlayerData/" + "Data.csv";
-        }
+        SheetReader sheetReader = new SheetReader();
+        yield return sheetReader.updateSheetRange(CompileHeaderData(), "1:1");
 
-        UnityWebRequest www = UnityWebRequest.Get(url);
-        yield return www.SendWebRequest();
-
-        if (www.isNetworkError || www.isHttpError)
-        {
-            Debug.Log(www.error);
-            yield return null;
-        }
-
-        byte[] data = www.downloadHandler.data;
-        string unprocessed = System.Text.Encoding.Default.GetString(data);
-        Debug.Log(unprocessed);
-        csv = unprocessed.Split(new string[] { "\n" }, System.StringSplitOptions.None).ToList();
-
-        yield return CompileData();
-    }
-
-    public IEnumerator CompileData()
-    {
-
-        string header = CompileDataHeader();
-        csv.Add(GetPlayerData());
-
-        string compiled = header;
-
-        for (int i = 1; i < csv.Count; i++)
-        {
-            compiled += "\n" + csv[i];
-        }
-
-        Debug.Log(compiled);
-
-        yield return SendData(compiled);
-    }
-
-    public IEnumerator SendData(string compiledData)
-    {
-        if (Application.isEditor)
-        {
-            StreamWriter writer = File.CreateText(url);
-            writer.Close();
-
-            File.WriteAllText(url, compiledData);
-        }
-
-        UnityWebRequest www = UnityWebRequest.Post(url, compiledData);
-        yield return www.SendWebRequest();
-
-        if (www.isNetworkError || www.isHttpError)
-        {
-            Debug.Log(www.error);
-            yield return null;
-        }
+        yield return sheetReader.AppendSheetRange(GetPlayerData());
     }
 
     public void OnApplicationQuit()
