@@ -69,7 +69,7 @@ public class DataManager : MonoBehaviour
 
     public IEnumerator RetrieveData()
     {
-        if (Application.isEditor)
+        if (Application.isEditor || url == "" || url == null)
         {
             url = Application.streamingAssetsPath + "/PlayerData/" + "Data.csv";
         }
