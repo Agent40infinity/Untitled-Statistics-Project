@@ -472,7 +472,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loadingScreen: {fileID: 1959816737}
   levelIndex: 0
-  startingScene: 2
+  startingScene: 3
   exclusionScenes: 0200000004000000
   dialogueController: {fileID: 1057337227}
   fade: {fileID: 1769037665}
@@ -2222,8 +2222,10 @@ MonoBehaviour:
   - {fileID: 760170376}
   - {fileID: 1217988146}
   - {fileID: 746508056}
+  sectionIndex: 0
   separator: '|'
-  currentQuestion: 
+  isNext: 1
+  wasCorrect: 0
 --- !u!1 &1064559729
 GameObject:
   m_ObjectHideFlags: 0

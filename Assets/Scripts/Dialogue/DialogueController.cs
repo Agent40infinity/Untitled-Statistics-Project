@@ -12,23 +12,74 @@ public class DialogueController : MonoBehaviour
     public Dialogue dialogue;
     public List<TextMeshProUGUI> options = new List<TextMeshProUGUI>();
 
+    public int sectionIndex;
+    public static bool queueWaiting = true;
+
     public string separator = "|";
 
-    public string currentQuestion;
+    public Question currentQuestion;
+
+    public bool isNext = true;
+
+    public bool wasCorrect = false;
 
     ProcessedDialogue processedDialogue;
 
-    public void QuestionSetup(string question, QuestionState state)
+    public void Update()
+    {
+        switch (queueWaiting)
+        {
+            case false:
+                QueueUpdate();
+                break;
+        }
+    }
+
+    public void QueueUpdate()
+    {
+        switch (sectionIndex)
+        {
+            case int a when sectionIndex > 0 && sectionIndex < currentQuestion.sections.Count:
+                if (currentQuestion.sections[sectionIndex - 1].state == QuestionState.Questions || (currentQuestion.sections[sectionIndex].state == QuestionState.Questions && !wasCorrect))
+                {
+                    sectionIndex += 2;
+                }
+                else
+                {
+                    sectionIndex++;
+                }
+                break;
+            default:
+                sectionIndex++;
+                break;
+        }
+
+        if (sectionIndex < currentQuestion.sections.Count)
+        {
+            LoadSection();
+            queueWaiting = true;
+            return;
+        }
+
+        LevelManager.queueWaiting = false;
+    }
+
+    public void QuestionSetup(Question question)
     {
         currentQuestion = question;
+        sectionIndex = -1;
+        queueWaiting = false;
+    }
 
-        switch (state)
+    public void LoadSection()
+    {
+        switch (currentQuestion.sections[sectionIndex].state)
         {
-            case QuestionState.Questions:
+            case QuestionState.Questions: case QuestionState.Alternative:
                 StartCoroutine(DialogueSelection());
                 break;
-            case QuestionState.Dialogue: case QuestionState.Responses:
-                DisplayDialogue(QuestionState.Dialogue, 0);
+            case QuestionState.Dialogue: case QuestionState.ResponseCorrect: case QuestionState.ResponseIncorrect:
+                DisplayDialogue();
                 break;
         }
     }
@@ -36,23 +87,16 @@ public class DialogueController : MonoBehaviour
     public IEnumerator DialogueSelection()
     {
         dialogueSelection.SetActive(true);
-        DataManager.instance.CallQuestionTimer(currentQuestion);
+        DataManager.instance.CallQuestionTimer(currentQuestion.name);
 
-        int dialogueOptions = DialogueData.currentlyLoaded.levelData[FieldManager.GetState][currentQuestion]["Questions"].Count;
-
-        string[] decompiledTitle = new string[dialogueOptions];
-
-        for (int i = 0; i < decompiledTitle.Length; i++)
-        {
-            decompiledTitle[i] = DialogueData.currentlyLoaded.levelData[FieldManager.GetState][currentQuestion]["Questions"][(i + 1).ToString()];
-        }
+        int dialogueOptions = currentQuestion.sections[sectionIndex].values.Count;
 
         for (int i = 0; i < options.Count; i++)
         {
             if (dialogueOptions > 0)
             {
                 options[i].transform.parent.gameObject.SetActive(true);
-                options[i].text = decompiledTitle[i];
+                options[i].text = currentQuestion.sections[sectionIndex].values.ElementAt(i).Value;
                 dialogueOptions--;
             }
             else 
@@ -64,59 +108,60 @@ public class DialogueController : MonoBehaviour
         yield return null;
     }
 
-    public void DisplayDialogue(QuestionState state, int optionIndex)
+    public void OptionSelection(int optionIndex)
+    {
+        StartCoroutine(ResponseCheck(optionIndex));
+    }
+
+    public IEnumerator ResponseCheck(int optionIndex)
+    {
+        switch (currentQuestion.sections[sectionIndex].state)
+        {
+            case QuestionState.Alternative:
+                isNext = System.Convert.ToBoolean(optionIndex);
+                break;
+            default:
+                switch (int.Parse(currentQuestion.answer))
+                {
+                    case int a when a == optionIndex:
+                        wasCorrect = true;
+                        break;
+                    default:
+                        wasCorrect = false;
+                        break;
+                }
+                break;
+        }
+
+        queueWaiting = false;
+        yield return null;
+    }
+
+    public void DialogueActivation(bool toggle)
+    {
+        dialogueSelection.SetActive(!toggle);
+        dialogueBox.SetActive(toggle);
+    }
+
+    public void DisplayDialogue()
     {
         DialogueActivation(true);
 
-        Dictionary<string, string> loadedDialogue = DialogueData.currentlyLoaded.levelData[FieldManager.GetState][currentQuestion][state.ToString()];
-
-        switch (state)
+        switch (currentQuestion.sections[sectionIndex].state)
         {
-            case QuestionState.Responses:
-                string answer;
-                bool answerSwitch;
+            case QuestionState.ResponseCorrect: case QuestionState.ResponseIncorrect:
 
-                if (DialogueData.currentlyLoaded.answers[currentQuestion] == optionIndex)
-                {
-                    answer = "Incorrect";
-                    answerSwitch = true;
-                }
-                else
-                {
-                    answer = "Correct";
-                    answerSwitch = false;
-                }
-
-                List<string> toRemove = new List<string>();
-
-                for (int i = 0; i < loadedDialogue.Count; i++)
-                {
-                    Debug.Log(answer + " | " + loadedDialogue.ElementAt(i).Key + "Contains Answer? " + loadedDialogue.ElementAt(i).Key.Contains(answer));
-                    if (loadedDialogue.ElementAt(i).Key.Contains(answer))
-                    {
-                        toRemove.Add(loadedDialogue.ElementAt(i).Key);
-                    }
-                }
-
-                foreach (var key in toRemove)
-                {
-                    loadedDialogue.Remove(key);
-                }
-
-                DataManager.playerData.questions.Add(currentQuestion, answerSwitch);
-                DataManager.playerData.requiredHelp.Add(currentQuestion, !answerSwitch);
+                DataManager.playerData.questions.Add(currentQuestion.name, wasCorrect);
                 DataManager.instance.questionState = TrackState.Complete;
-
-                LevelManager.lastState = QuestionState.Responses;
                 break;
         }
 
         processedDialogue = new ProcessedDialogue();
 
-        for (int i = 0; i < loadedDialogue.Count; i++)
+        for (int i = 0; i < currentQuestion.sections[sectionIndex].values.Count; i++)
         {
-            processedDialogue.dialogue.Add(DialogueFilter(loadedDialogue.ElementAt(i).Value, false, state));
-            processedDialogue.title.Add(DialogueFilter(loadedDialogue.ElementAt(i).Key, true, state));
+            processedDialogue.title.Add(DialogueFilter(currentQuestion.sections[sectionIndex].values.ElementAt(i).Key, true));
+            processedDialogue.dialogue.Add(DialogueFilter(currentQuestion.sections[sectionIndex].values.ElementAt(i).Value, false));
 
             ProcessedNullCheck();
         }
@@ -127,18 +172,7 @@ public class DialogueController : MonoBehaviour
         dialogue.dialogueState = DialogueState.Load;
     }
 
-    public void OptionSelection(int optionIndex)
-    {
-        DisplayDialogue(QuestionState.Responses, optionIndex);
-    }
-
-    public void DialogueActivation(bool toggle)
-    {
-        dialogueSelection.SetActive(!toggle);
-        dialogueBox.SetActive(toggle);
-    }
-
-    public string DialogueFilter(string data, bool isKey, QuestionState state)
+    public string DialogueFilter(string data, bool isKey)
     {
         string output = "";
 
@@ -148,21 +182,6 @@ public class DialogueController : MonoBehaviour
                 if (data.Contains("#"))
                 {
                     output = data.Split('#')[0];
-                }
-
-                switch (state)
-                {
-                    case QuestionState.Responses:
-                        switch (output.Contains("Correct"))
-                        {
-                            case true:
-                                output = output.Split(new string[] { "Correct_" }, System.StringSplitOptions.None)[1];
-                                break;
-                            case false:
-                                output = output.Split(new string[] { "Incorrect_" }, System.StringSplitOptions.None)[1];
-                                break;
-                        }
-                        break;
                 }
                 break;
             case false:
@@ -262,7 +281,6 @@ public class DialogueController : MonoBehaviour
             {
                 processedDialogue.position.Add(processedDialogue.position[processedDialogue.position.Count - 1]);
             }
-
         }
 
         if (processedDialogue.feedback.Count != index)
@@ -291,5 +309,7 @@ public enum QuestionState
 { 
     Dialogue,
     Questions,
-    Responses
+    ResponseCorrect,
+    ResponseIncorrect,
+    Alternative,
 }

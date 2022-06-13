@@ -78,7 +78,7 @@ public class Dialogue : MonoBehaviour
         intervalIndex = 0;
         index = 0;
         dialogueParent.SetActive(false);
-        LevelManager.queueWaiting = false;
+        DialogueController.queueWaiting = false;
         yield return null;
     }
 
