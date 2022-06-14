@@ -2,13 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
-using Newtonsoft.Json;
+
 public class LevelManager : MonoBehaviour
 {
     public string identity;
-    public List<string> queue = new List<string>();
-    public int queueIndex = 0;
-    public static QuestionState lastState;
+    public int questionIndex;
     public static bool queueWaiting = true;
 
     public DialogueController dialogueController;
@@ -16,6 +14,7 @@ public class LevelManager : MonoBehaviour
 
     public void Awake()
     {
+        questionIndex = 0;
         dialogueController = GameObject.FindWithTag("Dialogue").GetComponent<DialogueController>();
         fade = GameObject.FindWithTag("FadeController").GetComponent<FadeController>();
         StartCoroutine(LoadLevel());
@@ -33,42 +32,21 @@ public class LevelManager : MonoBehaviour
 
     public void QueueUpdate()
     {
-        int questionIndex = (int)lastState + 1;
-
-        Debug.Log(questionIndex);
-        Debug.Log(questionIndex < System.Enum.GetValues(typeof(QuestionState)).Length);
-
-        if (queue[0] == "Prelude")
+        if (DialogueData.currentlyLoaded.levelData[FieldManager.State][dialogueController.currentQuestion.name].next == "end")
         {
             StartCoroutine(NextLevel());
             return;
         }
 
-        if (questionIndex < System.Enum.GetValues(typeof(QuestionState)).Length)
+        if (dialogueController.isNext)
         {
-            QuestionState state = (QuestionState)System.Enum.GetValues(typeof(QuestionState)).GetValue(questionIndex);
-
-            if (DialogueData.currentlyLoaded.levelData[FieldManager.GetState][queue[queueIndex]].ContainsKey(state.ToString()))
-            {
-                LoadQuestion(queue[queueIndex], state);
-            }
-            else
-            {
-                queueIndex++;
-                LoadQuestion(queue[queueIndex], QuestionState.Dialogue);
-            }
-        }
-        else if (queueIndex < queue.Count - 1)
-        {
-            queueIndex++;
-            LoadQuestion(queue[queueIndex], QuestionState.Dialogue);
+            LoadQuestion(DialogueData.currentlyLoaded.levelData[FieldManager.State][dialogueController.currentQuestion.next]);
         }
         else
         {
-            FieldManager.Completed = FieldManager.State;
-
-            StartCoroutine(NextLevel());
+            LoadQuestion(DialogueData.currentlyLoaded.levelData[FieldManager.State][dialogueController.currentQuestion.alternative]); 
         }
+
     }
 
     public IEnumerator NextLevel()
@@ -87,23 +65,12 @@ public class LevelManager : MonoBehaviour
             yield return null;
         }
 
-        /*string json = JsonConvert.SerializeObject(DialogueData.currentlyLoaded.levelData, Formatting.Indented);
-        Debug.Log(json);*/
-
-        for (int i = 0; i < DialogueData.currentlyLoaded.levelData[FieldManager.GetState].Count; i++)
-        {
-            queue.Add(DialogueData.currentlyLoaded.levelData[FieldManager.GetState].ElementAt(i).Key);
-            Debug.Log(queue[i]);
-        }
-
-        LoadQuestion(queue[0], QuestionState.Dialogue);
+        LoadQuestion(DialogueData.currentlyLoaded.levelData[FieldManager.State].ElementAt(questionIndex).Value);
     }
 
-    public void LoadQuestion(string question, QuestionState state)
+    public void LoadQuestion(Question question)
     {
-        Debug.Log(question + " " + state.ToString());
-        dialogueController.QuestionSetup(question, state);
-        lastState = state;
+        dialogueController.QuestionSetup(question);
         queueWaiting = true;
     }
 }

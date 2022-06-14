@@ -2222,8 +2222,10 @@ MonoBehaviour:
   - {fileID: 760170376}
   - {fileID: 1217988146}
   - {fileID: 746508056}
+  sectionIndex: 0
   separator: '|'
-  currentQuestion: 
+  isNext: 1
+  wasCorrect: 0
 --- !u!1 &1064559729
 GameObject:
   m_ObjectHideFlags: 0
@@ -3042,7 +3044,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbeea3b6092239f4eb0b1996123641c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  url: 
+  spreadsheetId: 1_IZo5MzTXkgZSyTK8tM9iIsWnkhxjMQYCci60fCArdY
+  jsonPath: /PlayerData/statistics-project-345715-8b6c8278d652.json
+  sheetRange: Player Data
   gameState: 0
   questionState: 1
 --- !u!114 &1473583273

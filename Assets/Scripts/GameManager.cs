@@ -75,6 +75,7 @@ public class GameManager : MonoBehaviour
         levelIndex++;
         if (!FieldManager.CheckComplete && levelIndex == System.Enum.GetValues(typeof(SceneIndex)).Length - 1)
         {
+            FieldManager.Completed = FieldManager.State;
             scenesLoading.Add(SceneManager.LoadSceneAsync(FieldManager.selector, LoadSceneMode.Additive));
             levelIndex = 2;
         }

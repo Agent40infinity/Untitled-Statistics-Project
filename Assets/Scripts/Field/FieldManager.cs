@@ -7,7 +7,7 @@ public class FieldManager
     public static List<FieldState> complete = new List<FieldState>();
     public static int selector = 2;
 
-    public static string GetState
+    public static string GetString
     {
         get { return state.ToString(); }
     }
