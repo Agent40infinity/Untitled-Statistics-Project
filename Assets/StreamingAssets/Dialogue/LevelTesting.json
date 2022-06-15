@@ -4,8 +4,8 @@
     "Poverty": {
       "Q115": {
         "name": "Q115",
-        "next": "end",
-        "alternative": "",
+        "next": "Q116",
+        "alternative": "Q115-2",
         "answerType": 0,
         "answer": "1",
         "sections": [
@@ -41,8 +41,96 @@
               "Professor#2": "Try again!"
             }
           },
+          {
+            "name": "Alternative",
+            "state": 4,
+            "values": {
+              "Professor#1": "Do you want a similar question?",
+              "Professor#2": "Or do you want to go to the next question instead?"
+            }
+          },
         ]
-      }
+      },
+      "Q115-2": {
+        "name": "Q115-2",
+        "next": "Q116",
+        "alternative": "",
+        "answerType": 0,
+        "answer": "1",
+        "sections": [
+          {
+            "name": "Dialogue",
+            "state": 0,
+            "values": {
+              "Professor#1": "This is the alternative question to 115!",
+            }
+          },
+          {
+            "name": "Questions",
+            "state": 1,
+            "values": {
+              "1": "Wow that's cool",
+              "2": "Poggers"
+            }
+          },
+          {
+            "name": "Correct",
+            "state": 2,
+            "values": {
+              "Professor#1": "Gaming",
+              "Professor#2": "Woooop"
+            }
+          },
+          {
+            "name": "Incorrect",
+            "state": 3,
+            "values": {
+              "Professor#1": "Well then",
+              "Professor#2": "Let's go"
+            }
+          },
+        ]
+      },
+      "Q116": {
+        "name": "Q116",
+        "next": "end",
+        "alternative": "",
+        "answerType": 0,
+        "answer": "1",
+        "sections": [
+          {
+            "name": "Dialogue",
+            "state": 0,
+            "values": {
+              "Professor#1": "This is question 116!",
+            }
+          },
+          {
+            "name": "Questions",
+            "state": 1,
+            "values": {
+              "1": "Hello students!",
+              "2": "What are students?"
+            }
+          },
+          {
+            "name": "Correct",
+            "state": 2,
+            "values": {
+              "Professor#1": "Wow you did it!",
+              "Professor#2": "Congratz!"
+            }
+          },
+          {
+            "name": "Incorrect",
+            "state": 3,
+            "values": {
+              "Professor#1": "Wow you suck!",
+              "Professor#2": "Try again!"
+            }
+          },
+        ]
+      },
     },
     "Health": {
       "Q116": {
