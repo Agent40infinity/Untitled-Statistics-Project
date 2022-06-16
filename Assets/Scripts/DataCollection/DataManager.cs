@@ -7,7 +7,8 @@ public class DataManager : MonoBehaviour
 {
     public static DataManager instance;
     public static PlayerData playerData;
-    private List<string> csv;
+
+    private SheetReader sheetReader;
 
     [Header("Data Collection")]
     public string spreadsheetId = "1_IZo5MzTXkgZSyTK8tM9iIsWnkhxjMQYCci60fCArdY";
@@ -23,7 +24,8 @@ public class DataManager : MonoBehaviour
     {
         instance = this;
         playerData = new PlayerData();
-        GoogleAuth();
+        sheetReader = new SheetReader(spreadsheetId, jsonPath, sheetRange);
+        sheetReader.updateSheetRange(CompileHeaderData(), "1:1");
         StartCoroutine(playerData.GameTimer());
     }
 
@@ -33,13 +35,6 @@ public class DataManager : MonoBehaviour
         {
             SaveData();
         }
-    }
-
-    public void GoogleAuth()
-    {
-        SheetReader.spreadsheetId = spreadsheetId;
-        SheetReader.jsonPath = jsonPath;
-        SheetReader.sheetRange = sheetRange;
     }
 
     public void CallQuestionTimer(string question)
@@ -100,9 +95,7 @@ public class DataManager : MonoBehaviour
 
     public IEnumerator RetrieveAndSendData()
     {
-        SheetReader sheetReader = new SheetReader();
-        yield return sheetReader.updateSheetRange(CompileHeaderData(), "1:1");
-
+        Debug.Log(SheetReader.sheetRange);
         yield return sheetReader.AppendSheetRange(GetPlayerData());
     }
 

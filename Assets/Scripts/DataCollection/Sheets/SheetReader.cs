@@ -13,7 +13,7 @@ using UnityEngine;
 
 using Newtonsoft.Json;
 
-class SheetReader
+public class SheetReader
 {
     static public String spreadsheetId = "1_IZo5MzTXkgZSyTK8tM9iIsWnkhxjMQYCci60fCArdY";
     static public String jsonPath = "/PlayerData/statistics-project-345715-8b6c8278d652.json";
@@ -21,8 +21,10 @@ class SheetReader
 
     static private SheetsService service;
 
-    public SheetReader()
+    public SheetReader(String id, String path, String range)
     {
+        GoogleAuth(id, path, range);
+
         String fullJsonPath = Application.streamingAssetsPath + jsonPath;
 
         Stream jsonCreds = (Stream)File.Open(fullJsonPath, FileMode.Open);
@@ -33,6 +35,13 @@ class SheetReader
         {
             HttpClientInitializer = credential,
         });
+    }
+
+    public void GoogleAuth(String id, String path, String range)
+    {
+        spreadsheetId = id;
+        jsonPath = path;
+        sheetRange = range;
     }
 
     public IList<IList<object>> getSheetRange(String cells)
