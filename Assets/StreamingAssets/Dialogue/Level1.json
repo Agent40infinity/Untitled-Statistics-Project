@@ -945,6 +945,7 @@
         "next": "end",
         "alternative": "",
         "answerType": 1,
+        "answer": "1",
         "sections": [
           {
             "name": "Dialogue",
@@ -992,10 +993,355 @@
 
     "Health": {
       "Q311": {
-
+        "name": "Q311",
+        "next": "Q312",
+        "alternative": "",
+        "answerType": 1,
+        "answer": "1",
+        "sections": [
+          {
+            "name": "Dialogue",
+            "state": 0,
+            "values": {
+              "Rebecca#1": "Oh christ! Where am I? What’s going on? This room is so white it’s actually hurting my eyes.",
+              "Professor#1": "Welcome to learning about the Health and Wellbeing UNSDG goal.",
+              "Professor#2": "You are currently playing through the eyes of Rebecca Sutherland.",
+              "Professor#3": "She is currently a statistician who works closely with the United Nations…",
+              "Professor#4": "…to develop solutions to the specific Sustainable Development United Nations Goal of Health.",
+              "Rebecca#2": "Right….. Whatever that means.",
+              "Professor#5": "It MEANS, you are currently in possession of a memoram of someone quite knowledgeable and…",
+              "Professor#6": "…should be able to assist you through most of the questions and statistics I will present to you.",
+              "Professor#7": "Now if you don’t mind, I-",
+              "Narrator#1": "*Within Rebecca’s body, Player runs down the hallway and turns into the first room they see, and shuts the door behind them*",
+              "Rebecca#3": "Hah. Jokes on you. If I am an employee of the UN, that means I have access to all these doors and you don’t.",
+              "Rebecca#4": "Before that old sod tries to get through that door and ask me stupid questions again, let me think of a way to bust myself-",
+              "Professor#8": "The fastest way you can “bust” yourself out of here, is to cooperate with me, you little rascal.",
+              "Narrator#2": "*Player’s turns around and see the Professor standing right in front of them, with the door still locked behind them*",
+              "Rebecca#5": "WHAT! How did you manage to sneak behind me with…",
+              "Professor#9": "Let me remind you that you are currently within a memoram.",
+              "Professor#10": "Which is a virtual reality where we allow certain users to play through the memory of another person.",
+              "Professor#11": "So you can’t really just get away from me, as I am part of the system itself.",
+              "Professor#12": "Were you really that naive to think that you can scram away when you are still within our system? ",
+              "Professor#13": "We brought you here for a reason, and we won’t be letting you go until you learn what you have to learn.",
+              "Rebecca#6": "Oh man. You are so irritating.",
+              "Professor#14": "The feelings are mutual on this one.",
+              "Professor#15": "Now! Onto our first question. What do you think a key indicator of good health in a country is?"
+            }
+          },
+          {
+            "name": "Questions",
+            "state": 1,
+            "values": {
+              "1": "Although there are many indicators at our disposal, Life expectancy is very reliable.",
+              "2": "No"
+            }
+          },
+          {
+            "name": "Correct",
+            "state": 2,
+            "values": {
+              "Rebecca#1": "According to whatever is inside her head, life expectancy is the most reliable indicator for that?"
+            }
+          },
+          {
+            "name": "Incorrect",
+            "state": 3,
+            "values": {
+              "Professor#1": "That's so wrong!"
+            }
+          }
+        ]
       },
       "Q312": {
+        "name": "Q312",
+        "next": "Q313",
+        "alternative": "",
+        "answerType": 1,
+        "answer": "4",
+        "sections": [
+          {
+            "name": "Dialogue",
+            "state": 0,
+            "values": {
+              "Professor#1": "According to whatever is inside her head, life expectancy is the most reliable indicator for that?",
+              "Narrator#1": "https://www.aihw.gov.au/reports/australias-health/australias-health-2020-data-insights/contents/summary ",
+              "Professor#2": "Then tell me, what do you think plays a big role in living a long life in Australia?"
+            }
+          },
+          {
+            "name": "Questions",
+            "state": 1,
+            "values": {
+              "1": "Quality of life of individuals",
+              "2": "Health care planning",
+              "3": "Demand and need for health and welfare services and health system costs",
+              "4": "All of the above"
+            }
+          },
+          {
+            "name": "Correct",
+            "state": 2,
+            "values": {
+              "Rebecca#1": "I would’ve much preferred the answers to not be as long as they are but what can I expect from a terrible system.",
+              "Professor#1": "Ah yes. Save the smart-mouthing for answering my questions, yeah?",
+              "Rebecca#2": "Fine. But answer me this, does the wealth of an individual necessarily determine how long they will live for?"
+            }
+          },
+          {
+            "name": "Incorrect",
+            "state": 3,
+            "values": {
+              "Professor#1": "That's wrong."
+            }
+          }
+        ]
+      },
+      
+      "Q313": {
+        "name": "Q313",
+        "next": "Q314",
+        "alternative": "",
+        "answerType": 1,
+        "answer": "1",
+        "sections": [
+          {
+            "name": "Dialogue",
+            "state": 0,
+            "values": {
+              "Professor#1": "Well, let me answer that question with another question.",
+              "Professor#2": "I have already provided you with the necessary resource, the Australian health reports,...",
+              "Professor#3": "…observe the correlation between socioeconomics and health and tell me what you think?",
+              "Professor#4": "And the data are recorded for those between the ages of 65-69, why do you think that it?"
+            }
+          },
+          {
+            "name": "Questions",
+            "state": 1,
+            "values": {
+              "1": "Those living in higher socioeconomic areas on average live longer lives.",
+              "2": "Those living in higher socioeconomic areas on average live shorter lives."
+            }
+          },
+          {
+            "name": "Correct",
+            "state": 2,
+            "values": {
+              "Rebecca#1": "To be fair, that’s pretty self-explanatory.",
+              "Rebecca#2": "People with a higher socioeconomic background have more access to healthcare facilities and systems than others."
+            }
+          },
+          {
+            "name": "Incorrect",
+            "state": 3,
+            "values": {
+              "Professor#1": "Wrong."
+            }
+          }
+        ]
+      },
 
+      "Q314": {
+        "name": "Q314",
+        "next": "Q315",
+        "alternative": "",
+        "answerType": 1,
+        "answer": "",
+        "sections": [
+          {
+            "name": "Dialogue",
+            "state": 0,
+            "values": {
+              "Rebecca#1": "But let me quickly ask, and stop changing my questions into your questions.",
+              "Rebecca#2": "What factors do you think cause the impact of such a difference in life expectancy for socio economic groups?",
+              "Professor#1": "Alright. For this I will partially answer it for you.",
+              "Professor#2": "People of different incomes imply that they have different lifestyles, which means they all have different issues.",
+              "Professor#3": "For example, allow me to present you the data sets on the link I gave you.",
+              "Professor#4": "Now tell me the total disease burden for selected diseases, by socioeconomic area, 2015?",
+              "Rebecca#3": "Looks like coronary disease is the highest impacting disease on Australians.",
+              "Professor#5": "Exactly. Therefore as you can see, issues around health and wealth…",
+              "Professor#6": "…play a big part in not just life expectancy but also the quality of life in terms of health.",
+              "Rebecca#4": "Okay I can understand that. But another quick question..",
+              "Professor#7": "You are quite curious now, aren’t you?",
+              "Rebecca#5": "Let me finish my sentence, you old sod.",
+              "Narrator#1": "*Player rolls their eyes*",
+              "Rebecca#6": "I wonder if being educated is a good way to prevent people from experiencing health issues that could have been easily avoided.",
+              "Professor#8": "That is an extremely good question and I’m so glad you mentioned that,…",
+              "Professor#9": "because I think it’s important for you to tell me which age group,...",
+              "Professor#10": "…education level and gender are most vulnerable to cardiovascular disease?",
+              "Professor#11": "I will assist you by giving you these graphs as references."
+            }
+          },
+          {
+            "name": "Questions",
+            "state": 1,
+            "values": {
+              "1": "Men aged 30-48 years with no post secondary and year 11",
+              "2": "Men aged 65-84 years with no post secondary and year 12"
+            }
+          },
+          {
+            "name": "Correct",
+            "state": 2,
+            "values": {
+              "Professor#1": "Nicely done."
+            }
+          },
+          {
+            "name": "Incorrect",
+            "state": 3,
+            "values": {
+              "Professor#1": "Well that's wrong."
+            }
+          }
+        ]
+      },
+
+      "Q315": {
+        "name": "Q315",
+        "next": "Q316",
+        "alternative": "",
+        "answerType": 1,
+        "answer": "1",
+        "sections": [
+          {
+            "name": "Dialogue",
+            "state": 0,
+            "values": {
+              "Rebecca#1": "Apparently this person that I am currently controlling is supposed to ask this question at some point.",
+              "Rebecca#2": "And since you are so helpful right now. Let me just relay that question for her right now.",
+              "Rebecca#3": "There was apparently a  project I did a long time ago but I still don’t know what I should have done.",
+              "Rebecca#4": "I had to choose from two datasets, and I did not know which one to choose.",
+              "Professor#1": "Okay. I have an idea what you might be talking about.",
+              "Professor#2": "But describe to me about these datasets that Rebecca apparently knows of.",
+              "Rebecca#5": "Sure, I guess.",
+              "Rebecca#6": "The first dataset was collected from anonymous questionnaires and…",
+              "Rebecca#7": "…we surveyed people of many different ages, addresses, and backgrounds.",
+              "Rebecca#8": "While the second dataset was collected from a specific group of people…",
+              "Rebecca#9": "…that were pretty much the same age and background with very little variation.",
+              "Professor#10": "Interesting. And can you tell me about the aim of the project that you were doing?",
+              "Rebecca#10": "We were testing the hypothesis that changes in temperature are related to changes in height throughout the day.",
+              "Professor#11": "That’s so interesting! And what do you think we should do here?",
+              "Rebecca#11": "Am I not the one asking you the question?!",
+              "Professor#12": "Yes, and I am asking you what’s the answer?"
+            }
+          },
+          {
+            "name": "Questions",
+            "state": 1,
+            "values": {
+              "1": "The first dataset",
+              "2": "Second dataset"
+            }
+          },
+          {
+            "name": "Correct",
+            "state": 2,
+            "values": {
+              "Rebecca#1": "Thank you so much Professor. You are so absolutely helpful in these situations.",
+              "Rebecca#2": "I could have never guessed you would answer my question with another question again.",
+              "Professor#1": "Exactly. Very good Rebecca. You are quickly learning. I am so glad to be of help."
+            }
+          },
+          {
+            "name": "Incorrect",
+            "state": 3,
+            "values": {
+              "Professor#1": "Wrong."
+            }
+          }
+        ]
+      },
+
+      "Q316": {
+        "name": "Q316",
+        "next": "Q317",
+        "alternative": "",
+        "answerType": 1,
+        "answer": "1",
+        "sections": [
+          {
+            "name": "Dialogue",
+            "state": 0,
+            "values": {
+              "Rebecca#1": "Well, all of these questions got me thinking. And by me, I mean Rebecca.",
+              "Rebecca#2": "Because why not, she seems like a person who has a lot of questions on. her. MIND.",
+              "Rebecca#3": "If we consider a hypothetical situation where the ages of all subjects in a dataset are the same, where would we use that dataset?",
+              "Professor#1": "Well, that’s a pretty good question.",
+              "Professor#2": "I will give you a bunch of answers and you can choose for yourself which one is the right one?"
+            }
+          },
+          {
+            "name": "Questions",
+            "state": 1,
+            "values": {
+              "1": "A data set relevant to that age would be required",
+              "2": "A data set relevant to that species should be required"
+            }
+          },
+          {
+            "name": "Correct",
+            "state": 2,
+            "values": {
+              "Professor#1": "That's correct."
+            }
+          },
+          {
+            "name": "Incorrect",
+            "state": 3,
+            "values": {
+              "Professor#1": "That's incorrect"
+            }
+          }
+        ]
+      },
+
+      "Q317": {
+        "name": "Q317",
+        "next": "end",
+        "alternative": "",
+        "answerType": 1,
+        "answer": "1",
+        "sections": [
+          {
+            "name": "Dialogue",
+            "state": 0,
+            "values": {
+              "Rebecca#1": "Well. That’s all her questions answered. She also has a project that she wants to talk about?",
+              "Rebecca#2": "Are you serious? What is this, am I getting sponsored for this. Jesus.",
+              "Rebecca#3": "“My project is focused on Malaria research. I’ll give some information about Malaria in countries where it is found:",
+              "Rebecca#4": "Malaria is a disease transmitted by a parasite through the bites of infected mosquitos.",
+              "Rebecca#5": "Malaria is very rare in countries like Australia but is more prevalent in tropical countries in South America and Africa.",
+              "Rebecca#6": "Each year 290 million people are infected with Malaria worldwide and over 400,000 people die from this disease.",
+              "Rebecca#7": "Part of my research is based on this.",
+              "Rebecca#8": "https://www.mayoclinic.org/diseases-conditions/malaria/symptoms-causes/syc-20351184”",
+              "Professor#1": "Oh well. You are running through her memoram.",
+              "Professor#2": "You have no choice but to always go through whatever predetermined sequence that she had gone through before.",
+              "Professor#3": "Alright. Congratulations on completing your first level of this goal. Are you ready to move on to the second level?"
+            }
+          },
+          {
+            "name": "Questions",
+            "state": 1,
+            "values": {
+              "1": "Yes",
+              "2": "No"
+            }
+          },
+          {
+            "name": "Correct",
+            "state": 2,
+            "values": {
+              "Professor#1": "Let's move on."
+            }
+          },
+          {
+            "name": "Incorrect",
+            "state": 3,
+            "values": {
+              "Professor#1": "Well, you can't stay anyways."
+            }
+          }
+        ]
       }
     }
   }
