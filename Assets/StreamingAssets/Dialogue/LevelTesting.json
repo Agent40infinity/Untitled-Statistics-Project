@@ -1,5 +1,5 @@
 {
-  "level": "1",
+  "level": null,
   "levelData": {
     "Poverty": {
       "Q115": {
@@ -13,7 +13,7 @@
             "name": "Dialogue",
             "state": 0,
             "values": {
-              "Professor#1": "Hello students!",
+              "Professor#1": "$CEIdle|$POS0|$BGMEducation_BGM|$BGRoomBackground|Hello students!",
               "Professor#2": "What are students?"
             }
           },
@@ -48,7 +48,7 @@
               "Professor#1": "Do you want a similar question?",
               "Professor#2": "Or do you want to go to the next question instead?"
             }
-          },
+          }
         ]
       },
       "Q115-2": {
@@ -62,7 +62,7 @@
             "name": "Dialogue",
             "state": 0,
             "values": {
-              "Professor#1": "This is the alternative question to 115!",
+              "Professor#1": "This is the alternative question to 115!"
             }
           },
           {
@@ -88,7 +88,7 @@
               "Professor#1": "Well then",
               "Professor#2": "Let's go"
             }
-          },
+          }
         ]
       },
       "Q116": {
@@ -102,7 +102,7 @@
             "name": "Dialogue",
             "state": 0,
             "values": {
-              "Professor#1": "This is question 116!",
+              "Professor#1": "This is question 116!"
             }
           },
           {
@@ -128,7 +128,7 @@
               "Professor#1": "Wow you suck!",
               "Professor#2": "Try again!"
             }
-          },
+          }
         ]
       },
       "Q116-2": {
@@ -142,7 +142,7 @@
             "name": "Dialogue",
             "state": 0,
             "values": {
-              "Professor#1": "This is question 116!",
+              "Professor#1": "This is question 116!"
             }
           },
           {
@@ -176,9 +176,9 @@
               "Professor#1": "Do you want a similar question?",
               "Professor#2": "Or do you want to go to the next question instead?"
             }
-          },
+          }
         ]
-      },
+      }
     },
     "Health": {
       "Q116": {

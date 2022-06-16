@@ -472,7 +472,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loadingScreen: {fileID: 1959816737}
   levelIndex: 0
-  startingScene: 3
+  startingScene: 2
   exclusionScenes: 0200000004000000
   dialogueController: {fileID: 1057337227}
   fade: {fileID: 1769037665}
@@ -1297,7 +1297,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -3145,7 +3145,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.35
   m_Pitch: 1
   Loop: 0
   Mute: 0
