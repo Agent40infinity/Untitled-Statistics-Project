@@ -1,0 +1,1256 @@
+{
+  "level": "3",
+  "levelData": {
+    "Education": {
+      "Q131-1": {
+        "name": "Q131-1",
+        "next": "Q132",
+        "aternative": "Q131-2",
+        "answerType": 1,
+        "answer": "2",
+        "sections": [
+          {
+            "name": "Dialogue",
+            "state": 0,
+            "values": {
+              "Tim#1": "Hey Amanda, the professor just taught me how to read a normal distribution.",
+              "Tim#2": "Using my own marks in visual arts, I could see where I sit among my peers, and that is in the top 2.5% of my area.",
+              "Tim#3": "It made me think that I should stay in school and keep trying, because in the long term, I could end up being more successful going through the school system.",
+              "Amanda#1": "That's so great, I do want to keep progressing in school too, the teachers said that I shouldn't continue math's because my scores aren't high enough.",
+              "Amanda#2": "I got a 66 on my report card and the teacher says it's not competitive enough to compete with my peers. Is the teacher the right professor?",
+              "Professor#1": "Okay I took some intelligence from their database on your area and the students you will be competing with. Now let's do a test to prove that whether your teacher was right or wrong.",
+              "Professor#2": "So the teacher claims your marks are not competitive enough, so what did the teacher say the average mark in your area was?",
+              "Amanda#3": "He claimed it was 70.",
+              "Professor#4": "Okay we're going to conduct a one-sample t-Test for the population mean.",
+              "Professor#5": "This will help tell us if there was or was not a significant difference between what the teacher said, and what the database is saying.",
+              "Professor#6": "First part is a hypothesis test, so if the null hypothesis is",
+              "Professor#7": "H0: Mean = 70",
+              "Professor#8": "Then what is H1 equal to?",
+              "Professor#9": "Use this link to help you https://teaching.science.mq.edu.au/probtool/"
+            }
+          },
+          {
+            "name": "Questions",
+            "state": 1,
+            "values": {
+              "1": "The alternative hypothesis is not 70",
+              "2": "The alternative hypothesis is 70"
+            }
+          },
+          {
+            "name": "Correct",
+            "state": 2,
+            "values": {
+              "Professor#1": "Correct! The alternative hypothesis is not 70"
+            }
+          },
+          {
+            "name": "Incorrect",
+            "state": 3,
+            "values": {
+              "Professor#1": "Incorrect! The alternative hypothesis is not 70"
+            }
+          },
+          {
+            "name": "Alternative",
+            "state": 4,
+            "values": {
+              "Professor#1": "Do you want a similar question?",
+              "Professor#2": "Or do you want to go to the next question instead?"
+            }
+          }
+        ]
+      },
+      "Q131-2":{
+        "name": "Q131-2",
+        "next": "Q132",
+        "alternative": "",
+        "answerType": 1,
+        "answer": "1",
+        "sections": [
+          {
+            "name": "Dialogue",
+            "state": 0,
+            "values": {
+              "Professor#1": "First part is a hypothesis test, so if the null hypothesis is ",
+              "Professor#2": "Mean = 80",
+              "Professor#3": "Amanda, if we're testing the null hypothesis which is 70 then H1 would be the alternative hypothesis, therefore the alternative hypothesis is not 70."
+            }
+          },
+          {
+            "name": "Questions",
+            "state": 1,
+            "values": {
+              "1": "The alternative hypothesis is 80",
+              "2": "The alternative hypothesis is not 80"
+            }
+          },
+          {
+            "name": "Correct",
+            "state": 2,
+            "values": {
+              "Professor#1": "Correct!, The alternative hypothesis is 80."
+            }
+          },
+          {
+            "name": "Incorrect",
+            "state": 3,
+            "values": {
+              "Professor#1": "Incorrect!, The alternative hypothesis is 80."
+            }
+          }
+        ]
+	    },
+
+      "Q132":{
+        "name": "Q132",
+        "next": "Q133",
+        "alternative": "",
+        "answerType": 1,
+        "answer": "1",
+        "sections": [
+          {
+            "name": "Dialogue",
+            "state": 0,
+            "values": {
+              "Professor#1": "Find the t-score now using the information provided above, and tell me the degrees of freedom?",
+              "Graph#1": "$PICQ132|"
+            }
+          },
+          {
+            "name": "Questions",
+            "state": 1,
+            "values": {
+              "1": "X=64.52 , Mu=70, S=17.73, n=4548",
+              "2": "X=64.52 , Mu=70, S=16.73, n=4548",
+              "3": "X=44.52 , Mu=70, S=17.73, n=4548",
+              "4": "X=44.52 , Mu=70, S=16.73, n=4548"
+            }
+          },
+          {
+            "name": "Correct",
+            "state": 2,
+            "values": {
+              "Correct_Professor#1": "Correct!, The answer is X=64.52 , Mu=70, S=17.73, n=4548"
+            }
+          },
+          {
+            "name": "Incorrect",
+            "state": 3,
+            "values": {
+              "Incorrect_Professor#1": "Incorrect!, The answer is X=64.52 , Mu=70, S=17.73, n=4548"
+            }
+          }
+        ]
+	    },
+      
+      "Q133": {
+        "name": "Q133",
+        "next": "Q134",
+        "alternative": "",
+        "answerType": 1,
+        "answer": "3",
+        "sections": [
+          {
+            "name": "Dialogue",
+            "state": 0,
+            "values": {
+              "Professor#1": "With this information, can you find the p-value?"
+            }
+          },
+          {
+            "name": "Questions",
+            "state": 1,
+            "values": {
+              "1": "p-value = 1",
+              "2": "p-value = 2",
+              "3": "p-value = 0",
+              "4": "p-value = -1"
+            }
+          },
+          {
+            "name": "Correct",
+            "state": 2,
+            "values": {
+              "Professor#1": "Correct! The p-value is equal to 0"
+            }
+          },
+          {
+            "name": "Incorrect",
+            "state": 3,
+            "values": {
+              "Professor#1": "Incorrect!, The p-value is equal to 0"
+            }
+          }
+        ]
+	    },
+
+      "Q134":{
+        "name": "Q134",
+        "next": "Q135",
+        "alternative": "",
+        "answerType": 1,
+        "answer": "4",
+        "sections": [
+          {
+            "name": "Dialogue",
+            "state": 0,
+            "values": {
+              "Professor#1": "So do we accept the null hypothesis or not?",
+              "Graph#1": "$PICQ134|"
+            }
+          },
+          {
+            "name": "Questions",
+            "state": 1,
+            "values": {
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": ""
+            }
+          },
+          {
+            "name": "Correct",
+            "state": 2,
+            "values": {
+              "Professor#1": "Correct!, The graph shows that more females have obtained a higher education than males."
+            }
+          },
+          {
+            "name": "Incorrect",
+            "state": 3,
+            "values": {
+              "Professor#1": "Incorrect!, The graph shows that more females have obtained a higher education than males."
+            }
+          }
+        ]
+	    },
+      "Q116":{
+        "name": "Q116",
+        "next": "Q117",
+        "alternative": "",
+        "answerType": 1,
+        "answer": "2",
+        "sections": [
+          {
+            "name": "Dialogue",
+            "state": 0,
+            "values": {
+              "Samantha#1": "Is it supposed to be reassuring to me that there are more females that have received a higher education than males? ",
+              "Samantha#2": "Look, as empowering as it is to see that statistics, it doesn't help ease my nerves around my peers, you know that right?",
+              "Professor#1": "Alright.Stop smart-mouthing me.",
+              "Professor#2": "I know just letting you directly stare at statistics is not gonna give you too much comfort, but I will ask you a couple more questions.",
+              "Professor#3": "Then you can decide for yourself how you can go about navigating your pathway towards higher education.",
+              "Professor#4": "Now, can you answer me exactly how has education changed over the years?",
+              "Samantha#3": "Okay, how am I supposed to answer that without...",
+              "Samantha#4": "Actually nevermind, you are gonna do the thing that you do again, aren't you? Alright...hit me with it."
+            }
+          },
+          {
+            "name:": "Questions",
+            "state": 1,
+            "values": {
+              "1": "wrong a",
+              "2": "Correct",
+              "3": "wrong c",
+              "4": "wrong d"
+            }
+          },
+          {
+            "name": "Correct",
+            "state": 2,
+            "values": {
+              "Professor#1": "Correct!, Average years of education has increased by generation, ...",
+              "Professor#2": "...which means that future generations will be even more educated than the previous generation because more people are pursuing a bachelor's degree."
+            }
+          },
+          {
+            "name": "Incorrect",
+            "state": 3,
+            "values": {
+              "Professor#1": "Incorrect!, "
+            }
+          }
+        ]
+	    },
+      "Q117":{
+        "name": "Q117",
+        "next": "Q118",
+        "alternative": "",
+        "answerType": 1,
+        "answer": "3",
+        "sections": [
+          {
+            "name": "Dialogue",
+            "state": 0,
+            "values": {
+              "Samantha#1": "Looking at these statistics, the future does look quite promising.",
+              "Samantha#2": "More and more people in our generation are pursuing a bachelor's degree.",
+              "Samantha#3": "Which means as generations go by, more and more people will be more educated.",
+              "Professor#1": "That is CORRECT, Samantha.Look at you, what a smart cookie.",
+              "Samantha#4": "And yet I still somehow don't see how that's relevant to me, Professor Know It All.",
+              "Professor#2": "If you think about it Samantha, what conclusion can you draw after answering the previous two questions?",
+              "Samantha#5": "I guess this means that over time, more people of different genders will become more educated, especially women.",
+              "Samantha#6": "I guess it's a sign of progress for society, as it wasn't even that long ago when women were not even allowed to read books.",
+              "Samantha#7": "Okay, I can see your point now.But here is my question though.",
+              "Samantha#8": "I have noticed that at certain age groups, the amount of people choosing to study starts decreasing.",
+              "Samantha#9": "Are there any particular reasons as to why that trend persists?",
+              "Professor#3": "That is quite a good question.",
+              "Professor#4": "Look at you asking the questions now, looks like you are starting to accept your situation and starting to want to learn now.",
+              "Samantha#10": "Shut your-",
+              "Samantha#11": "One, I am trapped here regardless of my willingness in the situation, might as well make the most out of it.",
+              "Samantha#12": "Two, this concerns how I perceive pursuing a path of tertiary education, therefore please show me the data without the extra fuss.",
+              "Professor#5": "Alright, whatever floats your boat.",
+              "Narrator#1": "*snaps fingers*"
+            }
+          },
+          {
+            "name": "Questions",
+            "state": 1,
+            "values": {
+              "1": "wrong a",
+              "2": "wrong b",
+              "3": "Correct",
+              "4": "wrong d"
+            }
+          },
+          {
+            "name": "Correct",
+            "state": 2,
+            "values": {
+              "Professor#1": "Correct!, Males recorded “no longer interested as to why they stopped 28.7% and females recorded that as their second highest reason.",
+              "Professor#2": "Males second highest is “employment or financial reasons” at 26.1%, and females highest is “family, health or other personal reasons” at 29.6%."
+            }
+          },
+          {
+            "name": "Incorrect",
+            "state": 3,
+            "values": {
+              "Professor#1": "Incorrect!"
+            }
+          }
+        ]
+	    },
+
+      "Q118":{
+        "name": "Q118",
+        "next": "Q119",
+        "alternative": "",
+        "answerType": 0,
+        "answer": "4",
+        "sections": [
+          {
+            "name": "Dialogue",
+            "state": 0,
+            "values": {
+              "Samantha#1": "Interesting.So each demographic of people records different reasons for why they no longer study.",
+              "Samantha#2": "So I am going to take a guess and say that the data would be different for my age group?",
+              "Professor#1": "That is so correct! And that is because the mean years of education have increased over generations.",
+              "Professor#2": "But here is another question for you, why do you think things are so different for you and your brother today?"
+            }
+          },
+          {
+            "name": "Questions",
+            "state": 1,
+            "values": {
+              "1": "wrong a",
+              "2": "wrong b",
+              "3": "wrong c",
+              "4": "Correct"
+            }
+          },
+          {
+            "name": "Correct",
+            "state": 2,
+            "values": {
+              "Professor#1": "Correct!, The male and females range from 15-64 which could include a large number of older generations that record less education.",
+              "Professor#2": "Meaning maybe there was a higher pressure for men to focus on earning a living..., ",
+              "Professor#3": "...whereas females were more focused on having a family.",
+              "Professor#4": "Whereas today there is higher value on education and qualifications."
+            }
+          },
+          {
+            "name": "Incorrect",
+            "state": 3,
+            "values": {
+              "Professor#1": "Incorrect!, "
+            }
+          }
+        ]
+	    },
+      "Q119":{
+        "name": "Q119",
+        "next": "Q1110",
+        "alternative": "",
+        "answer": "1",
+        "sections": [
+          {
+            "name": "Dialogue",
+            "state": 0,
+            "values": {
+              "Samantha#1": "I mean, from what I can tell, people from both of the binary gender demographic,...",
+              "Samantha#2": "...with their age ranging from 15-64, includes a huge number of older generations that records being less educated.",
+              "Samantha#3": "From my understanding of the older generation, I am guessing there was just a higher pressure for men to focus on earning a living...",
+              "Samantha#4": "...and for women to focus on their own family back in the olden days.Whereas in our current generation, we place a higher value on education and qualifications.",
+              "Professor#1": "That is absolutely wonderful Samantha.Perfect analysis on the subject matter.",
+              "Professor#2": "Now to answer the most important question of it all, the one that you have been dying to know.",
+              "Professor#3": "Are there many women who study STEM in university?",
+              "Narrator#1": "*snaps fingers*"
+            }
+          },
+          {
+            "name": "Questions",
+            "state": 1,
+            "values": {
+              "1": "Correct",
+              "2": "wrong b",
+              "3": "wrong c",
+              "4": "wrong d"
+            }
+          },
+          {
+            "name": "Correct",
+            "state": 2,
+            "values": {
+              "Professor#1": "Correct!, Women are more prevalent in science than men, but in engineering, men have a significantly higher population."
+            }
+          },
+          {
+            "name": "Incorrect",
+            "state": 3,
+            "values": {
+              "Professor#1": "Incorrect!, "
+            }
+          }
+        ]
+	    },
+      "Q1110":{
+        "name": "Q1110",
+        "next": "end",
+        "alternative": "",
+        "answerType": 1,
+        "answer": "2",
+        "sections": [
+          {
+            "name": "Dialogue",
+            "state": 0,
+            "values": {
+              "Samantha#1": "That's quite relieving to see that there are quite a number of women who choose to study STEM subjects.",
+              "Samantha#2": "I guess that gives me some sort of comfort seeing so many women study in the science side of STEM subjects.",
+              "Samantha#3": "Still it is quite a shame to see that there is significantly less percentage of women in engineering subjects though.",
+              "Professor#1": "It definitely is quite a shame.",
+              "Professor#2": "Although engineering is a difficult subject to grasp,...",
+              "Professor#3": "...I believe it is an advantage to see a diverse demographic within the Engineering field.",
+              "Professor#4": "And as more and more people choose to pursue higher education, this data can change over time.",
+              "Professor#5": "You can be part of that change too if you would like, it is ultimately up to you as to what you want to study though.",
+              "Samantha#4": "Alright well, that was quite eye-opening and educational, I have a slight grasp as to my own future now.",
+              "Samantha#5": "But I won't have a future to pursue, if you won't let me out."
+            }
+          },
+          {
+            "name": "Questions",
+            "state": 1,
+            "values": {
+              "1": "wrong a",
+              "2": "Correct",
+              "3": "wrong c",
+              "4": "wrong d"
+            }
+          },
+          {
+            "name": "Correct",
+            "state": 2,
+            "values" :{
+              "Professor#1": "Correct!, "
+            }
+          },
+          {
+            "name": "Incorrect",
+            "state": 3,
+            "values": {
+              "Professor#1": "Incorrect!, "
+            }
+          }
+        ]
+	    }
+    },
+
+    "Poverty": {
+      "Q211": {
+        "name": "Q211",
+        "next": "Q212",
+        "alternative": "",
+        "answerType": 1,
+        "answer": "4",
+        "sections": [
+          {
+            "name": "Dialogue",
+            "state": 0,
+            "values": {
+              "Professor#1": "$CEIdle|$POS0|$BGPovertyBackground|$BGMPoverty_BGM|Alright. Since you've chosen this level, you will experience this and answer my questions through the mindset of one of my favorite memoram, Elijah.",
+              "Professor#2": "Now, if we may, we shall start right away.",
+              "Player#1":"$CEIdle|$POS1|I can't get used to this experience at all to be quite honest.",
+              "Professor#3":"You will get used to it eventually.",
+              "Professor#4":"For this topic, we will be using the memoram we obtained when Elijah signed up for one of our programs. ",
+              "Professor#5":"I have to say he was one of the more pleasant interviewees I have had the pleasure to do this program with, unlike yourself.",
+              "Professor#6":"And therefore for my sake, I will be making this a third person memoram experience, just so you can't ruin this for me.",
+              "Player#2":"How fair. You absolute coward. If you are going to trap me, at least let me have some way to retaliate at you.",
+              "Professor#7":"In your dreams. Now let's begin, shall we?",
+              "Narrator#1":"*Professor snaps their fingers and Elijah seems to come to life and starts animating*",
+              "Professor#8":"Hello there. Elijah, correct? How are you doing? And what can I do for you today?",
+              "Elijah#1":"$CEIdle|$POS1|Hello there sir! I am doing absolutely fantastic. It is such an honor to meet you.",
+              "Elijah#2":"Since you asked, I will just go straight to the point then.",
+              "Elijah#3":"I have been thinking about volunteering for support work to further develop my resume and grow my experience as a member of society,...",
+              "Elijah#4":"…but I am currently struggling to search up relevant resources to develop my views on the reality of poverty within Australia.",
+              "Professor#9":"Oh you are too kind.",
+              "Narrator#2":" *winks at Player, and you roll your eyes*",
+              "Professor#10":"The pleasure is all mine.",
+              "Professor#11":"Now since you got straight to the point that you need more information on the current situation of poverty within Australia.",
+              "Professor#12":"Let's take a step back and observe the meaning of poverty. Can you tell me what would be some indicators of poverty?"
+            }
+          },
+          {
+            "name": "Questions",
+            "state": 1,
+            "values": {
+              "1": "A lack of money",
+              "2": "Hunger and unclean water",
+              "3": "Inadequate shelter",
+              "4": "All of the above"
+            }
+          },
+          {
+            "name": "Correct",
+            "state": 2,
+            "values": {
+              "Elijah#1": "From my observation, all of the answers seem to be indicators of poverty.",
+              "Elijah#2": "Lacking money in a capitalist world is a very big indicator.",
+              "Elijah#3": "Having limited to no access to food and clean water is also a big indicator.",
+              "Elijah#4": "And a lack of shelter in our day and age can prove to be very problematic.",
+              "Professor#1": "Absolutely correct, Elijah. Those are extremely good answers you've provided.",
+              "Professor#2": "However, income is definitely the best numerical indicator for poverty as most definitions of poverty are mostly based on income."
+            }
+          },
+          {
+            "name": "Incorrect",
+            "state": 3,
+            "values": {
+              "Professor#1": "Yikes!"
+            }
+          }
+        ]
+      },
+      "Q212": {
+        "name": "Q212",
+        "next": "Q213",
+        "alternative": "",
+        "answerType": 1,
+        "answer": "1",
+        "sections": [
+          {
+            "name": "Dialogue",
+            "state": 0,
+            "values": {
+              "Professor#1": "Now comes another question, this is a graph that's obtained from careful observations from my colleague.",
+              "Professor#2": "From this graph, can you tell me the global percentage of people that are making less than $5.49 per day?",
+              "Graph#1": "$PICQ212|"
+            }
+          },
+          {
+            "name": "Questions",
+            "state": 1,
+            "values": {
+              "1": "37.1%",
+              "2": "45%",
+              "3": "25.9%",
+              "4": "36%"
+            }
+          },
+          {
+            "name": "Correct",
+            "state": 2,
+            "values": {
+              "Elijah#1": "That is absolutely terrible…… 37.1% of people globally are making less than $5 per day?!",
+              "Elijah#2": "Living in Australia, I would've never heard of that, I can't even imagine what that would feel like.",
+              "Professor#1": "That's okay Elijah, you don't have to panic just yet.",
+              "Professor#2": "I know it can feel very disheartening but that's what I am here for, are you feeling okay?",
+              "Elijah#3": "I feel okay to proceed, I just feel a bit sad to hear that people can still earn less than what they deserve.",
+              "Player#1": "Well it is quite saddening to hear that.",
+              "Player#2": "But what's even more disheartening is that I am stuck here with an annoying know-it-all and a crybaby.",
+              "Narrator#1": "*Professor stares at Player briefly and looks back at Elijah*",
+              "Professor#3": "That's okay, Elijah. It means you have basic sympathy."
+
+            }
+          },
+          {
+            "name": "Incorrect",
+            "state": 3,
+            "values": {
+              "Professor#1": "Incorrect! Yikes."
+            }
+          }
+        ]
+      },
+      "Q213": {
+        "name": "Q213",
+        "next": "Q214",
+        "alternative": "",
+        "answerType": 1,
+        "answer": "2",
+        "sections": [
+          {
+            "name": "Dialogue",
+            "state": 0,
+            "values": {
+              "Professor#1": "Now I will say that sometimes the percentage does not represent the actual poverty rate.",
+              "Professor#2": "Let's try and understand that better shall we?",
+              "Professor#3": "Now here is some dud data for you to practice on.",
+              "Professor#4": "Can you please find out the mean and the median for the data that's currently before you?",
+              "Professor#5": "1, 1, 3, 6, 15, 22"
+
+            }
+          },
+          {
+            "name": "Questions",
+            "state": 1,
+            "values": {
+              "1": "Mean:5   Median: 4.5",
+              "2": "Mean:8   Median: 4.5",
+              "3": "Mean:8   Median: 6.5",
+              "4": "-"
+            }
+          },
+          {
+            "name": "Correct",
+            "state": 2,
+            "values": {
+              "Elijah#1": "The difference between the mean and the median is so huge. Wait, what's causing this gap?",
+              "Professor#1": "Incredible calculation and observational skill Elijah!",
+              "Professor#2": "The reason why there is a big difference between the mean and median is because of the extreme variables within the dataset.",
+              "Professor#3": "So this means depending on the subject, we need to actually consider which measurement is most useful to your current conclusion."
+
+            }
+          },
+          {
+            "name": "Incorrect",
+            "state": 3,
+            "values": {
+              "Professor#1": "Incorrect! Yikes."
+
+            }
+          }
+        ]
+      },
+      "Q214": {
+        "name": "Q214",
+        "next": "Q215",
+        "alternative": "",
+        "answerType": 1,
+        "answer": "2",
+        "sections": [
+          {
+            "name": "Dialogue",
+            "state": 0,
+            "values": {
+              "Elijah#1": "Oh! That is so interesting. Can I-",
+              "Narrator#1": "*Player pauses the simulation by themselves*",
+              "Player#1": "$CEIdle|$POS1|I am sorry, how is this question actually relevant to what Elijah is trying to understand?",
+              "Player#2": "From what I understand about him, he is trying to obtain more understanding on the reality of poverty.",
+              "Player#3": "So how is learning any of these yip-yaps about statistics supposed to help him?",
+              "Professor#1": "Well, if you have simply allowed the <b>memoram</b> to play through,...",
+              "Professor#2": "…you would've gotten to know how Elijah will gain an understanding of how poverty is in Australia.",
+              "Professor#3": "But unfortunately, you just rudely interrupted our conversation and just paused the <b>memoram</b>.",
+              "Player#4": "Well sorry for just wanting to gain some understanding and find relevance in these questions I guess.",
+              "Narrator#2":"*Professor glares at Player and unpause*",
+              "Elijah#2": "$CEIdle|$POS1|Can I then just choose the most appropriate measurement according to what's required here?",
+              "Professor#4": "That is correct!",
+              "Professor#5": "Now think about this, if you are trying to carry out a study on the poverty rate in Australia with the data of everyone's income, which measurement should we look at? The mean or the median?"
+            }
+          },
+          {
+            "name": "Questions",
+            "state": 1,
+            "values": {
+              "1": "Mean",
+              "2": "Median",
+              "3": "-",
+              "4": "-"
+            }
+          },
+          {
+            "name": "Correct",
+            "state": 2,
+            "values": {
+              "Elijah#1": "Oh! That makes so much more sense.",
+              "Elijah#2": "Since our datasets will be based on income, it's normal to have some extremely low or high values,...",
+              "Elijah#3": "…and therefore it will be much more appropriate to use median income as a reference to poverty."
+              
+            }
+          },
+          {
+            "name": "Incorrect",
+            "state": 3,
+            "values": {
+              "Professor#1": "Sorry, that's wrong!"
+
+            }
+          }
+        ]
+      },
+      "Q215": {
+        "name": "Q215",
+        "next": "Q216",
+        "alternative": "",
+        "answerType": 1,
+        "answer": "2",
+        "sections": [
+          {
+            "name": "Dialogue",
+            "state": 0,
+            "values": {
+              "Player#1": "$CEIdle|$POS1|Wow. We got a smart cookie over here.",
+              "Player#2": "Now if he only knew that I am the one answering the questions and not him.",
+              "Player#3": "How surprised do you reckon he would be.",
+              "Narrator#1": "*Professor glares at Player momentarily before continuing*",
+              "Professor#1": "That's right. We might think that poverty shouldn't be a serious problem here in Australia.",
+              "Professor#2": "But if we take a look at the study by ACOSS(Australian Council of Social Service) and UNSW on the poverty issue in Australia 2021.",
+              "Professor#3": "The study is based on the global standard poverty measurement which is 50% of the median income.",
+              "Professor#4": "Now let's think about it together. Which data should we be using as the measurement for poverty rate?",
+              "Table#1": "$PICQ215|"
+
+            }
+          },
+          {
+            "name": "Questions",
+            "state": 1,
+            "values": {
+              "1": "25% of Median income cost",
+              "2": "50% of Median income cost",
+              "3": "35% of Median income cost",
+              "4": "65% of Median income cost"
+            }
+          },
+          {
+            "name": "Correct",
+            "state": 2,
+            "values": {
+              "Elijah#1": "$CEIdle|$POS1|I guess we would be looking at the 50% of median income cost?",
+              "Elijah#2": "Simply because housing costs can be different for every individual.",
+              "Professor#1": "Absolutely spot on!"
+
+            }
+          },
+          {
+            "name": "Incorrect",
+            "state": 3,
+            "values": {
+              "Professor#1": "Incorrect! Yikes."
+
+            }
+          }
+        ]
+      },
+
+      "Q216": {
+        "name": "Q216",
+        "next": "Q217",
+        "alternative": "",
+        "answerType": 1,
+        "answer": "1",
+        "sections": [
+          {
+            "name": "Dialogue",
+            "state": 0,
+            "values": {
+              "Professor#1": "According to their studies and surveys.",
+              "Professor#2": "ACOSS and UNSW were able to estimate that 3,239,000 people in Australia are under the poverty line.",
+              "Professor#3": "The population in Australia is around 23,810,000 in 2018.",
+              "Professor#4": "Can you now work out the poverty rate from these numbers?"
+            }
+          },
+          {
+            "name": "Questions",
+            "state": 1,
+            "values": {
+              "1": "13.6%",
+              "2": "15.5%",
+              "3": "12.9%",
+              "4": "13.4%"
+            }
+          },
+          {
+            "name": "Correct",
+            "state": 2,
+            "values": {
+              "Elijah#1": "The poverty rate is 13.6%. That's still quite high.",
+              "Professor#1": "You got it!"
+
+            }
+          },
+          {
+            "name": "Incorrect",
+            "state": 3,
+            "values": {
+              "Professor#1": "Yikes"
+
+            }
+          }
+        ]
+      },
+
+      "Q217": {
+        "name": "Q217",
+        "next": "Q218",
+        "alternative": "",
+        "answerType": 1,
+        "answer": "1",
+        "sections": [
+          {
+            "name": "Dialogue",
+            "state": 0,
+            "values": {
+              "Professor#1": "The calculation of poverty rate is simply using the number of people below the poverty line divided by the total population.",
+              "Professor#2": "Now go ahead and have a look at this plot of the trends in median household disposable incomes, before and after deducting housing costs.",
+              "Professor#3": "Does this data suggest a positive relationship? What does this mean?",
+              "Graph#1": "$PICQ217|"
+            }
+          },
+          {
+            "name": "Questions",
+            "state": 1,
+            "values": {
+              "1": "Yes",
+              "2": "No",
+              "3": "-",
+              "4": "-"
+            }
+          },
+          {
+            "name": "Correct",
+            "state": 2,
+            "values": {
+              "Elijah#1": "This feels quite depressing.",
+              "Elijah#2": "The graph suggests a positive relationship, which means the poverty rate is increasing in Australia every year.",
+              "Professor#1": "It is quite depressing just to look at the graph by itself, yes. ",
+              "Professor#2": "But this is exactly why volunteering work coming from young people like you can help make a difference."
+
+            }
+          },
+          {
+            "name": "Incorrect",
+            "state": 3,
+            "values": {
+              "Incorrect_Professor#1": "Incorrect! Yikes."
+
+            }
+          }
+        ]
+      },
+
+      "Q218": {
+        "name": "Q218",
+        "next": "end",
+        "alternative": "",
+        "answerType": 1,
+        "answer": "1",
+        "sections": [
+          {
+            "name": "Dialogue",
+            "state": 0,
+            "values": {
+              "Professor#1": "Hopefully these statistics have helped you gain clarity in the current situation surrounding poverty in Australia.",
+              "Elijah#1": "It has. Thank you so much for your help.",
+              "Elijah#2": "When I first signed up for this program to try and gain more understanding on this subject matter…",
+              "Elijah#3": "…I thought I would be scammed, I am very glad to have gotten to meet you now.",
+              "Professor#2": "Likewise Elijah.",
+              "Narrator#1": "*Your surrounding seems to freeze in place now and Elijah also seems to be frozen in place too*",
+              "Player#1": "At least someone was glad to have met you I guess.",
+              "Professor#3": "Well, that makes one of you guys.",
+              "Professor#4": "Now I will also be asking you the same question.",
+              "Professor#5": "Have you also obtained more understanding around poverty now that you've gone through Elijah's memoram?",
+              "Player#2": "If I say sure would you just let me out of here?"
+            }
+          },
+          {
+            "name": "Questions",
+            "state": 1, 
+            "values": {
+              "1": "Yes",
+              "2": "No"
+            }
+          },
+          {
+            "name": "Correct",
+            "state": 2,
+            "values": {
+              "Professor#1": "Hmm."
+            }
+          },
+          {
+            "name": "Incorrect",
+            "state": 3,
+            "values": {
+              "Professor#1": "Sure."
+
+            }
+          }
+        ]
+      }
+    },
+
+    "Health": {
+      "Q311": {
+        "name": "Q311",
+        "next": "Q312",
+        "alternative": "",
+        "answerType": 1,
+        "answer": "1",
+        "sections": [
+          {
+            "name": "Dialogue",
+            "state": 0,
+            "values": {
+              "Rebecca#1": "Oh christ! Where am I? What's going on? This room is so white it's actually hurting my eyes.",
+              "Professor#1": "Welcome to learning about the Health and Wellbeing UNSDG goal.",
+              "Professor#2": "You are currently playing through the eyes of Rebecca Sutherland.",
+              "Professor#3": "She is currently a statistician who works closely with the United Nations…",
+              "Professor#4": "…to develop solutions to the specific Sustainable Development United Nations Goal of Health.",
+              "Rebecca#2": "Right….. Whatever that means.",
+              "Professor#5": "It MEANS, you are currently in possession of a memoram of someone quite knowledgeable and…",
+              "Professor#6": "…should be able to assist you through most of the questions and statistics I will present to you.",
+              "Professor#7": "Now if you don't mind, I-",
+              "Narrator#1": "*Within Rebecca's body, Player runs down the hallway and turns into the first room they see, and shuts the door behind them*",
+              "Rebecca#3": "Hah. Jokes on you. If I am an employee of the UN, that means I have access to all these doors and you don't.",
+              "Rebecca#4": "Before that old sod tries to get through that door and ask me stupid questions again, let me think of a way to bust myself-",
+              "Professor#8": "The fastest way you can “bust” yourself out of here, is to cooperate with me, you little rascal.",
+              "Narrator#2": "*Player's turns around and see the Professor standing right in front of them, with the door still locked behind them*",
+              "Rebecca#5": "WHAT! How did you manage to sneak behind me with…",
+              "Professor#9": "Let me remind you that you are currently within a memoram.",
+              "Professor#10": "Which is a virtual reality where we allow certain users to play through the memory of another person.",
+              "Professor#11": "So you can't really just get away from me, as I am part of the system itself.",
+              "Professor#12": "Were you really that naive to think that you can scram away when you are still within our system? ",
+              "Professor#13": "We brought you here for a reason, and we won't be letting you go until you learn what you have to learn.",
+              "Rebecca#6": "Oh man. You are so irritating.",
+              "Professor#14": "The feelings are mutual on this one.",
+              "Professor#15": "Now! Onto our first question. What do you think a key indicator of good health in a country is?"
+            }
+          },
+          {
+            "name": "Questions",
+            "state": 1,
+            "values": {
+              "1": "Although there are many indicators at our disposal, Life expectancy is very reliable.",
+              "2": "No"
+            }
+          },
+          {
+            "name": "Correct",
+            "state": 2,
+            "values": {
+              "Rebecca#1": "According to whatever is inside her head, life expectancy is the most reliable indicator for that?"
+            }
+          },
+          {
+            "name": "Incorrect",
+            "state": 3,
+            "values": {
+              "Professor#1": "That's so wrong!"
+            }
+          }
+        ]
+      },
+      "Q312": {
+        "name": "Q312",
+        "next": "Q313",
+        "alternative": "",
+        "answerType": 1,
+        "answer": "4",
+        "sections": [
+          {
+            "name": "Dialogue",
+            "state": 0,
+            "values": {
+              "Professor#1": "According to whatever is inside her head, life expectancy is the most reliable indicator for that?",
+              "Narrator#1": "https://www.aihw.gov.au/reports/australias-health/australias-health-2020-data-insights/contents/summary ",
+              "Professor#2": "Then tell me, what do you think plays a big role in living a long life in Australia?"
+            }
+          },
+          {
+            "name": "Questions",
+            "state": 1,
+            "values": {
+              "1": "Quality of life of individuals",
+              "2": "Health care planning",
+              "3": "Demand and need for health and welfare services and health system costs",
+              "4": "All of the above"
+            }
+          },
+          {
+            "name": "Correct",
+            "state": 2,
+            "values": {
+              "Rebecca#1": "I would've much preferred the answers to not be as long as they are but what can I expect from a terrible system.",
+              "Professor#1": "Ah yes. Save the smart-mouthing for answering my questions, yeah?",
+              "Rebecca#2": "Fine. But answer me this, does the wealth of an individual necessarily determine how long they will live for?"
+            }
+          },
+          {
+            "name": "Incorrect",
+            "state": 3,
+            "values": {
+              "Professor#1": "That's wrong."
+            }
+          }
+        ]
+      },
+      
+      "Q313": {
+        "name": "Q313",
+        "next": "Q314",
+        "alternative": "",
+        "answerType": 1,
+        "answer": "1",
+        "sections": [
+          {
+            "name": "Dialogue",
+            "state": 0,
+            "values": {
+              "Professor#1": "Well, let me answer that question with another question.",
+              "Professor#2": "I have already provided you with the necessary resource, the Australian health reports,...",
+              "Professor#3": "…observe the correlation between socioeconomics and health and tell me what you think?",
+              "Professor#4": "And the data are recorded for those between the ages of 65-69, why do you think that it?"
+            }
+          },
+          {
+            "name": "Questions",
+            "state": 1,
+            "values": {
+              "1": "Those living in higher socioeconomic areas on average live longer lives.",
+              "2": "Those living in higher socioeconomic areas on average live shorter lives."
+            }
+          },
+          {
+            "name": "Correct",
+            "state": 2,
+            "values": {
+              "Rebecca#1": "To be fair, that's pretty self-explanatory.",
+              "Rebecca#2": "People with a higher socioeconomic background have more access to healthcare facilities and systems than others."
+            }
+          },
+          {
+            "name": "Incorrect",
+            "state": 3,
+            "values": {
+              "Professor#1": "Wrong."
+            }
+          }
+        ]
+      },
+
+      "Q314": {
+        "name": "Q314",
+        "next": "Q315",
+        "alternative": "",
+        "answerType": 1,
+        "answer": "",
+        "sections": [
+          {
+            "name": "Dialogue",
+            "state": 0,
+            "values": {
+              "Rebecca#1": "But let me quickly ask, and stop changing my questions into your questions.",
+              "Rebecca#2": "What factors do you think cause the impact of such a difference in life expectancy for socio economic groups?",
+              "Professor#1": "Alright. For this I will partially answer it for you.",
+              "Professor#2": "People of different incomes imply that they have different lifestyles, which means they all have different issues.",
+              "Professor#3": "For example, allow me to present you the data sets on the link I gave you.",
+              "Professor#4": "Now tell me the total disease burden for selected diseases, by socioeconomic area, 2015?",
+              "Rebecca#3": "Looks like coronary disease is the highest impacting disease on Australians.",
+              "Professor#5": "Exactly. Therefore as you can see, issues around health and wealth…",
+              "Professor#6": "…play a big part in not just life expectancy but also the quality of life in terms of health.",
+              "Rebecca#4": "Okay I can understand that. But another quick question..",
+              "Professor#7": "You are quite curious now, aren't you?",
+              "Rebecca#5": "Let me finish my sentence, you old sod.",
+              "Narrator#1": "*Player rolls their eyes*",
+              "Rebecca#6": "I wonder if being educated is a good way to prevent people from experiencing health issues that could have been easily avoided.",
+              "Professor#8": "That is an extremely good question and I'm so glad you mentioned that,…",
+              "Professor#9": "because I think it's important for you to tell me which age group,...",
+              "Professor#10": "…education level and gender are most vulnerable to cardiovascular disease?",
+              "Professor#11": "I will assist you by giving you these graphs as references."
+            }
+          },
+          {
+            "name": "Questions",
+            "state": 1,
+            "values": {
+              "1": "Men aged 30-48 years with no post secondary and year 11",
+              "2": "Men aged 65-84 years with no post secondary and year 12"
+            }
+          },
+          {
+            "name": "Correct",
+            "state": 2,
+            "values": {
+              "Professor#1": "Nicely done."
+            }
+          },
+          {
+            "name": "Incorrect",
+            "state": 3,
+            "values": {
+              "Professor#1": "Well that's wrong."
+            }
+          }
+        ]
+      },
+
+      "Q315": {
+        "name": "Q315",
+        "next": "Q316",
+        "alternative": "",
+        "answerType": 1,
+        "answer": "1",
+        "sections": [
+          {
+            "name": "Dialogue",
+            "state": 0,
+            "values": {
+              "Rebecca#1": "Apparently this person that I am currently controlling is supposed to ask this question at some point.",
+              "Rebecca#2": "And since you are so helpful right now. Let me just relay that question for her right now.",
+              "Rebecca#3": "There was apparently a  project I did a long time ago but I still don't know what I should have done.",
+              "Rebecca#4": "I had to choose from two datasets, and I did not know which one to choose.",
+              "Professor#1": "Okay. I have an idea what you might be talking about.",
+              "Professor#2": "But describe to me about these datasets that Rebecca apparently knows of.",
+              "Rebecca#5": "Sure, I guess.",
+              "Rebecca#6": "The first dataset was collected from anonymous questionnaires and…",
+              "Rebecca#7": "…we surveyed people of many different ages, addresses, and backgrounds.",
+              "Rebecca#8": "While the second dataset was collected from a specific group of people…",
+              "Rebecca#9": "…that were pretty much the same age and background with very little variation.",
+              "Professor#10": "Interesting. And can you tell me about the aim of the project that you were doing?",
+              "Rebecca#10": "We were testing the hypothesis that changes in temperature are related to changes in height throughout the day.",
+              "Professor#11": "That's so interesting! And what do you think we should do here?",
+              "Rebecca#11": "Am I not the one asking you the question?!",
+              "Professor#12": "Yes, and I am asking you what's the answer?"
+            }
+          },
+          {
+            "name": "Questions",
+            "state": 1,
+            "values": {
+              "1": "The first dataset",
+              "2": "Second dataset"
+            }
+          },
+          {
+            "name": "Correct",
+            "state": 2,
+            "values": {
+              "Rebecca#1": "Thank you so much Professor. You are so absolutely helpful in these situations.",
+              "Rebecca#2": "I could have never guessed you would answer my question with another question again.",
+              "Professor#1": "Exactly. Very good Rebecca. You are quickly learning. I am so glad to be of help."
+            }
+          },
+          {
+            "name": "Incorrect",
+            "state": 3,
+            "values": {
+              "Professor#1": "Wrong."
+            }
+          }
+        ]
+      },
+
+      "Q316": {
+        "name": "Q316",
+        "next": "Q317",
+        "alternative": "",
+        "answerType": 1,
+        "answer": "1",
+        "sections": [
+          {
+            "name": "Dialogue",
+            "state": 0,
+            "values": {
+              "Rebecca#1": "Well, all of these questions got me thinking. And by me, I mean Rebecca.",
+              "Rebecca#2": "Because why not, she seems like a person who has a lot of questions on. her. MIND.",
+              "Rebecca#3": "If we consider a hypothetical situation where the ages of all subjects in a dataset are the same, where would we use that dataset?",
+              "Professor#1": "Well, that's a pretty good question.",
+              "Professor#2": "I will give you a bunch of answers and you can choose for yourself which one is the right one?"
+            }
+          },
+          {
+            "name": "Questions",
+            "state": 1,
+            "values": {
+              "1": "A data set relevant to that age would be required",
+              "2": "A data set relevant to that species should be required"
+            }
+          },
+          {
+            "name": "Correct",
+            "state": 2,
+            "values": {
+              "Professor#1": "That's correct."
+            }
+          },
+          {
+            "name": "Incorrect",
+            "state": 3,
+            "values": {
+              "Professor#1": "That's incorrect"
+            }
+          }
+        ]
+      },
+
+      "Q317": {
+        "name": "Q317",
+        "next": "end",
+        "alternative": "",
+        "answerType": 1,
+        "answer": "1",
+        "sections": [
+          {
+            "name": "Dialogue",
+            "state": 0,
+            "values": {
+              "Rebecca#1": "Well. That's all her questions answered. She also has a project that she wants to talk about?",
+              "Rebecca#2": "Are you serious? What is this, am I getting sponsored for this. Jesus.",
+              "Rebecca#3": "“My project is focused on Malaria research. I'll give some information about Malaria in countries where it is found:",
+              "Rebecca#4": "Malaria is a disease transmitted by a parasite through the bites of infected mosquitos.",
+              "Rebecca#5": "Malaria is very rare in countries like Australia but is more prevalent in tropical countries in South America and Africa.",
+              "Rebecca#6": "Each year 290 million people are infected with Malaria worldwide and over 400,000 people die from this disease.",
+              "Rebecca#7": "Part of my research is based on this.",
+              "Rebecca#8": "https://www.mayoclinic.org/diseases-conditions/malaria/symptoms-causes/syc-20351184”",
+              "Professor#1": "Oh well. You are running through her memoram.",
+              "Professor#2": "You have no choice but to always go through whatever predetermined sequence that she had gone through before.",
+              "Professor#3": "Alright. Congratulations on completing your first level of this goal. Are you ready to move on to the second level?"
+            }
+          },
+          {
+            "name": "Questions",
+            "state": 1,
+            "values": {
+              "1": "Yes",
+              "2": "No"
+            }
+          },
+          {
+            "name": "Correct",
+            "state": 2,
+            "values": {
+              "Professor#1": "Let's move on."
+            }
+          },
+          {
+            "name": "Incorrect",
+            "state": 3,
+            "values": {
+              "Professor#1": "Well, you can't stay anyways."
+            }
+          }
+        ]
+      }
+    }
+  }
+}
