@@ -8,21 +8,25 @@ public class FadeController : MonoBehaviour
     public Animator fade; //Creates a reference for the Animator: Fade.
     public FadeState fadeState;
 
-    public IEnumerator FadeOut() //Called upon to Fade Out.
+    public IEnumerator FadeOut(string name) //Called upon to Fade Out.
     {
+        Debug.Log("Fade Out from " + name);
         fade.SetTrigger("FadeOut");
         yield return FadeWait();
+        Debug.Log("Fade Out from Finished");
     }
 
     public void FadeIn() //Called upon to Fade In.
     {
         fade.SetTrigger("FadeIn");
+        Debug.Log("Fade in");
     }
 
     public IEnumerator FadeWait()
     {
         while (!FinishedFade())
         {
+            Debug.Log("Waiting");
             yield return null;
         }
     }

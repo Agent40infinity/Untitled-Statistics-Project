@@ -106,7 +106,8 @@ public class GameManager : MonoBehaviour
 
         yield return new WaitForSeconds(0.5f);
 
-        yield return fade.FadeOut();
+        Debug.Log("?");
+        yield return fade.FadeOut(name);
         loadingScreen.Visibility(false);
     }
 

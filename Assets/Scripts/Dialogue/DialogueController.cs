@@ -87,7 +87,15 @@ public class DialogueController : MonoBehaviour
     public IEnumerator DialogueSelection()
     {
         dialogueSelection.SetActive(true);
-        DataManager.instance.CallQuestionTimer(currentQuestion.name);
+
+        switch (currentQuestion.sections[sectionIndex].state)
+        {
+            case QuestionState.Alternative:
+                break;
+            default:
+                DataManager.instance.CallQuestionTimer(currentQuestion.name);
+                break;
+        }
 
         int dialogueOptions = currentQuestion.sections[sectionIndex].values.Count;
 
@@ -118,7 +126,7 @@ public class DialogueController : MonoBehaviour
         switch (currentQuestion.sections[sectionIndex].state)
         {
             case QuestionState.Alternative:
-                isNext = System.Convert.ToBoolean(optionIndex);
+                isNext = System.Convert.ToBoolean(optionIndex - 1);
                 break;
             default:
                 switch (int.Parse(currentQuestion.answer))
