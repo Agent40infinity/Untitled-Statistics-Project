@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using System.IO;
 
 public class DataManager : MonoBehaviour
 {
@@ -25,7 +26,7 @@ public class DataManager : MonoBehaviour
         instance = this;
         playerData = new PlayerData();
         sheetReader = new SheetReader(spreadsheetId, jsonPath, sheetRange);
-        sheetReader.updateSheetRange(CompileHeaderData(), "1:1");
+        
         StartCoroutine(playerData.GameTimer());
     }
 
@@ -45,6 +46,40 @@ public class DataManager : MonoBehaviour
         StartCoroutine(playerData.QuestionTimer(question));
     }
 
+    public IEnumerator LoadDialogueFile()
+    {
+        string path = Application.streamingAssetsPath + DialogueLoading.fileType["Default"];
+        List<string> files = Directory.GetFiles(path).ToList();
+
+        List<string> questionsToAdd = new List<string>();
+
+        foreach (var file in files)
+        {
+            StreamReader reader = new StreamReader(file);
+            string data = reader.ReadToEnd();
+            Level level = JsonConvert.DeserializeObject<Level>(data);
+
+            for (int i = 0; i < FieldManager.FieldCount; i++)
+            {
+                FieldState field = FieldManager.GetIndexOf(i);
+
+                for (int j = 0; j < level.levelData[field].Count; j++)
+                {
+                    switch (level.levelData[field].ElementAt(j).Value.answer)
+                    {
+                        case "":
+                            break;
+                        default:
+                            questionsToAdd.Add(level.levelData[field].ElementAt(j).Value.name);
+                            break;
+                    }
+                }
+            }
+        }
+
+        yield return sheetReader.AppendSheetRange(CompileHeaderData(questionsToAdd));
+    }
+
     public void SaveData()
     {
         gameState = TrackState.Complete;
@@ -56,12 +91,18 @@ public class DataManager : MonoBehaviour
         RowList rowList = new RowList();
         Row row = new Row();
 
-        row.cellData = new List<string>("ID,Total Time,Completed?,Feedback".Split(',').ToList());
+        row.cellData = new List<string>()
+        {
+            { "ID" },
+            { "Total Time" },
+            { "Completed?" },
+            { "Feedback" },
+        };
 
         foreach (var question in playerData.questions)
         {
-            string node = ",Question " + question.Key + ",Required Help on " + question.Key + "?,Time Spent on " + question.Key;
-            row.cellData.Concat(node.Split(',').ToList());
+            string node = "Question " + question.Key + ",Required Help on " + question.Key + "?,Time Spent on " + question.Key;
+            row.cellData.AddRange(node.Split(',').ToList());
         }
 
         rowList.rows.Add(row);
@@ -85,7 +126,7 @@ public class DataManager : MonoBehaviour
         foreach (var question in playerData.questions)
         {
             string questions = playerData.questions[question.Key] + "," + playerData.requiredHelp[question.Key] + "," + playerData.timeSpent[question.Key];
-            row.cellData.Concat(questions.Split(',').ToList());
+            row.cellData.AddRange(questions.Split(',').ToList());
         }
 
         rowList.rows.Add(row);
@@ -97,6 +138,7 @@ public class DataManager : MonoBehaviour
     {
         Debug.Log(SheetReader.sheetRange);
         yield return sheetReader.AppendSheetRange(GetPlayerData());
+        yield return sheetReader.updateSheetRange(CompileHeaderData(), "1:1");
     }
 
     public void OnApplicationQuit()

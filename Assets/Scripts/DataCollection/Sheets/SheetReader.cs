@@ -62,6 +62,17 @@ public class SheetReader
         }
     }
 
+    public IEnumerator createNewSheet(RowList valueRange)
+    {
+        Spreadsheet requestBody = new Spreadsheet();
+
+        SpreadsheetsResource.CreateRequest request = service.Spreadsheets.Create(requestBody);
+        var response = request.Execute();
+        Debug.Log(response);
+
+        yield return null;
+    }
+
     public IEnumerator updateSheetRange(RowList dataToWrite, string range)
     {
         ValueRange valueRange = RegisterValueRange(dataToWrite);
@@ -121,6 +132,18 @@ public class SheetReader
 public class Row
 {
     public List<string> cellData = new List<string>();
+
+    public string Debug()
+    {
+        string temp = "";
+
+        for (int i = 0; i < cellData.Count; i++)
+        {
+            temp += cellData[i] + ", ";
+        }
+
+        return temp;
+    }
 }
 
 [Serializable]
