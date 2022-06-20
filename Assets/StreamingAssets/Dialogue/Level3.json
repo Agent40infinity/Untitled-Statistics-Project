@@ -13,7 +13,7 @@
             "name": "Dialogue",
             "state": 0,
             "values": {
-              "Tim#1": "$CEIdle|$POS1|Hey Amanda, the professor just taught me how to read a normal distribution.",
+              "Tim#1": "$CEIdle|$POS1|$BGRoomBackground|Hey Amanda, the professor just taught me how to read a normal distribution.",
               "Tim#2": "Using my own marks in visual arts, I could see where I sit among my peers, and that is in the top 2.5% of my area.",
               "Tim#3": "It made me think that I should stay in school and keep trying, because in the long term, I could end up being more successful going through the school system.",
               "Amanda#1": "$CEIdle|$POS1|That's so great, I do want to keep progressing in school too, the teachers said that I shouldn't continue math's because my scores aren't high enough.",
@@ -492,7 +492,7 @@
             "name": "Dialogue",
             "state": 0,
             "values": {
-              "Professor#1": "$CEIdle|$POS0|Now that we have looked at some basic concepts in the previous levels, we can now begin to apply our knowledge of statistics at a higher level.",
+              "Professor#1": "$CEIdle|$POS0|$BGPovertyBackground|Now that we have looked at some basic concepts in the previous levels, we can now begin to apply our knowledge of statistics at a higher level.",
               "Eliza#1": "$CEIDLE|$POS1|I am looking forward to it.",
               "Professor#2": "We will now be using data on the percentage yearly growth of GDP per capita for 184 countries.",
               "Professor#3": "And you may be wondering how the growth of GDP per capita might be related to poverty. That is a good question, one which I would like you to have a go at:",
@@ -936,7 +936,7 @@
             "name": "Dialogue",
             "state": 0,
             "values": {
-              "Professor#1": "$CEIdle|$POS0|Hi Rebecca! How are you doing recently?",
+              "Professor#1": "$CEIdle|$POS0|$BGHealthBackground|Hi Rebecca! How are you doing recently?",
               "Rebecca#1": "$CEIdle|$POS1|Sigh, I've been kinda busy for the past week. Since this is almost the end of this semester.",
               "Rebecca#2": "I've got four hurdle assignments due within two weeks. I couldn't get much sleep because of the stress.",
               "Professor#2": "You should probably take a break. Working under stress is not good for your mental health",
