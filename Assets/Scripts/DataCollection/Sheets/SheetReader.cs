@@ -158,6 +158,7 @@ public class SheetReader
     }
 }
 
+[Serializable]
 public class Row
 {
     public List<string> cellData = new List<string>();
