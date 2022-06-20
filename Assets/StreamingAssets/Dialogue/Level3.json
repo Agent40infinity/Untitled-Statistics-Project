@@ -5,7 +5,7 @@
       "Q131-1": {
         "name": "Q131-1",
         "next": "Q132",
-        "aternative": "Q131-2",
+        "alternative": "Q131-2",
         "answerType": 1,
         "answer": "2",
         "sections": [
@@ -493,7 +493,7 @@
             "state": 0,
             "values": {
               "Professor#1": "$CEIdle|$POS0|Now that we have looked at some basic concepts in the previous levels, we can now begin to apply our knowledge of statistics at a higher level.",
-              "Eliza#1": "$CEIDLE|POS1|I am looking forward to it.",
+              "Eliza#1": "$CEIDLE|$POS1|I am looking forward to it.",
               "Professor#2": "We will now be using data on the percentage yearly growth of GDP per capita for 184 countries.",
               "Professor#3": "And you may be wondering how the growth of GDP per capita might be related to poverty. That is a good question, one which I would like you to have a go at:",
               "Eliza#2": "Hmmm, how might growth of gdp per capita be related to poverty?"
