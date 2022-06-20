@@ -2,39 +2,85 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Security.Cryptography.X509Certificates;
 
 using Google.Apis.Services;
 using Google.Apis.Auth.OAuth2;
 using Google.Apis.Sheets.v4;
 using Google.Apis.Sheets.v4.Data;
 
-
 using UnityEngine;
+using UnityEngine.Networking;
 
 using Newtonsoft.Json;
 
 class SheetReader
 {
+    static public String serviceEmail = "statistics-project@statistics-project-345715.iam.gserviceaccount.com";
     static public String spreadsheetId = "1_IZo5MzTXkgZSyTK8tM9iIsWnkhxjMQYCci60fCArdY";
     static public String jsonPath = "/PlayerData/statistics-project-345715-8b6c8278d652.json";
     static public String sheetRange = "Player Data";
 
     static private SheetsService service;
 
+<<<<<<< Updated upstream
     public SheetReader()
     {
+=======
+    public Boolean serviceLoaded = false;
+
+    public SheetReader(String email, String id, String path, String range)
+    {
+        GoogleAuth(email, id, path, range);
+
+>>>>>>> Stashed changes
         String fullJsonPath = Application.streamingAssetsPath + jsonPath;
 
-        Stream jsonCreds = (Stream)File.Open(fullJsonPath, FileMode.Open);
+        //Stream jsonCreds = (Stream)File.Open(fullJsonPath, FileMode.Open);
+        DataManager.instance.StartCoroutine(GetRequest(fullJsonPath));
+    }
 
-        ServiceAccountCredential credential = ServiceAccountCredential.FromServiceAccountData(jsonCreds);
+    public IEnumerator GetRequest(String fullJsonPath)
+    {
+        UnityWebRequest reader = UnityWebRequest.Get(fullJsonPath);
+        yield return reader.SendWebRequest();
+        //byte[] data = reader.downloadHandler.data;
+
+        if (reader.isNetworkError || reader.isHttpError)
+        {
+            Debug.Log(reader.error);
+        }
+
+        String path = Application.streamingAssetsPath + "/PlayerData/certs.json";
+        //Stream creds = new MemoryStream(data);
+        //ServiceAccountCredential credential = ServiceAccountCredential.FromServiceAccountData(creds);
+        var certificate = new X509Certificate2(reader.downloadHandler.text, "notasecret", X509KeyStorageFlags.Exportable);
+
+        ServiceAccountCredential credential = new ServiceAccountCredential(
+            new ServiceAccountCredential.Initializer(serviceEmail)
+            {
+                Scopes = new[] { SheetsService.Scope.Spreadsheets }
+            }.FromCertificate(certificate));
 
         service = new SheetsService(new BaseClientService.Initializer()
         {
             HttpClientInitializer = credential,
         });
+
+        serviceLoaded = true;
     }
 
+<<<<<<< Updated upstream
+=======
+    public void GoogleAuth(String email, String id, String path, String range)
+    {
+        serviceEmail = email;
+        spreadsheetId = id;
+        jsonPath = path;
+        sheetRange = range;
+    }
+
+>>>>>>> Stashed changes
     public IList<IList<object>> getSheetRange(String cells)
     {
         SpreadsheetsResource.ValuesResource.GetRequest request = service.Spreadsheets.Values.Get(spreadsheetId, sheetRange + cells);

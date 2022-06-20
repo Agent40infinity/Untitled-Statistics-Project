@@ -151,7 +151,7 @@ public class DialogueController : MonoBehaviour
         {
             case QuestionState.ResponseCorrect: case QuestionState.ResponseIncorrect:
 
-                DataManager.playerData.questions.Add(currentQuestion.name, wasCorrect);
+                DataManager.playerData.questions[currentQuestion.name] = wasCorrect;
                 DataManager.instance.questionState = TrackState.Complete;
                 break;
         }

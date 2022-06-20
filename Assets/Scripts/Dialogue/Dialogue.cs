@@ -55,6 +55,9 @@ public class Dialogue : MonoBehaviour
                         intervalIndex = 1;
                         dialogueState = DialogueState.Fast;
                         break;
+                    case DialogueState.Fast:
+                        dialogueState = DialogueState.Instant;
+                        break;
                 }
             }
             else
@@ -72,6 +75,13 @@ public class Dialogue : MonoBehaviour
         dialogueState = DialogueState.Normal;
     }
 
+    public void DisplayModifiers()
+    {
+        DisplaySprites();
+        DisplayEffects();
+        ActiveSound();
+    }
+
     public IEnumerator ClearDialogue()
     {
         dialogue = null;
@@ -82,23 +92,6 @@ public class Dialogue : MonoBehaviour
         yield return null;
     }
 
-    public IEnumerator DialogueDelay()
-    {
-        dialoguePaused = true;
-        yield return new WaitForSeconds(dialogue.delay[index]);
-        dialoguePaused = false;
-    }
-
-    public void UpdateText()
-    {
-        dialogueText.text = display;
-    }
-
-    public void DisplayName(string name)
-    {
-        characterText.text = name;
-    }
-
     public IEnumerator DisplayText(string sentence)
     {
         for (int i = 0; i <= sentence.Length; i++)
@@ -106,8 +99,10 @@ public class Dialogue : MonoBehaviour
             display = sentence.Substring(0, i);
             UpdateText();
             yield return new WaitForSeconds(interval[intervalIndex]);
-            
         }
+
+        display = sentence;
+        UpdateText();
 
         yield return StartCoroutine(DialogueDelay());
         yield return StartCoroutine(FeedbackCheck());
@@ -117,11 +112,21 @@ public class Dialogue : MonoBehaviour
         dialogueState = DialogueState.Idle;
     }
 
-    public void DisplayModifiers()
+    public void DisplayName(string name)
     {
-        DisplaySprites();
-        DisplayEffects();
-        ActiveSound();
+        characterText.text = name;
+    }
+
+    public void UpdateText()
+    {
+        dialogueText.text = display;
+    }
+
+    public IEnumerator DialogueDelay()
+    {
+        dialoguePaused = true;
+        yield return new WaitForSeconds(dialogue.delay[index] + 0.2f);
+        dialoguePaused = false;
     }
 
     public void DisplaySprites()
@@ -214,5 +219,6 @@ public enum DialogueState
     Load,
     Idle,
     Normal,
-    Fast
+    Fast,
+    Instant,
 }
