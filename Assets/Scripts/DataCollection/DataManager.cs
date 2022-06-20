@@ -2,19 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
-<<<<<<< Updated upstream
-=======
 using System.IO;
 using UnityEngine.Networking;
 
 using Newtonsoft.Json;
->>>>>>> Stashed changes
 
 public class DataManager : MonoBehaviour
 {
     public static DataManager instance;
     public static PlayerData playerData;
-    private List<string> csv;
+
+    private SheetReader sheetReader;
 
     [Header("Data Collection")]
     public string serviceEmail = "statistics-project@statistics-project-345715.iam.gserviceaccount.com";
@@ -31,12 +29,8 @@ public class DataManager : MonoBehaviour
     {
         instance = this;
         playerData = new PlayerData();
-<<<<<<< Updated upstream
-        GoogleAuth();
-=======
         sheetReader = new SheetReader(serviceEmail ,spreadsheetId, jsonPath, sheetRange);
         
->>>>>>> Stashed changes
         StartCoroutine(playerData.GameTimer());
         StartCoroutine(LoadDialogueFile());
     }
@@ -49,13 +43,6 @@ public class DataManager : MonoBehaviour
         }
     }
 
-    public void GoogleAuth()
-    {
-        SheetReader.spreadsheetId = spreadsheetId;
-        SheetReader.jsonPath = jsonPath;
-        SheetReader.sheetRange = sheetRange;
-    }
-
     public void CallQuestionTimer(string question)
     {
         playerData.timeSpent[question] = 0;
@@ -64,9 +51,6 @@ public class DataManager : MonoBehaviour
         StartCoroutine(playerData.QuestionTimer(question));
     }
 
-<<<<<<< Updated upstream
-    public void SaveData()
-=======
     public IEnumerator LoadDialogueFile()
     {
         string path = Application.streamingAssetsPath + DialogueLoading.fileType["Default"];
@@ -111,7 +95,6 @@ public class DataManager : MonoBehaviour
     }
 
     public bool ContainsMeta(string s)
->>>>>>> Stashed changes
     {
         return s.Contains(".meta");
     }
@@ -145,17 +128,18 @@ public class DataManager : MonoBehaviour
         RowList rowList = new RowList();
         Row row = new Row();
 
-        row.cellData = new List<string>("ID,Total Time,Completed?,Feedback".Split(',').ToList());
+        row.cellData = new List<string>()
+        {
+            { "ID" },
+            { "Total Time" },
+            { "Completed?" },
+            { "Feedback" },
+        };
 
         foreach (var question in questions)
         {
-<<<<<<< Updated upstream
-            string node = ",Question " + question.Key + ",Required Help on " + question.Key + "?,Time Spent on " + question.Key;
-            row.cellData.Concat(node.Split(',').ToList());
-=======
             string node = "Question " + question + ",Time Spent on " + question + ",Required Help on " + question + "?";
             row.cellData.AddRange(node.Split(',').ToList());
->>>>>>> Stashed changes
         }
 
         rowList.rows.Add(row);
@@ -202,13 +186,8 @@ public class DataManager : MonoBehaviour
         
         foreach (var question in playerData.questions)
         {
-<<<<<<< Updated upstream
-            string questions = playerData.questions[question.Key] + "," + playerData.requiredHelp[question.Key] + "," + playerData.timeSpent[question.Key];
-            row.cellData.Concat(questions.Split(',').ToList());
-=======
             string questions = playerData.questions[question.Key] + "," + playerData.timeSpent[question.Key] + "," + playerData.requiredHelp[question.Key];
             row.cellData.AddRange(questions.Split(',').ToList());
->>>>>>> Stashed changes
         }
 
         rowList.rows.Add(row);
@@ -216,17 +195,6 @@ public class DataManager : MonoBehaviour
         return rowList;
     }
 
-<<<<<<< Updated upstream
-    public IEnumerator RetrieveAndSendData()
-    {
-        SheetReader sheetReader = new SheetReader();
-        yield return sheetReader.updateSheetRange(CompileHeaderData(), "1:1");
-
-        yield return sheetReader.AppendSheetRange(GetPlayerData());
-    }
-
-=======
->>>>>>> Stashed changes
     public void OnApplicationQuit()
     {
         SaveData();

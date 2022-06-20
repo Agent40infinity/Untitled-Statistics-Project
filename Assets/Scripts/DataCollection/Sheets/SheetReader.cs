@@ -14,7 +14,7 @@ using UnityEngine.Networking;
 
 using Newtonsoft.Json;
 
-class SheetReader
+public class SheetReader
 {
     static public String serviceEmail = "statistics-project@statistics-project-345715.iam.gserviceaccount.com";
     static public String spreadsheetId = "1_IZo5MzTXkgZSyTK8tM9iIsWnkhxjMQYCci60fCArdY";
@@ -23,17 +23,12 @@ class SheetReader
 
     static private SheetsService service;
 
-<<<<<<< Updated upstream
-    public SheetReader()
-    {
-=======
     public Boolean serviceLoaded = false;
 
     public SheetReader(String email, String id, String path, String range)
     {
         GoogleAuth(email, id, path, range);
 
->>>>>>> Stashed changes
         String fullJsonPath = Application.streamingAssetsPath + jsonPath;
 
         //Stream jsonCreds = (Stream)File.Open(fullJsonPath, FileMode.Open);
@@ -70,8 +65,6 @@ class SheetReader
         serviceLoaded = true;
     }
 
-<<<<<<< Updated upstream
-=======
     public void GoogleAuth(String email, String id, String path, String range)
     {
         serviceEmail = email;
@@ -80,7 +73,6 @@ class SheetReader
         sheetRange = range;
     }
 
->>>>>>> Stashed changes
     public IList<IList<object>> getSheetRange(String cells)
     {
         SpreadsheetsResource.ValuesResource.GetRequest request = service.Spreadsheets.Values.Get(spreadsheetId, sheetRange + cells);
@@ -97,6 +89,17 @@ class SheetReader
             Debug.Log("No data found.");
             return null;
         }
+    }
+
+    public IEnumerator createNewSheet(RowList valueRange)
+    {
+        Spreadsheet requestBody = new Spreadsheet();
+
+        SpreadsheetsResource.CreateRequest request = service.Spreadsheets.Create(requestBody);
+        var response = request.Execute();
+        Debug.Log(response);
+
+        yield return null;
     }
 
     public IEnumerator updateSheetRange(RowList dataToWrite, string range)
@@ -158,6 +161,18 @@ class SheetReader
 public class Row
 {
     public List<string> cellData = new List<string>();
+
+    public string Debug()
+    {
+        string temp = "";
+
+        for (int i = 0; i < cellData.Count; i++)
+        {
+            temp += cellData[i] + ", ";
+        }
+
+        return temp;
+    }
 }
 
 [Serializable]
