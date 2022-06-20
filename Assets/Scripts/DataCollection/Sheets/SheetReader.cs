@@ -45,27 +45,25 @@ public class SheetReader
             Debug.Log(reader.error);
         }
 
+        byte[] data = reader.downloadHandler.data;
+
         ServiceAccountCredential credential;
 
-        if (Application.isEditor)
-        {
-            byte[] data = reader.downloadHandler.data;
-
+        //if (Application.isEditor)
+        //{
             Stream creds = new MemoryStream(data);
             credential = ServiceAccountCredential.FromServiceAccountData(creds);
-        }
+        /*}
         else
         {
-            String path = Application.streamingAssetsPath + "/PlayerData/certs.json";
-
-            var certificate = new X509Certificate2(reader.url, "notasecret", X509KeyStorageFlags.Exportable);
+            var certificate = new X509Certificate2(data, String.Empty);
 
              credential = new ServiceAccountCredential(
                  new ServiceAccountCredential.Initializer(serviceEmail)
                  {
                      Scopes = new[] { SheetsService.Scope.Spreadsheets }
                  }.FromCertificate(certificate));
-        }
+        }*/
 
         service = new SheetsService(new BaseClientService.Initializer()
         {

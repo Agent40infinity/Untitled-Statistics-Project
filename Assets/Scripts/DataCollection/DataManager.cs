@@ -63,12 +63,12 @@ public class DataManager : MonoBehaviour
         {
             string data = "";
 
-            if (Application.isEditor)
-            {
+            //if (Application.isEditor)
+            //{
                 StreamReader reader = new StreamReader(file);
                 data = reader.ReadToEnd();
-            }
-            else
+            //}
+           /* else
             {
                 UnityWebRequest www = UnityWebRequest.Get(path);
                 yield return www.SendWebRequest();
@@ -79,7 +79,7 @@ public class DataManager : MonoBehaviour
                 }
 
                 data = www.downloadHandler.text;
-            }
+            }*/
 
             Level level = JsonConvert.DeserializeObject<Level>(data);
             questionsToAdd.AddRange(RequestQuestions(level));
