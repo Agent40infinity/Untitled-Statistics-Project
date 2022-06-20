@@ -14,9 +14,9 @@
                         "state": 0,
                         "values": {
                             "Narrator#1": "https://teaching.science.mq.edu.au/probtool/ use this probtool to help answer questions",
-                            "Professor#1": "So Rebecca has your perspective on education changed because of what you have seen.",
-                            "Rebecca#1": "Yeah of course I feel less inclined to do plumbing now.",
-                            "Rebecca#2": "I guess if I’m going to university, I want to know what atar is the average and the likelihood, so I would like to know where I rank in the schools around my area for visual arts.",
+                            "Professor#1": "So Samantha has your perspective on education changed because of what you have seen.",
+                            "Samantha#1": "Yeah of course I feel less inclined to do plumbing now.",
+                            "Samantha#2": "I guess if I’m going to university, I want to know what atar is the average and the likelihood, so I would like to know where I rank in the schools around my area for visual arts.",
                             "Professor#2": "Okay here is the table of the people you attend school with. Now please explain what the standard deviation is?"
                         }
                     },
@@ -59,7 +59,7 @@
                         "name": "Dialogue",
                         "state": 0,
                         "values": {
-                            "Rebecca#1": "Well I got an average of 85 so far in Visual arts, so where would I fall on a normal distribution of scores",
+                            "Samantha#1": "Well I got an average of 85 so far in Visual arts, so where would I fall on a normal distribution of scores",
                             "Professor#1": "Take a look at the bell curve and tell me how many standard deviations you are from the mean?"
                         }
                     },
@@ -144,8 +144,8 @@
                         "name": "Dialogue",
                         "state": 0,
                         "values": {
-                            "Rebecca#1": "How accurate can the standard deviation actually be though?",
-                            "Rebecca#2": "Like the whole thing seems to be a good way to calculate probability based on standard deviation and mean in a population but what is the accuracy?",
+                            "Samantha#1": "How accurate can the standard deviation actually be though?",
+                            "Samantha#2": "Like the whole thing seems to be a good way to calculate probability based on standard deviation and mean in a population but what is the accuracy?",
                             "Professor#1": "The accuracy is in the standard error.",
                             "Professor#2": "Standard error gives the accuracy of a sample mean by measuring the sample-to-sample variability of the sample means",
                             "Professor#3": "Try to find the standard error using the formula:"
@@ -275,7 +275,7 @@
                         "name": "Dialogue",
                         "state": 0,
                         "values": {
-                            "Professor#1": "So can you now calculate the confidence interval for me please Rebecca?"
+                            "Professor#1": "So can you now calculate the confidence interval for me please Samantha?"
                         }
                     },
 
@@ -324,7 +324,7 @@
                         "name": "Questions",
                         "state": 1,
                         "values": {
-                            "1": "It tells you more than just the possible range around the esRebeccaate",
+                            "1": "It tells you more than just the possible range around the esSamanthaate",
                             "2": "Wrong answer or something"
                         }
                     },
@@ -446,8 +446,8 @@
                         "name": "Dialogue",
                         "state": 0,
                         "values": {
-                            "Professor#1": "Eliza I hope you got a better understanding of poverty from our analysis.",
-                            "Eliza#1": "Absolutely! I never knew poverty could be defined so explicitly so I am glad that we were able to look at that.",
+                            "Professor#1": "Elijah I hope you got a better understanding of poverty from our analysis.",
+                            "Elijah#1": "Absolutely! I never knew poverty could be defined so explicitly so I am glad that we were able to look at that.",
                             "Professor#2": "Now we will move on to other things but still keep the central theme of poverty. Read the following scenario:",
                             "Narrator#1": "The Bekele family lives in Ethiopia.",
                             "Narrator#2": "Yonas is 31 years old and works in a garment factory.",
