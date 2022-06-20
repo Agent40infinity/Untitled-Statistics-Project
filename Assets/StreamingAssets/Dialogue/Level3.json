@@ -558,7 +558,7 @@
             "name": "Correct",
             "state": 2,
             "values": {
-              "Professor#1": "Correct!, T distribution, also known as the student’s t distribution. ",
+              "Professor#1": "Correct!, T distribution, also known as the student's t distribution. ",
               "Professor#2": "An interesting property of the t distribution is that as the sample size gets larger the t distribution will tend to the standard normal distribution.",
               "Professor#3": "(which is the normal distribution with mean 0 and variance 1)"
             }
@@ -567,7 +567,7 @@
             "name": "Incorrect",
             "state": 3,
             "values": {
-              "Professor#1": "Correct!, T distribution, also known as the student’s t distribution. ",
+              "Professor#1": "Correct!, T distribution, also known as the student's t distribution. ",
               "Professor#2": "An interesting property of the t distribution is that as the sample size gets larger the t distribution will tend to the standard normal distribution.",
               "Professor#3": "(which is the normal distribution with mean 0 and variance 1)"
             }
@@ -632,7 +632,7 @@
             "name": "Dialogue",
             "state": 0,
             "values": {
-              "Eliza#1": "What would we say if let’s say, we do have enough evidence to accept the alternative?",
+              "Eliza#1": "What would we say if let's say, we do have enough evidence to accept the alternative?",
               "Professor#1": "Good question. We would say that there is insufficient evidence and reject the null hypothesis H0.",
               "Professor#2": "Now before we move on we need to know about Type 1 and Type 2 errors. What is the definition of a Type 1 error in relation to the hypothesis test?"
             }
@@ -813,7 +813,7 @@
             "state": 0,
             "values": {
               "Professor#1": "Now that we have the test statistic, we can compute the p-value, but there is one problem.",
-              "Professor#2": "If we use the standard tables for the t-distribution, they don’t go up to 183, so what should we do?"
+              "Professor#2": "If we use the standard tables for the t-distribution, they don't go up to 183, so what should we do?"
             }
           },
           {
@@ -908,7 +908,7 @@
             "name": "Correct",
             "state": 2,
             "values": {
-              "Professor#1": "We retain the null hypothesis as the p-value exceeds the significance level of 5%.",
+              "Professor#1": "Correct!, We retain the null hypothesis as the p-value exceeds the significance level of 5%.",
               "Professor#2": "So there is insufficient evidence to conclude that the true value for yearly gdp per capita is different from 3%."
             }
           },
@@ -916,7 +916,7 @@
             "name": "Incorrect",
             "state": 3,
             "values": {
-              "Professor#1": "We retain the null hypothesis as the p-value exceeds the significance level of 5%.",
+              "Professor#1": "Incorrect, We retain the null hypothesis as the p-value exceeds the significance level of 5%.",
               "Professor#2": "So there is insufficient evidence to conclude that the true value for yearly gdp per capita is different from 3%."
             }
           }
@@ -925,69 +925,60 @@
     },
 
     "Health": {
-      "Q311": {
-        "name": "Q311",
-        "next": "Q312",
+      "Q331": {
+        "name": "Q331",
+        "next": "Q332",
         "alternative": "",
         "answerType": 1,
-        "answer": "1",
+        "answer": "2",
         "sections": [
           {
             "name": "Dialogue",
             "state": 0,
             "values": {
-              "Rebecca#1": "Oh christ! Where am I? What's going on? This room is so white it's actually hurting my eyes.",
-              "Professor#1": "Welcome to learning about the Health and Wellbeing UNSDG goal.",
-              "Professor#2": "You are currently playing through the eyes of Rebecca Sutherland.",
-              "Professor#3": "She is currently a statistician who works closely with the United Nations…",
-              "Professor#4": "…to develop solutions to the specific Sustainable Development United Nations Goal of Health.",
-              "Rebecca#2": "Right….. Whatever that means.",
-              "Professor#5": "It MEANS, you are currently in possession of a memoram of someone quite knowledgeable and…",
-              "Professor#6": "…should be able to assist you through most of the questions and statistics I will present to you.",
-              "Professor#7": "Now if you don't mind, I-",
-              "Narrator#1": "*Within Rebecca's body, Player runs down the hallway and turns into the first room they see, and shuts the door behind them*",
-              "Rebecca#3": "Hah. Jokes on you. If I am an employee of the UN, that means I have access to all these doors and you don't.",
-              "Rebecca#4": "Before that old sod tries to get through that door and ask me stupid questions again, let me think of a way to bust myself-",
-              "Professor#8": "The fastest way you can “bust” yourself out of here, is to cooperate with me, you little rascal.",
-              "Narrator#2": "*Player's turns around and see the Professor standing right in front of them, with the door still locked behind them*",
-              "Rebecca#5": "WHAT! How did you manage to sneak behind me with…",
-              "Professor#9": "Let me remind you that you are currently within a memoram.",
-              "Professor#10": "Which is a virtual reality where we allow certain users to play through the memory of another person.",
-              "Professor#11": "So you can't really just get away from me, as I am part of the system itself.",
-              "Professor#12": "Were you really that naive to think that you can scram away when you are still within our system? ",
-              "Professor#13": "We brought you here for a reason, and we won't be letting you go until you learn what you have to learn.",
-              "Rebecca#6": "Oh man. You are so irritating.",
-              "Professor#14": "The feelings are mutual on this one.",
-              "Professor#15": "Now! Onto our first question. What do you think a key indicator of good health in a country is?"
+              "Professor#1": "$CEIdle|$POS0|Hi Rebecca! How are you doing recently?",
+              "Rebecca#1": "$CEIdle|$POS1|Sigh, I've been kinda busy for the past week. Since this is almost the end of this semester.",
+              "Rebecca#2": "I've got four hurdle assignments due within two weeks. I couldn't get much sleep because of the stress.",
+              "Professor#2": "You should probably take a break. Working under stress is not good for your mental health",
+              "Professor#3": "Try to take some stress level tests online to see if you need to talk to a psychologist.",
+              "Rebecca#3": "I tried a few tests, and I don't feel like they are relevant.",
+              "Professor#4": "I had the same doubt last year. Check out the data below from my previous students.",
+              "Professor#5": "Two randomly selected stress level tests were selected from different websites.",
+              "Professor#6": "The data represents the stress level of the subject (out of 100).",
+              "Professor#7": "Students who got over 80 were recommended to seek help from their psychologists.",
+              "Professor#8": "To see if the tests are equally representing students' stress levels, which hypothesis test would be appropriate?",
+              "Professor#9": "(Hint: Subjects are independent. Each student does their own tests.)",
+              "Professor#10": "(Hint: Each of the paired measurements is obtained from the same subject. Each student takes both tests.)"
             }
           },
           {
             "name": "Questions",
             "state": 1,
             "values": {
-              "1": "Although there are many indicators at our disposal, Life expectancy is very reliable.",
-              "2": "No"
+              "1": "Two-sample t-test ",
+              "2": "Paired t-test",
+              "3": "One sample t-test"
             }
           },
           {
             "name": "Correct",
             "state": 2,
             "values": {
-              "Rebecca#1": "According to whatever is inside her head, life expectancy is the most reliable indicator for that?"
+              "Professor#1": "Correct! Paired t-test is appropriate hypothesis test."
             }
           },
           {
             "name": "Incorrect",
             "state": 3,
             "values": {
-              "Professor#1": "That's so wrong!"
+              "Professor#1": "Incorrect! Paired t-test is appropriate hypothesis test."
             }
           }
         ]
       },
-      "Q312": {
-        "name": "Q312",
-        "next": "Q313",
+      "Q332": {
+        "name": "Q332",
+        "next": "Q333",
         "alternative": "",
         "answerType": 1,
         "answer": "4",
@@ -996,43 +987,42 @@
             "name": "Dialogue",
             "state": 0,
             "values": {
-              "Professor#1": "According to whatever is inside her head, life expectancy is the most reliable indicator for that?",
-              "Narrator#1": "https://www.aihw.gov.au/reports/australias-health/australias-health-2020-data-insights/contents/summary ",
-              "Professor#2": "Then tell me, what do you think plays a big role in living a long life in Australia?"
+              "Professor#1": "Before jumping into the analysis, we should plot the data. The figure below shows a histogram and summary statistics for the score differences.",
+              "Graph#1":"$PICQ332|",
+              "Professor#2": "From the statistics, what is the average result difference?",
+              "Graph#2":"$PICQ332|"
             }
           },
           {
             "name": "Questions",
             "state": 1,
             "values": {
-              "1": "Quality of life of individuals",
-              "2": "Health care planning",
-              "3": "Demand and need for health and welfare services and health system costs",
-              "4": "All of the above"
+              "1": "5.0436467",
+              "2": "7.002083",
+              "3": "16",
+              "4": "1.3125"
             }
           },
           {
             "name": "Correct",
             "state": 2,
             "values": {
-              "Rebecca#1": "I would've much preferred the answers to not be as long as they are but what can I expect from a terrible system.",
-              "Professor#1": "Ah yes. Save the smart-mouthing for answering my questions, yeah?",
-              "Rebecca#2": "Fine. But answer me this, does the wealth of an individual necessarily determine how long they will live for?"
+              "Professor#1": "Correct! The answer was 1.3125"
             }
           },
           {
             "name": "Incorrect",
             "state": 3,
             "values": {
-              "Professor#1": "That's wrong."
+              "Professor#1": "Incorrect! The answer was 1.3125"
             }
           }
         ]
       },
       
-      "Q313": {
-        "name": "Q313",
-        "next": "Q314",
+      "Q333": {
+        "name": "Q333",
+        "next": "Q334",
         "alternative": "",
         "answerType": 1,
         "answer": "1",
@@ -1041,97 +1031,43 @@
             "name": "Dialogue",
             "state": 0,
             "values": {
-              "Professor#1": "Well, let me answer that question with another question.",
-              "Professor#2": "I have already provided you with the necessary resource, the Australian health reports,...",
-              "Professor#3": "…observe the correlation between socioeconomics and health and tell me what you think?",
-              "Professor#4": "And the data are recorded for those between the ages of 65-69, why do you think that it?"
+              "Professor#1": "That's right, however, is the 1.3125 difference close enough to zero for us to decide that the two tests are equally representing students' stress levels?",
+              "Professor#2": "Let's find out!",
+              "Professor#3": "Will you be able to get the standard error for the result difference? (Keep 2 dp.)",
+              "Professor#4": "Using this forumla work out the standard error difference.",
+              "Graph#1":"$PICQ333|"
             }
           },
           {
             "name": "Questions",
             "state": 1,
             "values": {
-              "1": "Those living in higher socioeconomic areas on average live longer lives.",
-              "2": "Those living in higher socioeconomic areas on average live shorter lives."
+              "1": "1.75",
+              "2": "3.33",
+              "3": "4.45",
+              "4": "0"
             }
           },
           {
             "name": "Correct",
             "state": 2,
             "values": {
-              "Rebecca#1": "To be fair, that's pretty self-explanatory.",
-              "Rebecca#2": "People with a higher socioeconomic background have more access to healthcare facilities and systems than others."
+              "Professor#1": "Correct! The answer was 1.75"
             }
           },
           {
             "name": "Incorrect",
             "state": 3,
             "values": {
-              "Professor#1": "Wrong."
+              "Professor#1": "Incorrect! The answer was 1.75"
             }
           }
         ]
       },
 
-      "Q314": {
-        "name": "Q314",
-        "next": "Q315",
-        "alternative": "",
-        "answerType": 1,
-        "answer": "",
-        "sections": [
-          {
-            "name": "Dialogue",
-            "state": 0,
-            "values": {
-              "Rebecca#1": "But let me quickly ask, and stop changing my questions into your questions.",
-              "Rebecca#2": "What factors do you think cause the impact of such a difference in life expectancy for socio economic groups?",
-              "Professor#1": "Alright. For this I will partially answer it for you.",
-              "Professor#2": "People of different incomes imply that they have different lifestyles, which means they all have different issues.",
-              "Professor#3": "For example, allow me to present you the data sets on the link I gave you.",
-              "Professor#4": "Now tell me the total disease burden for selected diseases, by socioeconomic area, 2015?",
-              "Rebecca#3": "Looks like coronary disease is the highest impacting disease on Australians.",
-              "Professor#5": "Exactly. Therefore as you can see, issues around health and wealth…",
-              "Professor#6": "…play a big part in not just life expectancy but also the quality of life in terms of health.",
-              "Rebecca#4": "Okay I can understand that. But another quick question..",
-              "Professor#7": "You are quite curious now, aren't you?",
-              "Rebecca#5": "Let me finish my sentence, you old sod.",
-              "Narrator#1": "*Player rolls their eyes*",
-              "Rebecca#6": "I wonder if being educated is a good way to prevent people from experiencing health issues that could have been easily avoided.",
-              "Professor#8": "That is an extremely good question and I'm so glad you mentioned that,…",
-              "Professor#9": "because I think it's important for you to tell me which age group,...",
-              "Professor#10": "…education level and gender are most vulnerable to cardiovascular disease?",
-              "Professor#11": "I will assist you by giving you these graphs as references."
-            }
-          },
-          {
-            "name": "Questions",
-            "state": 1,
-            "values": {
-              "1": "Men aged 30-48 years with no post secondary and year 11",
-              "2": "Men aged 65-84 years with no post secondary and year 12"
-            }
-          },
-          {
-            "name": "Correct",
-            "state": 2,
-            "values": {
-              "Professor#1": "Nicely done."
-            }
-          },
-          {
-            "name": "Incorrect",
-            "state": 3,
-            "values": {
-              "Professor#1": "Well that's wrong."
-            }
-          }
-        ]
-      },
-
-      "Q315": {
-        "name": "Q315",
-        "next": "Q316",
+      "Q334": {
+        "name": "Q334",
+        "next": "Q335",
         "alternative": "",
         "answerType": 1,
         "answer": "1",
@@ -1140,54 +1076,41 @@
             "name": "Dialogue",
             "state": 0,
             "values": {
-              "Rebecca#1": "Apparently this person that I am currently controlling is supposed to ask this question at some point.",
-              "Rebecca#2": "And since you are so helpful right now. Let me just relay that question for her right now.",
-              "Rebecca#3": "There was apparently a  project I did a long time ago but I still don't know what I should have done.",
-              "Rebecca#4": "I had to choose from two datasets, and I did not know which one to choose.",
-              "Professor#1": "Okay. I have an idea what you might be talking about.",
-              "Professor#2": "But describe to me about these datasets that Rebecca apparently knows of.",
-              "Rebecca#5": "Sure, I guess.",
-              "Rebecca#6": "The first dataset was collected from anonymous questionnaires and…",
-              "Rebecca#7": "…we surveyed people of many different ages, addresses, and backgrounds.",
-              "Rebecca#8": "While the second dataset was collected from a specific group of people…",
-              "Rebecca#9": "…that were pretty much the same age and background with very little variation.",
-              "Professor#10": "Interesting. And can you tell me about the aim of the project that you were doing?",
-              "Rebecca#10": "We were testing the hypothesis that changes in temperature are related to changes in height throughout the day.",
-              "Professor#11": "That's so interesting! And what do you think we should do here?",
-              "Rebecca#11": "Am I not the one asking you the question?!",
-              "Professor#12": "Yes, and I am asking you what's the answer?"
+              "Rebecca#1": "In the formula, n is the number of students. The standard deviation of the differences is sd.",
+              "Professor#1": "Awesome! For our test statistic, can you work out the t value from here?",
+              "Professor#2": "Use the forumla to work out the t value"
             }
           },
           {
             "name": "Questions",
             "state": 1,
             "values": {
-              "1": "The first dataset",
-              "2": "Second dataset"
+              "1": "0.750",
+              "2": "1.000",
+              "3": "0.500",
+              "4": "0.250"
             }
           },
           {
             "name": "Correct",
             "state": 2,
             "values": {
-              "Rebecca#1": "Thank you so much Professor. You are so absolutely helpful in these situations.",
-              "Rebecca#2": "I could have never guessed you would answer my question with another question again.",
-              "Professor#1": "Exactly. Very good Rebecca. You are quickly learning. I am so glad to be of help."
+              "Professor#1": "Correct! The answer was 0.750"
             }
           },
           {
             "name": "Incorrect",
             "state": 3,
             "values": {
-              "Professor#1": "Wrong."
+              "Professor#1": "Correct! The answer was 0.750"
             }
           }
         ]
       },
 
-      "Q316": {
-        "name": "Q316",
-        "next": "Q317",
+      "Q335": {
+        "name": "Q335",
+        "next": "Q336",
         "alternative": "",
         "answerType": 1,
         "answer": "1",
@@ -1196,33 +1119,73 @@
             "name": "Dialogue",
             "state": 0,
             "values": {
-              "Rebecca#1": "Well, all of these questions got me thinking. And by me, I mean Rebecca.",
-              "Rebecca#2": "Because why not, she seems like a person who has a lot of questions on. her. MIND.",
-              "Rebecca#3": "If we consider a hypothetical situation where the ages of all subjects in a dataset are the same, where would we use that dataset?",
-              "Professor#1": "Well, that's a pretty good question.",
-              "Professor#2": "I will give you a bunch of answers and you can choose for yourself which one is the right one?"
+              "Professor#1": "Based on the sample size what would be the degrees of freedom to this paired t-test?"
             }
           },
           {
             "name": "Questions",
             "state": 1,
             "values": {
-              "1": "A data set relevant to that age would be required",
-              "2": "A data set relevant to that species should be required"
+              "1": "df=n−1=16−1=15",
+              "2": "n/a",
+              "3": "n/a",
+              "4": "n/a"
             }
           },
           {
             "name": "Correct",
             "state": 2,
             "values": {
-              "Professor#1": "That's correct."
+              "Professor#1": "Correct! The answer was df=n−1=16−1=15."
             }
           },
           {
             "name": "Incorrect",
             "state": 3,
             "values": {
-              "Professor#1": "That's incorrect"
+              "Professor#1": "Incorrect! The answer was df=n−1=16−1=15."
+            }
+          }
+        ]
+      },
+
+      "Q336": {
+        "name": "Q336",
+        "next": "Q337",
+        "alternative": "",
+        "answerType": 1,
+        "answer": "1",
+        "sections": [
+          {
+            "name": "Dialogue",
+            "state": 0,
+            "values": {
+              "Professor#1": "For the degrees of freedom as 21 and α=0.05. What would be the t value from the t table?",
+              "Professor#2": "Hint: t-table can be found from http://www.ttable.org/"
+            }
+          },
+          {
+            "name": "Questions",
+            "state": 1,
+            "values": {
+              "1": "t = 2.131",
+              "2": "t = 1.131",
+              "3": "t = 2.313",
+              "4": "t = 1.313"
+            }
+          },
+          {
+            "name": "Correct",
+            "state": 2,
+            "values": {
+              "Professor#1": "Correct! The answer was 2.131"
+            }
+          },
+          {
+            "name": "Incorrect",
+            "state": 3,
+            "values": {
+              "Professor#1": "Incorrect! The answer was 2.131"
             }
           }
         ]
@@ -1239,39 +1202,39 @@
             "name": "Dialogue",
             "state": 0,
             "values": {
-              "Rebecca#1": "Well. That's all her questions answered. She also has a project that she wants to talk about?",
-              "Rebecca#2": "Are you serious? What is this, am I getting sponsored for this. Jesus.",
-              "Rebecca#3": "“My project is focused on Malaria research. I'll give some information about Malaria in countries where it is found:",
-              "Rebecca#4": "Malaria is a disease transmitted by a parasite through the bites of infected mosquitos.",
-              "Rebecca#5": "Malaria is very rare in countries like Australia but is more prevalent in tropical countries in South America and Africa.",
-              "Rebecca#6": "Each year 290 million people are infected with Malaria worldwide and over 400,000 people die from this disease.",
-              "Rebecca#7": "Part of my research is based on this.",
-              "Rebecca#8": "https://www.mayoclinic.org/diseases-conditions/malaria/symptoms-causes/syc-20351184”",
-              "Professor#1": "Oh well. You are running through her memoram.",
-              "Professor#2": "You have no choice but to always go through whatever predetermined sequence that she had gone through before.",
-              "Professor#3": "Alright. Congratulations on completing your first level of this goal. Are you ready to move on to the second level?"
+              "Professor#1": "We compare the value of our statistic (0.750) to the t value. Because 0.750 < 2.131, what do we suggest?"
             }
           },
           {
             "name": "Questions",
             "state": 1,
             "values": {
-              "1": "Yes",
-              "2": "No"
+              "1": "We cannot reject our idea that the mean score difference is zero. We make a practical conclusion to consider tests as equally reflecting subjects' stress levels.",
+              "2": "We reject the hypothesis that the mean score difference is zero. We make a practical conclusion to consider tests as not equally reflecting subjects' stress levels."
             }
           },
           {
             "name": "Correct",
             "state": 2,
             "values": {
-              "Professor#1": "Let's move on."
+              "Professor#1": "Correct!",
+              "Professor#2": "We cannot reject our idea that the mean score difference is zero.",
+              "Professor#3": "We make a practical conclusion to consider tests as equally reflecting subjects' stress levels.",
+              "Professor#4": "Based on the result, I would say the stress level tests are still helpful on a certain level.",
+              "Professor#5": "Between study, part-time work, and your social life, it can be hard to find the time to take care of yourself. ",
+              "Professor#6": "You can always Cook yourself a nutritious meal, do some exercise, spend time in nature, connect with your friends and family, or seek support from university or doctors."
             }
           },
           {
             "name": "Incorrect",
             "state": 3,
             "values": {
-              "Professor#1": "Well, you can't stay anyways."
+              "Professor#1": "Incorrect!",
+              "Professor#2": "We cannot reject our idea that the mean score difference is zero.",
+              "Professor#3": "We make a practical conclusion to consider tests as equally reflecting subjects' stress levels.",
+              "Professor#4": "Based on the result, I would say the stress level tests are still helpful on a certain level.",
+              "Professor#5": "Between study, part-time work, and your social life, it can be hard to find the time to take care of yourself. ",
+              "Professor#6": "You can always Cook yourself a nutritious meal, do some exercise, spend time in nature, connect with your friends and family, or seek support from university or doctors."
             }
           }
         ]
