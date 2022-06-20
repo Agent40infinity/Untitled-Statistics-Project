@@ -1,0 +1,86 @@
+{
+  "level": null,
+  "levelData": {
+    "Poverty": {
+      "Q115": {
+        "name": "Q115",
+        "next": "end",
+        "alternative": "",
+        "answerType": 0,
+        "answer": "1",
+        "sections": [
+          {
+            "name": "Dialogue",
+            "state": 0,
+            "values": {
+              "Professor#1": "Hello students!",
+              "Professor#2": "What are students?"
+            }
+          },
+          {
+            "name": "Questions",
+            "state": 1,
+            "values": {
+              "1": "Hello students!",
+              "2": "What are students?"
+            }
+          },
+          {
+            "name": "Correct",
+            "state": 2,
+            "values": {
+              "Professor#1": "Wow you did it!",
+              "Professor#2": "Congratz!"
+            }
+          },
+          {
+            "name": "Incorrect",
+            "state": 3,
+            "values": {
+              "Professor#1": "Wow you suck!",
+              "Professor#2": "Try again!"
+            }
+          },
+        ]
+      }
+    },
+    "Health": {
+      "Q116": {
+        "name": "",
+        "next": "",
+        "alternative": "",
+        "answerType": 1,
+        "answer": "1",
+        "sections": [
+          {
+            "name": "MainDialogue",
+            "state": 0,
+            "values": {
+              "Professor#1": "Hello students!",
+              "Professor#2": "What are students?"
+            }
+          }
+        ]
+      }
+    },
+    "Education": {
+      "Q117": {
+        "name": "",
+        "next": "",
+        "alternative": "",
+        "answerType": 1,
+        "answer": "1",
+        "sections": [
+          {
+            "name": "MainDialogue",
+            "state": 0,
+            "values": {
+              "Professor#1": "Hello students!",
+              "Professor#2": "What are students?"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

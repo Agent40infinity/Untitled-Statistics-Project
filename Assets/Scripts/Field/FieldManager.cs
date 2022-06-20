@@ -27,16 +27,6 @@ public class FieldManager
     {
         set { complete.Add(value); }
     }
-
-    public static int FieldCount
-    {
-        get { return System.Enum.GetValues(typeof(FieldState)).Length; }
-    }
-
-    public static FieldState GetIndexOf(int index)
-    {
-        return (FieldState)System.Enum.GetValues(typeof(FieldState)).GetValue(index);
-    }
 }
 
 public enum FieldState

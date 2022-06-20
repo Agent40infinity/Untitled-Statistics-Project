@@ -13,7 +13,7 @@ using UnityEngine;
 
 using Newtonsoft.Json;
 
-public class SheetReader
+class SheetReader
 {
     static public String spreadsheetId = "1_IZo5MzTXkgZSyTK8tM9iIsWnkhxjMQYCci60fCArdY";
     static public String jsonPath = "/PlayerData/statistics-project-345715-8b6c8278d652.json";
@@ -21,10 +21,8 @@ public class SheetReader
 
     static private SheetsService service;
 
-    public SheetReader(String id, String path, String range)
+    public SheetReader()
     {
-        GoogleAuth(id, path, range);
-
         String fullJsonPath = Application.streamingAssetsPath + jsonPath;
 
         Stream jsonCreds = (Stream)File.Open(fullJsonPath, FileMode.Open);
@@ -35,13 +33,6 @@ public class SheetReader
         {
             HttpClientInitializer = credential,
         });
-    }
-
-    public void GoogleAuth(String id, String path, String range)
-    {
-        spreadsheetId = id;
-        jsonPath = path;
-        sheetRange = range;
     }
 
     public IList<IList<object>> getSheetRange(String cells)
@@ -60,17 +51,6 @@ public class SheetReader
             Debug.Log("No data found.");
             return null;
         }
-    }
-
-    public IEnumerator createNewSheet(RowList valueRange)
-    {
-        Spreadsheet requestBody = new Spreadsheet();
-
-        SpreadsheetsResource.CreateRequest request = service.Spreadsheets.Create(requestBody);
-        var response = request.Execute();
-        Debug.Log(response);
-
-        yield return null;
     }
 
     public IEnumerator updateSheetRange(RowList dataToWrite, string range)
@@ -132,18 +112,6 @@ public class SheetReader
 public class Row
 {
     public List<string> cellData = new List<string>();
-
-    public string Debug()
-    {
-        string temp = "";
-
-        for (int i = 0; i < cellData.Count; i++)
-        {
-            temp += cellData[i] + ", ";
-        }
-
-        return temp;
-    }
 }
 
 [Serializable]

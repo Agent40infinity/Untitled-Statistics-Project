@@ -36,7 +36,7 @@ public class PlayerCollection : MonoBehaviour
 
     public IEnumerator NextLevel()
     {
-        yield return fade.FadeOut(name);
+        yield return fade.FadeOut();
         GameManager.instance.SwapLevel();
     }
 }

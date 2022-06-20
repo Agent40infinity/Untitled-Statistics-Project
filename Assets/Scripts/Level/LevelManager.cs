@@ -52,7 +52,7 @@ public class LevelManager : MonoBehaviour
     public IEnumerator NextLevel()
     {
         queueWaiting = true;
-        yield return fade.FadeOut(name);
+        yield return fade.FadeOut();
         GameManager.instance.SwapLevel();
     }
 
@@ -71,7 +71,6 @@ public class LevelManager : MonoBehaviour
     public void LoadQuestion(Question question)
     {
         dialogueController.QuestionSetup(question);
-        dialogueController.isNext = true;
         queueWaiting = true;
     }
 }
