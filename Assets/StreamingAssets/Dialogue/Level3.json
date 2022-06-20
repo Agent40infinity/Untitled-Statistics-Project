@@ -13,13 +13,14 @@
             "name": "Dialogue",
             "state": 0,
             "values": {
-              "Tim#1": "Hey Amanda, the professor just taught me how to read a normal distribution.",
+              "Tim#1": "$CEIdle|$POS1|Hey Amanda, the professor just taught me how to read a normal distribution.",
               "Tim#2": "Using my own marks in visual arts, I could see where I sit among my peers, and that is in the top 2.5% of my area.",
               "Tim#3": "It made me think that I should stay in school and keep trying, because in the long term, I could end up being more successful going through the school system.",
-              "Amanda#1": "That's so great, I do want to keep progressing in school too, the teachers said that I shouldn't continue math's because my scores aren't high enough.",
+              "Amanda#1": "$CEIdle|$POS1|That's so great, I do want to keep progressing in school too, the teachers said that I shouldn't continue math's because my scores aren't high enough.",
               "Amanda#2": "I got a 66 on my report card and the teacher says it's not competitive enough to compete with my peers. Is the teacher the right professor?",
-              "Professor#1": "Okay I took some intelligence from their database on your area and the students you will be competing with. Now let's do a test to prove that whether your teacher was right or wrong.",
-              "Professor#2": "So the teacher claims your marks are not competitive enough, so what did the teacher say the average mark in your area was?",
+              "Professor#1": "$CEIdle|$POS0|Okay I took some intelligence from their database on your area and the students you will be competing with.",
+              "Professor#2": "Now let's do a test to prove that whether your teacher was right or wrong.",
+              "Professor#3": "So the teacher claims your marks are not competitive enough, so what did the teacher say the average mark in your area was?",
               "Amanda#3": "He claimed it was 70.",
               "Professor#4": "Okay we're going to conduct a one-sample t-Test for the population mean.",
               "Professor#5": "This will help tell us if there was or was not a significant difference between what the teacher said, and what the database is saying.",
@@ -204,31 +205,29 @@
             "name": "Questions",
             "state": 1,
             "values": {
-              "1": "",
-              "2": "",
-              "3": "",
-              "4": ""
+              "1": "Accept",
+              "2": "Reject"
             }
           },
           {
             "name": "Correct",
             "state": 2,
             "values": {
-              "Professor#1": "Correct!, The graph shows that more females have obtained a higher education than males."
+              "Professor#1": "Correct!, Since p < 0.05 we reject the null hypothesis."
             }
           },
           {
             "name": "Incorrect",
             "state": 3,
             "values": {
-              "Professor#1": "Incorrect!, The graph shows that more females have obtained a higher education than males."
+              "Professor#1": "Incorrect!, if p > 0.05 then we would accept the null."
             }
           }
         ]
 	    },
-      "Q116":{
-        "name": "Q116",
-        "next": "Q117",
+      "Q135":{
+        "name": "Q135",
+        "next": "Q136",
         "alternative": "",
         "answerType": 1,
         "answer": "2",
@@ -237,14 +236,7 @@
             "name": "Dialogue",
             "state": 0,
             "values": {
-              "Samantha#1": "Is it supposed to be reassuring to me that there are more females that have received a higher education than males? ",
-              "Samantha#2": "Look, as empowering as it is to see that statistics, it doesn't help ease my nerves around my peers, you know that right?",
-              "Professor#1": "Alright.Stop smart-mouthing me.",
-              "Professor#2": "I know just letting you directly stare at statistics is not gonna give you too much comfort, but I will ask you a couple more questions.",
-              "Professor#3": "Then you can decide for yourself how you can go about navigating your pathway towards higher education.",
-              "Professor#4": "Now, can you answer me exactly how has education changed over the years?",
-              "Samantha#3": "Okay, how am I supposed to answer that without...",
-              "Samantha#4": "Actually nevermind, you are gonna do the thing that you do again, aren't you? Alright...hit me with it."
+              "Professor#1": "So what would the conclusion be about the evidence obtained through the null hypothesis test?"
             }
           },
           {
@@ -252,7 +244,7 @@
             "state": 1,
             "values": {
               "1": "wrong a",
-              "2": "Correct",
+              "2": "The evidence suggests that there is a significant difference between the claim the teacher made about the average mark and the actual average mark.",
               "3": "wrong c",
               "4": "wrong d"
             }
@@ -261,22 +253,21 @@
             "name": "Correct",
             "state": 2,
             "values": {
-              "Professor#1": "Correct!, Average years of education has increased by generation, ...",
-              "Professor#2": "...which means that future generations will be even more educated than the previous generation because more people are pursuing a bachelor's degree."
+              "Professor#1": "Correct!, The evidence suggests that there is a significant difference between the claim the teacher made about the average mark and the actual average mark."
             }
           },
           {
             "name": "Incorrect",
             "state": 3,
             "values": {
-              "Professor#1": "Incorrect!, "
+              "Professor#1": "Incorrect!, The evidence suggests that there is a significant difference between the claim the teacher made about the average mark and the actual average mark."
             }
           }
         ]
 	    },
-      "Q117":{
-        "name": "Q117",
-        "next": "Q118",
+      "Q136":{
+        "name": "Q136",
+        "next": "Q137",
         "alternative": "",
         "answerType": 1,
         "answer": "3",
@@ -285,24 +276,15 @@
             "name": "Dialogue",
             "state": 0,
             "values": {
-              "Samantha#1": "Looking at these statistics, the future does look quite promising.",
-              "Samantha#2": "More and more people in our generation are pursuing a bachelor's degree.",
-              "Samantha#3": "Which means as generations go by, more and more people will be more educated.",
-              "Professor#1": "That is CORRECT, Samantha.Look at you, what a smart cookie.",
-              "Samantha#4": "And yet I still somehow don't see how that's relevant to me, Professor Know It All.",
-              "Professor#2": "If you think about it Samantha, what conclusion can you draw after answering the previous two questions?",
-              "Samantha#5": "I guess this means that over time, more people of different genders will become more educated, especially women.",
-              "Samantha#6": "I guess it's a sign of progress for society, as it wasn't even that long ago when women were not even allowed to read books.",
-              "Samantha#7": "Okay, I can see your point now.But here is my question though.",
-              "Samantha#8": "I have noticed that at certain age groups, the amount of people choosing to study starts decreasing.",
-              "Samantha#9": "Are there any particular reasons as to why that trend persists?",
-              "Professor#3": "That is quite a good question.",
-              "Professor#4": "Look at you asking the questions now, looks like you are starting to accept your situation and starting to want to learn now.",
-              "Samantha#10": "Shut your-",
-              "Samantha#11": "One, I am trapped here regardless of my willingness in the situation, might as well make the most out of it.",
-              "Samantha#12": "Two, this concerns how I perceive pursuing a path of tertiary education, therefore please show me the data without the extra fuss.",
-              "Professor#5": "Alright, whatever floats your boat.",
-              "Narrator#1": "*snaps fingers*"
+              "Amanda#1": "The evidence suggests that there is a significant difference between the claim the teacher made about the average mark and the actual average mark.",
+              "Amanda#2": "So recently at my school the teachers are putting the math students in my class in the same physics class, so people in my classes are the same for maths and physics.",
+              "Amanda#3": "They're doing this because they have similar crossovers of students and numerical skills so they want to measure the average marks of students in both classes.",
+              "Amanda#4": "So the after the first tests in physics and maths, both were marked out of out of 20: ",
+              "Graph#1": "$PICQ136|",
+              "Amanda#5": "So, is there a difference between the average marks for both physics and maths students?",
+              "Professor#1": "We will go through a couple of steps to learn how to use techniques of the hypothesis test before, except for two or more populations.",
+              "Professor#2": "firstly identify the null hypothesis and the alternative hypothesis?",
+              "Graph#2": "$PICQ136|"
             }
           },
           {
@@ -311,7 +293,7 @@
             "values": {
               "1": "wrong a",
               "2": "wrong b",
-              "3": "Correct",
+              "3": "The null hypothesis is: H0= Mu(physics) = Mu(math)",
               "4": "wrong d"
             }
           },
@@ -319,23 +301,22 @@
             "name": "Correct",
             "state": 2,
             "values": {
-              "Professor#1": "Correct!, Males recorded “no longer interested as to why they stopped 28.7% and females recorded that as their second highest reason.",
-              "Professor#2": "Males second highest is “employment or financial reasons” at 26.1%, and females highest is “family, health or other personal reasons” at 29.6%."
+              "Professor#1": "Correct!, The null hypothesis is: H0= Mu(physics) = Mu(math)."
             }
           },
           {
             "name": "Incorrect",
             "state": 3,
             "values": {
-              "Professor#1": "Incorrect!"
+              "Professor#1": "Incorrect! The null hypothesis is: H0= Mu(physics) = Mu(math)."
             }
           }
         ]
 	    },
 
-      "Q118":{
-        "name": "Q118",
-        "next": "Q119",
+      "Q137":{
+        "name": "Q137",
+        "next": "Q138",
         "alternative": "",
         "answerType": 0,
         "answer": "4",
@@ -344,10 +325,8 @@
             "name": "Dialogue",
             "state": 0,
             "values": {
-              "Samantha#1": "Interesting.So each demographic of people records different reasons for why they no longer study.",
-              "Samantha#2": "So I am going to take a guess and say that the data would be different for my age group?",
-              "Professor#1": "That is so correct! And that is because the mean years of education have increased over generations.",
-              "Professor#2": "But here is another question for you, why do you think things are so different for you and your brother today?"
+              "Amanda#1": "Therefore the alternative hypothesis is: H1=Mu(physics) doesn't equal Mu(Math)",
+              "Professor#1": "Okay now there are conditions to a two sample test being valid, can you tell me what is required?"
             }
           },
           {
@@ -357,31 +336,28 @@
               "1": "wrong a",
               "2": "wrong b",
               "3": "wrong c",
-              "4": "Correct"
+              "4": "Our test is only valid if we can reasonably assume that both samples are drawn from normal distributions and that both samples are drawn from populations with equal spread."
             }
           },
           {
             "name": "Correct",
             "state": 2,
             "values": {
-              "Professor#1": "Correct!, The male and females range from 15-64 which could include a large number of older generations that record less education.",
-              "Professor#2": "Meaning maybe there was a higher pressure for men to focus on earning a living..., ",
-              "Professor#3": "...whereas females were more focused on having a family.",
-              "Professor#4": "Whereas today there is higher value on education and qualifications."
+              "Professor#1": "Correct!, Our test is only valid if we can reasonably assume that both samples are drawn from normal distributions and that both samples are drawn from populations with equal spread."
             }
           },
           {
             "name": "Incorrect",
             "state": 3,
             "values": {
-              "Professor#1": "Incorrect!, "
+              "Professor#1": "Incorrect!, Our test is only valid if we can reasonably assume that both samples are drawn from normal distributions and that both samples are drawn from populations with equal spread."
             }
           }
         ]
 	    },
-      "Q119":{
-        "name": "Q119",
-        "next": "Q1110",
+      "Q138":{
+        "name": "Q138",
+        "next": "Q139",
         "alternative": "",
         "answer": "1",
         "sections": [
@@ -389,21 +365,15 @@
             "name": "Dialogue",
             "state": 0,
             "values": {
-              "Samantha#1": "I mean, from what I can tell, people from both of the binary gender demographic,...",
-              "Samantha#2": "...with their age ranging from 15-64, includes a huge number of older generations that records being less educated.",
-              "Samantha#3": "From my understanding of the older generation, I am guessing there was just a higher pressure for men to focus on earning a living...",
-              "Samantha#4": "...and for women to focus on their own family back in the olden days.Whereas in our current generation, we place a higher value on education and qualifications.",
-              "Professor#1": "That is absolutely wonderful Samantha.Perfect analysis on the subject matter.",
-              "Professor#2": "Now to answer the most important question of it all, the one that you have been dying to know.",
-              "Professor#3": "Are there many women who study STEM in university?",
-              "Narrator#1": "*snaps fingers*"
+              "Professor#1": "Both subjects have different S-D. Try to evaluate the common standard deviation? ",
+              "Graph#1": "$PICQ138|"
             }
           },
           {
             "name": "Questions",
             "state": 1,
             "values": {
-              "1": "Correct",
+              "1": "S-D is 4.2536",
               "2": "wrong b",
               "3": "wrong c",
               "4": "wrong d"
@@ -413,20 +383,63 @@
             "name": "Correct",
             "state": 2,
             "values": {
-              "Professor#1": "Correct!, Women are more prevalent in science than men, but in engineering, men have a significantly higher population."
+              "Professor#1": "Correct!, S-D is 4.2536."
             }
           },
           {
             "name": "Incorrect",
             "state": 3,
             "values": {
-              "Professor#1": "Incorrect!, "
+              "Professor#1": "Incorrect!, S-D is 4.2536."
             }
           }
         ]
 	    },
-      "Q1110":{
-        "name": "Q1110",
+      "Q139":{
+        "name": "Q139",
+        "next": "Q1310",
+        "alternative": "",
+        "answerType": 1,
+        "answer": "2",
+        "sections": [
+          {
+            "name": "Dialogue",
+            "state": 0,
+            "values": {
+              "Professor#1": "Now find the new t-score and degrees of freedom, then using the information given find the p value and determine whether we accept or not reject the null hypothesis?",
+              "Graph#1": "$PICQ139|"
+            }
+          },
+          {
+            "name": "Questions",
+            "state": 1,
+            "values": {
+              "1": "wrong a",
+              "2": "Accept",
+              "3": "Reject",
+              "4": "wrong d"
+            }
+          },
+          {
+            "name": "Correct",
+            "state": 2,
+            "values" :{
+              "Professor#1": "Correct!, Using the t-score I found on a normal distribution tool I found the value to be p= 0.068.",
+              "Professor#2" : "Therefore since the p>0.05, we do not reject the null hypothesis"
+            }
+          },
+          {
+            "name": "Incorrect",
+            "state": 3,
+            "values": {
+              "Professor#1": "Incorrect!, Using the t-score I found on a normal distribution tool I found the value to be p= 0.068.",
+              "Professor#2" : "Therefore since the p>0.05, we do not reject the null hypothesis"
+            }
+          }
+        ]
+	    },
+      "Q1310":{
+        "name": "Q1310",
         "next": "end",
         "alternative": "",
         "answerType": 1,
@@ -436,16 +449,7 @@
             "name": "Dialogue",
             "state": 0,
             "values": {
-              "Samantha#1": "That's quite relieving to see that there are quite a number of women who choose to study STEM subjects.",
-              "Samantha#2": "I guess that gives me some sort of comfort seeing so many women study in the science side of STEM subjects.",
-              "Samantha#3": "Still it is quite a shame to see that there is significantly less percentage of women in engineering subjects though.",
-              "Professor#1": "It definitely is quite a shame.",
-              "Professor#2": "Although engineering is a difficult subject to grasp,...",
-              "Professor#3": "...I believe it is an advantage to see a diverse demographic within the Engineering field.",
-              "Professor#4": "And as more and more people choose to pursue higher education, this data can change over time.",
-              "Professor#5": "You can be part of that change too if you would like, it is ultimately up to you as to what you want to study though.",
-              "Samantha#4": "Alright well, that was quite eye-opening and educational, I have a slight grasp as to my own future now.",
-              "Samantha#5": "But I won't have a future to pursue, if you won't let me out."
+              "Professor#1": "Good job, Amanda, now finish off by making a conclusion about the comparisons of maths and physics students and their result?"
             }
           },
           {
@@ -453,7 +457,7 @@
             "state": 1,
             "values": {
               "1": "wrong a",
-              "2": "Correct",
+              "2": "There is evidence that suggest that there is not significant difference between the results of those in physics to those in mathematics.",
               "3": "wrong c",
               "4": "wrong d"
             }
@@ -462,14 +466,14 @@
             "name": "Correct",
             "state": 2,
             "values" :{
-              "Professor#1": "Correct!, "
+              "Professor#1": "Correct!, There is evidence that suggest that there is not significant difference between the results of those in physics to those in mathematics."
             }
           },
           {
             "name": "Incorrect",
             "state": 3,
             "values": {
-              "Professor#1": "Incorrect!, "
+              "Professor#1": "Incorrect!, There is evidence that suggest that there is not significant difference between the results of those in physics to those in mathematics."
             }
           }
         ]
@@ -477,9 +481,102 @@
     },
 
     "Poverty": {
-      "Q211": {
-        "name": "Q211",
-        "next": "Q212",
+      "Q231": {
+        "name": "Q231",
+        "next": "Q232",
+        "alternative": "",
+        "answerType": 1,
+        "answer": "2",
+        "sections": [
+          {
+            "name": "Dialogue",
+            "state": 0,
+            "values": {
+              "Professor#1": "$CEIdle|$POS0|Now that we have looked at some basic concepts in the previous levels, we can now begin to apply our knowledge of statistics at a higher level.",
+              "Eliza#1": "$CEIDLE|POS1|I am looking forward to it.",
+              "Professor#2": "We will now be using data on the percentage yearly growth of GDP per capita for 184 countries.",
+              "Professor#3": "And you may be wondering how the growth of GDP per capita might be related to poverty. That is a good question, one which I would like you to have a go at:",
+              "Eliza#2": "Hmmm, how might growth of gdp per capita be related to poverty?"
+            }
+          },
+          {
+            "name": "Questions",
+            "state": 1,
+            "values": {
+              "1": "Poor countries would be expected to have a large gdp",
+              "2": "Rich countries would be expected to have a large gdp",
+              "3": "Poverty can be related to low yearly gdp per capita growth ",
+              "4": "Poverty can be related to high yearly gdp per capita growth"
+            }
+          },
+          {
+            "name": "Correct",
+            "state": 2,
+            "values": {
+              "Professor#1": "Correct! Rich countries would be expected to have a large gdp",
+              "Eliza#1": "Poverty can be understood from many different perspectives.",
+              "Eliza#2": "For a country with lower rates of poverty we would expect the yearly growth of gdp per capita to be increasing."
+            }
+          },
+          {
+            "name": "Incorrect",
+            "state": 3,
+            "values": {
+              "Professor#1": "Incorrect! Rich countries would be expected to have a large gdp"
+            }
+          }
+        ]
+      },
+      "Q232": {
+        "name": "Q232",
+        "next": "Q233",
+        "alternative": "",
+        "answerType": 1,
+        "answer": "1",
+        "sections": [
+          {
+            "name": "Dialogue",
+            "state": 0,
+            "values": {
+              "Professor#1": "In the data set above, we do not know the true value for the mean of the yearly gdp growth because not every country is included.",
+              "Professor#2": "But we are given the sample mean and sample standard deviation.",
+              "Professor#3": "Suppose we wish to conduct a test about the nature of the population mean of the yearly gdp per capita growth.",
+              "Professor#4": "What type of distribution would be best?"
+            }
+          },
+          {
+            "name": "Questions",
+            "state": 1,
+            "values": {
+              "1": "T distribution",
+              "2": "Normal distribution with mean 1 and standard deviation",
+              "3": "Standard Normal Distribution",
+              "4": "Poisson distribution"
+            }
+          },
+          {
+            "name": "Correct",
+            "state": 2,
+            "values": {
+              "Professor#1": "Correct!, T distribution, also known as the student’s t distribution. ",
+              "Professor#2": "An interesting property of the t distribution is that as the sample size gets larger the t distribution will tend to the standard normal distribution.",
+              "Professor#3": "(which is the normal distribution with mean 0 and variance 1)"
+            }
+          },
+          {
+            "name": "Incorrect",
+            "state": 3,
+            "values": {
+              "Professor#1": "Correct!, T distribution, also known as the student’s t distribution. ",
+              "Professor#2": "An interesting property of the t distribution is that as the sample size gets larger the t distribution will tend to the standard normal distribution.",
+              "Professor#3": "(which is the normal distribution with mean 0 and variance 1)"
+            }
+          }
+        ]
+      },
+      "Q233": {
+        "name": "Q233",
+        "next": "Q234",
         "alternative": "",
         "answerType": 1,
         "answer": "4",
@@ -488,98 +585,28 @@
             "name": "Dialogue",
             "state": 0,
             "values": {
-              "Professor#1": "$CEIdle|$POS0|$BGPovertyBackground|$BGMPoverty_BGM|Alright. Since you've chosen this level, you will experience this and answer my questions through the mindset of one of my favorite memoram, Elijah.",
-              "Professor#2": "Now, if we may, we shall start right away.",
-              "Player#1":"$CEIdle|$POS1|I can't get used to this experience at all to be quite honest.",
-              "Professor#3":"You will get used to it eventually.",
-              "Professor#4":"For this topic, we will be using the memoram we obtained when Elijah signed up for one of our programs. ",
-              "Professor#5":"I have to say he was one of the more pleasant interviewees I have had the pleasure to do this program with, unlike yourself.",
-              "Professor#6":"And therefore for my sake, I will be making this a third person memoram experience, just so you can't ruin this for me.",
-              "Player#2":"How fair. You absolute coward. If you are going to trap me, at least let me have some way to retaliate at you.",
-              "Professor#7":"In your dreams. Now let's begin, shall we?",
-              "Narrator#1":"*Professor snaps their fingers and Elijah seems to come to life and starts animating*",
-              "Professor#8":"Hello there. Elijah, correct? How are you doing? And what can I do for you today?",
-              "Elijah#1":"$CEIdle|$POS1|Hello there sir! I am doing absolutely fantastic. It is such an honor to meet you.",
-              "Elijah#2":"Since you asked, I will just go straight to the point then.",
-              "Elijah#3":"I have been thinking about volunteering for support work to further develop my resume and grow my experience as a member of society,...",
-              "Elijah#4":"…but I am currently struggling to search up relevant resources to develop my views on the reality of poverty within Australia.",
-              "Professor#9":"Oh you are too kind.",
-              "Narrator#2":" *winks at Player, and you roll your eyes*",
-              "Professor#10":"The pleasure is all mine.",
-              "Professor#11":"Now since you got straight to the point that you need more information on the current situation of poverty within Australia.",
-              "Professor#12":"Let's take a step back and observe the meaning of poverty. Can you tell me what would be some indicators of poverty?"
+              "Professor#1": "For now we will conduct a hypothesis test on only the 2019 data set. ",
+              "Professor#2": "Suppose we wish to test the hypothesis that true value for the yearly gdp per capita is not 3%.",
+              "Professor#3": "What would be the appropriate test? Where M is the population mean."
             }
           },
           {
             "name": "Questions",
             "state": 1,
             "values": {
-              "1": "A lack of money",
-              "2": "Hunger and unclean water",
-              "3": "Inadequate shelter",
-              "4": "All of the above"
+              "1": "H0: M is  more than 3; H1: M is equal to 3",
+              "2": "H0: M is less than 3; H1: M is more than  3",
+              "3": "H0: M is not equal to 3; H1: M is not equal to 3",
+              "4": "H0: M is 3; H1: M is not equal to 3"
             }
           },
           {
             "name": "Correct",
             "state": 2,
             "values": {
-              "Elijah#1": "From my observation, all of the answers seem to be indicators of poverty.",
-              "Elijah#2": "Lacking money in a capitalist world is a very big indicator.",
-              "Elijah#3": "Having limited to no access to food and clean water is also a big indicator.",
-              "Elijah#4": "And a lack of shelter in our day and age can prove to be very problematic.",
-              "Professor#1": "Absolutely correct, Elijah. Those are extremely good answers you've provided.",
-              "Professor#2": "However, income is definitely the best numerical indicator for poverty as most definitions of poverty are mostly based on income."
-            }
-          },
-          {
-            "name": "Incorrect",
-            "state": 3,
-            "values": {
-              "Professor#1": "Yikes!"
-            }
-          }
-        ]
-      },
-      "Q212": {
-        "name": "Q212",
-        "next": "Q213",
-        "alternative": "",
-        "answerType": 1,
-        "answer": "1",
-        "sections": [
-          {
-            "name": "Dialogue",
-            "state": 0,
-            "values": {
-              "Professor#1": "Now comes another question, this is a graph that's obtained from careful observations from my colleague.",
-              "Professor#2": "From this graph, can you tell me the global percentage of people that are making less than $5.49 per day?",
-              "Graph#1": "$PICQ212|"
-            }
-          },
-          {
-            "name": "Questions",
-            "state": 1,
-            "values": {
-              "1": "37.1%",
-              "2": "45%",
-              "3": "25.9%",
-              "4": "36%"
-            }
-          },
-          {
-            "name": "Correct",
-            "state": 2,
-            "values": {
-              "Elijah#1": "That is absolutely terrible…… 37.1% of people globally are making less than $5 per day?!",
-              "Elijah#2": "Living in Australia, I would've never heard of that, I can't even imagine what that would feel like.",
-              "Professor#1": "That's okay Elijah, you don't have to panic just yet.",
-              "Professor#2": "I know it can feel very disheartening but that's what I am here for, are you feeling okay?",
-              "Elijah#3": "I feel okay to proceed, I just feel a bit sad to hear that people can still earn less than what they deserve.",
-              "Player#1": "Well it is quite saddening to hear that.",
-              "Player#2": "But what's even more disheartening is that I am stuck here with an annoying know-it-all and a crybaby.",
-              "Narrator#1": "*Professor stares at Player briefly and looks back at Elijah*",
-              "Professor#3": "That's okay, Elijah. It means you have basic sympathy."
+              "Professor#1": "Correct!, H0: M is 3; H1: M is not equal to 3",
+              "Professor#2": "H1 is the hypothesis that we are interested in proving.",
+              "Professor#3": "If the test does not provide sufficient evidence to conclude that this is the case, then we retain the null hypothesis H0."
 
             }
           },
@@ -587,14 +614,57 @@
             "name": "Incorrect",
             "state": 3,
             "values": {
-              "Professor#1": "Incorrect! Yikes."
+              "Professor#1": "Incorrect!, H0: M is 3; H1: M is not equal to 3",
+              "Professor#2": "H1 is the hypothesis that we are interested in proving.",
+              "Professor#3": "If the test does not provide sufficient evidence to conclude that this is the case, then we retain the null hypothesis H0."
             }
           }
         ]
       },
-      "Q213": {
-        "name": "Q213",
-        "next": "Q214",
+      "Q234": {
+        "name": "Q234",
+        "next": "Q235",
+        "alternative": "",
+        "answerType": 1,
+        "answer": "3",
+        "sections": [
+          {
+            "name": "Dialogue",
+            "state": 0,
+            "values": {
+              "Eliza#1": "What would we say if let’s say, we do have enough evidence to accept the alternative?",
+              "Professor#1": "Good question. We would say that there is insufficient evidence and reject the null hypothesis H0.",
+              "Professor#2": "Now before we move on we need to know about Type 1 and Type 2 errors. What is the definition of a Type 1 error in relation to the hypothesis test?"
+            }
+          },
+          {
+            "name": "Questions",
+            "state": 1,
+            "values": {
+              "1": "When you accept a false null hypothesis",
+              "2": "When you reject a false null hypothesis",
+              "3": "When you reject a true null hypothesis"
+            }
+          },
+          {
+            "name": "Correct",
+            "state": 2,
+            "values": {
+              "Professor#1": "Correct!, Type 1 error is when you reject a true null hypothesis"              
+            }
+          },
+          {
+            "name": "Incorrect",
+            "state": 3,
+            "values": {
+              "Professor#1": "Incorrect!, Type 1 error is when you reject a true null hypothesis"     
+            }
+          }
+        ]
+      },
+      "Q235": {
+        "name": "Q235",
+        "next": "Q236",
         "alternative": "",
         "answerType": 1,
         "answer": "2",
@@ -603,158 +673,38 @@
             "name": "Dialogue",
             "state": 0,
             "values": {
-              "Professor#1": "Now I will say that sometimes the percentage does not represent the actual poverty rate.",
-              "Professor#2": "Let's try and understand that better shall we?",
-              "Professor#3": "Now here is some dud data for you to practice on.",
-              "Professor#4": "Can you please find out the mean and the median for the data that's currently before you?",
-              "Professor#5": "1, 1, 3, 6, 15, 22"
-
+              "Professor#1": "Now what is a type 2 error?"
             }
           },
           {
             "name": "Questions",
             "state": 1,
             "values": {
-              "1": "Mean:5   Median: 4.5",
-              "2": "Mean:8   Median: 4.5",
-              "3": "Mean:8   Median: 6.5",
-              "4": "-"
+              "1": "When you retain a true null hypothesis",
+              "2": "When you prove a false null hypothesis",
+              "3": "When you retain a false null hypothesis"
             }
           },
           {
             "name": "Correct",
             "state": 2,
             "values": {
-              "Elijah#1": "The difference between the mean and the median is so huge. Wait, what's causing this gap?",
-              "Professor#1": "Incredible calculation and observational skill Elijah!",
-              "Professor#2": "The reason why there is a big difference between the mean and median is because of the extreme variables within the dataset.",
-              "Professor#3": "So this means depending on the subject, we need to actually consider which measurement is most useful to your current conclusion."
-
+              "Professor#1": "Correct!, Type 2 error is when you retain a false null hypothesis"
             }
           },
           {
             "name": "Incorrect",
             "state": 3,
             "values": {
-              "Professor#1": "Incorrect! Yikes."
-
-            }
-          }
-        ]
-      },
-      "Q214": {
-        "name": "Q214",
-        "next": "Q215",
-        "alternative": "",
-        "answerType": 1,
-        "answer": "2",
-        "sections": [
-          {
-            "name": "Dialogue",
-            "state": 0,
-            "values": {
-              "Elijah#1": "Oh! That is so interesting. Can I-",
-              "Narrator#1": "*Player pauses the simulation by themselves*",
-              "Player#1": "$CEIdle|$POS1|I am sorry, how is this question actually relevant to what Elijah is trying to understand?",
-              "Player#2": "From what I understand about him, he is trying to obtain more understanding on the reality of poverty.",
-              "Player#3": "So how is learning any of these yip-yaps about statistics supposed to help him?",
-              "Professor#1": "Well, if you have simply allowed the <b>memoram</b> to play through,...",
-              "Professor#2": "…you would've gotten to know how Elijah will gain an understanding of how poverty is in Australia.",
-              "Professor#3": "But unfortunately, you just rudely interrupted our conversation and just paused the <b>memoram</b>.",
-              "Player#4": "Well sorry for just wanting to gain some understanding and find relevance in these questions I guess.",
-              "Narrator#2":"*Professor glares at Player and unpause*",
-              "Elijah#2": "$CEIdle|$POS1|Can I then just choose the most appropriate measurement according to what's required here?",
-              "Professor#4": "That is correct!",
-              "Professor#5": "Now think about this, if you are trying to carry out a study on the poverty rate in Australia with the data of everyone's income, which measurement should we look at? The mean or the median?"
-            }
-          },
-          {
-            "name": "Questions",
-            "state": 1,
-            "values": {
-              "1": "Mean",
-              "2": "Median",
-              "3": "-",
-              "4": "-"
-            }
-          },
-          {
-            "name": "Correct",
-            "state": 2,
-            "values": {
-              "Elijah#1": "Oh! That makes so much more sense.",
-              "Elijah#2": "Since our datasets will be based on income, it's normal to have some extremely low or high values,...",
-              "Elijah#3": "…and therefore it will be much more appropriate to use median income as a reference to poverty."
-              
-            }
-          },
-          {
-            "name": "Incorrect",
-            "state": 3,
-            "values": {
-              "Professor#1": "Sorry, that's wrong!"
-
-            }
-          }
-        ]
-      },
-      "Q215": {
-        "name": "Q215",
-        "next": "Q216",
-        "alternative": "",
-        "answerType": 1,
-        "answer": "2",
-        "sections": [
-          {
-            "name": "Dialogue",
-            "state": 0,
-            "values": {
-              "Player#1": "$CEIdle|$POS1|Wow. We got a smart cookie over here.",
-              "Player#2": "Now if he only knew that I am the one answering the questions and not him.",
-              "Player#3": "How surprised do you reckon he would be.",
-              "Narrator#1": "*Professor glares at Player momentarily before continuing*",
-              "Professor#1": "That's right. We might think that poverty shouldn't be a serious problem here in Australia.",
-              "Professor#2": "But if we take a look at the study by ACOSS(Australian Council of Social Service) and UNSW on the poverty issue in Australia 2021.",
-              "Professor#3": "The study is based on the global standard poverty measurement which is 50% of the median income.",
-              "Professor#4": "Now let's think about it together. Which data should we be using as the measurement for poverty rate?",
-              "Table#1": "$PICQ215|"
-
-            }
-          },
-          {
-            "name": "Questions",
-            "state": 1,
-            "values": {
-              "1": "25% of Median income cost",
-              "2": "50% of Median income cost",
-              "3": "35% of Median income cost",
-              "4": "65% of Median income cost"
-            }
-          },
-          {
-            "name": "Correct",
-            "state": 2,
-            "values": {
-              "Elijah#1": "$CEIdle|$POS1|I guess we would be looking at the 50% of median income cost?",
-              "Elijah#2": "Simply because housing costs can be different for every individual.",
-              "Professor#1": "Absolutely spot on!"
-
-            }
-          },
-          {
-            "name": "Incorrect",
-            "state": 3,
-            "values": {
-              "Professor#1": "Incorrect! Yikes."
-
+              "Professor#1": "Incorrect!, Type 2 error is when you retain a false null hypothesis"
             }
           }
         ]
       },
 
-      "Q216": {
-        "name": "Q216",
-        "next": "Q217",
+      "Q236": {
+        "name": "Q236",
+        "next": "Q237",
         "alternative": "",
         "answerType": 1,
         "answer": "1",
@@ -763,45 +713,53 @@
             "name": "Dialogue",
             "state": 0,
             "values": {
-              "Professor#1": "According to their studies and surveys.",
-              "Professor#2": "ACOSS and UNSW were able to estimate that 3,239,000 people in Australia are under the poverty line.",
-              "Professor#3": "The population in Australia is around 23,810,000 in 2018.",
-              "Professor#4": "Can you now work out the poverty rate from these numbers?"
+              "Eliza#1": "How are these related to the Hypothesis test?",
+              "Professor#1": "Good question, type 1 and 2 errors are always present in every single hypothesis test",
+              "Professor#2": "That is also why we never say we accept the null hypothesis or that we accept the alternative hypothesis. ",
+              "Professor#3": "We say retain, which is the keyword here. Because we cannot prove it is absolutely true.",
+              "Professor#4": "If the chances of one error goes up then the other would decrease and vice versa.",
+              "Eliza#2": "Is there any way we can minimise the errors?",
+              "Professor#5": "We can choose which error we want to minimise. ",
+              "Professor#6": "The type 1 error is the probability of getting a false positive, whereas the type 2 error is the probability of getting a false negative.",
+              "Professor#7": "We can alter the probability by using a value called the significance level.",
+              "Professor#8": "So if the significance level is 5% then the confidence level of the test would be 95%.",
+              "Professor#9": "We typically select 5% as the significance level and only change it in specific circumstances.",
+              "Professor#10": "Generally if we increase the significance level then this would increase the likelihood of a Type 1 error and reduce the likelihood of a Type 2 error.",
+              "Professor#11": "Both errors are inversely related like this.",
+              "Eliza#3": "Thanks, that was very insightful.",
+              "Professor#12": "So we will conduct our test at the 95% confidence level with the hypothesis test above, what will be the test statistic?"
             }
           },
           {
             "name": "Questions",
             "state": 1,
             "values": {
-              "1": "13.6%",
-              "2": "15.5%",
-              "3": "12.9%",
-              "4": "13.4%"
+              "1": "(sample mean-mean in null hypothesis)/(sample standard deviation/sqrt(sample size))",
+              "2": "n/a",
+              "3": "n/a",
+              "4": "n/a"
             }
           },
           {
             "name": "Correct",
             "state": 2,
             "values": {
-              "Elijah#1": "The poverty rate is 13.6%. That's still quite high.",
-              "Professor#1": "You got it!"
-
+              "Professor#1": "Correct, (sample mean-mean in null hypothesis)/(sample standard deviation/sqrt(sample size))"
             }
           },
           {
             "name": "Incorrect",
             "state": 3,
             "values": {
-              "Professor#1": "Yikes"
-
+              "Professor#1": "Incorrect, (sample mean-mean in null hypothesis)/(sample standard deviation/sqrt(sample size))"
             }
           }
         ]
       },
 
-      "Q217": {
-        "name": "Q217",
-        "next": "Q218",
+      "Q237": {
+        "name": "Q237",
+        "next": "Q238",
         "alternative": "",
         "answerType": 1,
         "answer": "1",
@@ -810,89 +768,156 @@
             "name": "Dialogue",
             "state": 0,
             "values": {
-              "Professor#1": "The calculation of poverty rate is simply using the number of people below the poverty line divided by the total population.",
-              "Professor#2": "Now go ahead and have a look at this plot of the trends in median household disposable incomes, before and after deducting housing costs.",
-              "Professor#3": "Does this data suggest a positive relationship? What does this mean?",
-              "Graph#1": "$PICQ217|"
+              "Professor#1": "Now compute the value of the test statistic under the null hypothesis and determine the distribution of the test statistic",
+              "Professor#2": "The sample mean is 2.950694444, and the sample standard deviation is 1.806380585, the sample size is 184."
             }
           },
           {
             "name": "Questions",
             "state": 1,
             "values": {
-              "1": "Yes",
-              "2": "No",
-              "3": "-",
-              "4": "-"
+              "1": "Test statistic = (2.950694444-3)/(1.806380585/sqrt(184)) = -0.370250379",
+              "2": "n/a",
+              "3": "n/a",
+              "4": "n/a"
             }
           },
           {
             "name": "Correct",
             "state": 2,
             "values": {
-              "Elijah#1": "This feels quite depressing.",
-              "Elijah#2": "The graph suggests a positive relationship, which means the poverty rate is increasing in Australia every year.",
-              "Professor#1": "It is quite depressing just to look at the graph by itself, yes. ",
-              "Professor#2": "But this is exactly why volunteering work coming from young people like you can help make a difference."
-
+              "Professor#1": "Correct!, Test statistic = (2.950694444-3)/(1.806380585/sqrt(184)) = -0.370250379",
+              "Professor#2": "The distribution for this will be the t distribution with 183 (=184-1) degrees of freedom. Remember you have to take away 1 from the degrees of freedom."
             }
           },
           {
             "name": "Incorrect",
             "state": 3,
             "values": {
-              "Incorrect_Professor#1": "Incorrect! Yikes."
-
+              "Professor#1": "Incorrect!, Test statistic = (2.950694444-3)/(1.806380585/sqrt(184)) = -0.370250379",
+              "Professor#2": "The distribution for this will be the t distribution with 183 (=184-1) degrees of freedom. Remember you have to take away 1 from the degrees of freedom."
             }
           }
         ]
       },
 
-      "Q218": {
-        "name": "Q218",
-        "next": "end",
+      "Q238": {
+        "name": "Q238",
+        "next": "Q239",
         "alternative": "",
         "answerType": 1,
-        "answer": "1",
+        "answer": "3",
         "sections": [
           {
             "name": "Dialogue",
             "state": 0,
             "values": {
-              "Professor#1": "Hopefully these statistics have helped you gain clarity in the current situation surrounding poverty in Australia.",
-              "Elijah#1": "It has. Thank you so much for your help.",
-              "Elijah#2": "When I first signed up for this program to try and gain more understanding on this subject matter…",
-              "Elijah#3": "…I thought I would be scammed, I am very glad to have gotten to meet you now.",
-              "Professor#2": "Likewise Elijah.",
-              "Narrator#1": "*Your surrounding seems to freeze in place now and Elijah also seems to be frozen in place too*",
-              "Player#1": "At least someone was glad to have met you I guess.",
-              "Professor#3": "Well, that makes one of you guys.",
-              "Professor#4": "Now I will also be asking you the same question.",
-              "Professor#5": "Have you also obtained more understanding around poverty now that you've gone through Elijah's memoram?",
-              "Player#2": "If I say sure would you just let me out of here?"
+              "Professor#1": "Now that we have the test statistic, we can compute the p-value, but there is one problem.",
+              "Professor#2": "If we use the standard tables for the t-distribution, they don’t go up to 183, so what should we do?"
             }
           },
           {
             "name": "Questions",
             "state": 1, 
             "values": {
-              "1": "Yes",
-              "2": "No"
+              "1": "Cancel the test",
+              "2": "Check for mistakes",
+              "3": "Use a different distribution"
             }
           },
           {
             "name": "Correct",
             "state": 2,
             "values": {
-              "Professor#1": "Hmm."
+              "Professor#1": "Correct, Use a different distribution.",
+              "Professor#2": "Use the z-tables as n gets larger the t-distribution will approximate to the standard normal distribution."
             }
           },
           {
             "name": "Incorrect",
             "state": 3,
             "values": {
-              "Professor#1": "Sure."
-
+              "Professor#1": "Incorrect, Use a different distribution.",
+              "Professor#2": "Use the z-tables as n gets larger the t-distribution will approximate to the standard normal distribution."
+            }
+          }
+        ]
+      },
+      "Q239": {
+        "name": "Q239",
+        "next": "Q2310",
+        "alternative": "",
+        "answerType": 1,
+        "answer": "3",
+        "sections": [
+          {
+            "name": "Dialogue",
+            "state": 0,
+            "values": {
+              "Professor#1": "Find the p-value:"
+            }
+          },
+          {
+            "name": "Questions",
+            "state": 1, 
+            "values": {
+              "1": "P-value = P(|Z|>test statistic) = 2 x P(Z<test statistic) = 2 x 0.3557 = 0.7114.",
+              "2": "n/a",
+              "3": "n/a",
+              "4": "n/a"
+            }
+          },
+          {
+            "name": "Correct",
+            "state": 2,
+            "values": {
+              "Professor#1": "Correct, P-value = P(|Z|>test statistic) = 2 x P(Z<test statistic) = 2 x 0.3557 = 0.7114."
+            }
+          },
+          {
+            "name": "Incorrect",
+            "state": 3,
+            "values": {
+              "Professor#1": "Incorrect, P-value = P(|Z|>test statistic) = 2 x P(Z<test statistic) = 2 x 0.3557 = 0.7114."
+            }
+          }
+        ]
+      },
+      "Q2310": {
+        "name": "Q2310",
+        "next": "end",
+        "alternative": "",
+        "answerType": 1,
+        "answer": "3",
+        "sections": [
+          {
+            "name": "Dialogue",
+            "state": 0,
+            "values": {
+              "Professor#1": "What would be an acceptable conclusion to the test?"
+            }
+          },
+          {
+            "name": "Questions",
+            "state": 0, 
+            "values": {
+              "1": "Whatever answer you want."
+            }
+          },
+          {
+            "name": "Correct",
+            "state": 2,
+            "values": {
+              "Professor#1": "We retain the null hypothesis as the p-value exceeds the significance level of 5%.",
+              "Professor#2": "So there is insufficient evidence to conclude that the true value for yearly gdp per capita is different from 3%."
+            }
+          },
+          {
+            "name": "Incorrect",
+            "state": 3,
+            "values": {
+              "Professor#1": "We retain the null hypothesis as the p-value exceeds the significance level of 5%.",
+              "Professor#2": "So there is insufficient evidence to conclude that the true value for yearly gdp per capita is different from 3%."
             }
           }
         ]
