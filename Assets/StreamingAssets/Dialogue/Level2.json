@@ -1,0 +1,630 @@
+{
+    "level": "2",
+    "levelData" : {
+        "Education": {
+            "Q121": {
+                "name": "Q121",
+                "next": "Q122",
+                "alternative": "",
+                "answerType": 1,
+                "answer": "1",
+                "sections": [
+                    {
+                        "name": "Dialogue",
+                        "state": 0,
+                        "values": {
+                            "Narrator#1": "https://teaching.science.mq.edu.au/probtool/ use this probtool to help answer questions",
+                            "Professor#1": "So Rebecca has your perspective on education changed because of what you have seen.",
+                            "Rebecca#1": "Yeah of course I feel less inclined to do plumbing now.",
+                            "Rebecca#2": "I guess if I’m going to university, I want to know what atar is the average and the likelihood, so I would like to know where I rank in the schools around my area for visual arts.",
+                            "Professor#2": "Okay here is the table of the people you attend school with. Now please explain what the standard deviation is?"
+                        }
+                    },
+
+                    {
+                        "name": "Questions",
+                        "state": 1,
+                        "values": {
+                            "1": "a quantity expressed by how much the members of a group differ from the mean value for the group.",
+                            "2": "not the right answer"
+                        }
+                    },
+
+                    {
+                        "name": "Correct",
+                        "state": 2,
+                        "values": {
+                            "Professor#1": "That's correct."
+                        }
+                    },
+
+                    {
+                        "name": "Incorrect",
+                        "state": 3,
+                        "values": {
+                            "Professor#1": "WRONG!"
+                        }
+                    }
+                ]
+            },
+
+            "Q122": {
+                "name": "Q122",
+                "next": "Q123",
+                "alternative": "",
+                "answerType": 1,
+                "answer": "1",
+                "sections": [
+                    {
+                        "name": "Dialogue",
+                        "state": 0,
+                        "values": {
+                            "Rebecca#1": "Well I got an average of 85 so far in Visual arts, so where would I fall on a normal distribution of scores",
+                            "Professor#1": "Take a look at the bell curve and tell me how many standard deviations you are from the mean?"
+                        }
+                    },
+
+                    {
+                        "name": "Questions",
+                        "state": 1,
+                        "values": {
+                            "1": "2 standard deviations above the mean",
+                            "2": "3 standard deviations above the mean"
+                        }
+                    },
+
+                    {
+                        "name": "Correct",
+                        "state": 2,
+                        "values": {
+                            "Professor#1": "Correct."
+                        }
+                    },
+
+                    {
+                        "name": "Incorrect",
+                        "state": 3,
+                        "values": {
+                            "Professor#1": "WRONG!"
+                        }
+                    }
+                ]
+            },
+
+            "Q123": {
+                "name": "Q123",
+                "next": "Q124",
+                "alternative": "",
+                "answerType": 0,
+                "answer": "1",
+                "sections": [
+                    {
+                        "name": "Dialogue",
+                        "state": 0,
+                        "values": {
+                            "Professor#1": "So what is the likelihood of someone getting a score of 85?",
+                            "Professor#2": "Use a probability calculator to find this: https://www.calculator.net/probability-calculator.html"
+                        }
+                    },
+
+                    {
+                        "name": "Questions",
+                        "state": 1,
+                        "values": {
+                            "1": "0.019459"
+                        }
+                    },
+
+                    {
+                        "name": "Correct",
+                        "state": 2,
+                        "values": {
+                            "Professor#1": "Correct."
+                        }
+                    },
+
+                    {
+                        "name": "Incorrect",
+                        "state": 3,
+                        "values": {
+                            "Professor#1": "WRONG!"
+                        }
+                    }
+                ]
+            },
+
+            "Q124": {
+                "name": "Q124",
+                "next": "Q125",
+                "alternative": "",
+                "answerType": 0,
+                "answer": "1",
+                "sections": [
+                    {
+                        "name": "Dialogue",
+                        "state": 0,
+                        "values": {
+                            "Rebecca#1": "How accurate can the standard deviation actually be though?",
+                            "Rebecca#2": "Like the whole thing seems to be a good way to calculate probability based on standard deviation and mean in a population but what is the accuracy?",
+                            "Professor#1": "The accuracy is in the standard error.",
+                            "Professor#2": "Standard error gives the accuracy of a sample mean by measuring the sample-to-sample variability of the sample means",
+                            "Professor#3": "Try to find the standard error using the formula:"
+                        }
+                    },
+
+                    {
+                        "name": "Questions",
+                        "state": 1,
+                        "values": {
+                            "1": "0.36776"
+                        }
+                    },
+
+                    {
+                        "name": "Correct",
+                        "state": 2,
+                        "values": {
+                            "Professor#1": "That's correct."
+                        }
+                    },
+
+                    {
+                        "name": "Incorrect",
+                        "state": 3,
+                        "values": {
+                            "Professor#1": "WRONG!"
+                        }
+                    }
+                ]
+            },
+
+            "Q125": {
+                "name": "Q125",
+                "next": "Q126",
+                "alternative": "",
+                "answerType": 1,
+                "answer": "1",
+                "sections": [
+                    {
+                        "name": "Dialogue",
+                        "state": 0,
+                        "values": {
+                            "Professor#1": "So what does this value about the standard error mean?",
+                            "Professor#2": "Does it make your probability of where you sit on the bell curve more likely or less likely?"
+                        }
+                    },
+
+                    {
+                        "name": "Questions",
+                        "state": 1,
+                        "values": {
+                            "1": "Scores are close together, the standard error is accurate.",
+                            "2": "Wrong answer or something"
+                        }
+                    },
+
+                    {
+                        "name": "Correct",
+                        "state": 2,
+                        "values": {
+                            "Professor#1": "Correct."
+                        }
+                    },
+
+                    {
+                        "name": "Incorrect",
+                        "state": 3,
+                        "values": {
+                            "Professor#1": "WRONG!"
+                        }
+                    }
+                ]
+            },
+
+            "Q126": {
+                "name": "Q126",
+                "next": "Q127",
+                "alternative": "",
+                "answerType": 1,
+                "answer": "1",
+                "sections": [
+                    {
+                        "name": "Dialogue",
+                        "state": 0,
+                        "values": {
+                            "Professor#1": "On top of this, as you want to be confident that your marks put you in the higher part of the normal distribution",
+                            "Professor#2": "Is there a way to measure the lower interval and highest interval to see that range?"
+                        }
+                    },
+
+                    {
+                        "name": "Questions",
+                        "state": 1,
+                        "values": {
+                            "1": " Yes, A confidence interval displays the probability that a parameter will fall between a pair of values around the mean",
+                            "2": "No"
+                        }
+                    },
+
+                    {
+                        "name": "Correct",
+                        "state": 2,
+                        "values": {
+                            "Professor#1": "Correct."
+                        }
+                    },
+
+                    {
+                        "name": "Incorrect",
+                        "state": 3,
+                        "values": {
+                            "Professor#1": "WRONG!"
+                        }
+                    }
+                ]
+            },
+
+            "Q127": {
+                "name": "Q127",
+                "next": "Q128",
+                "alternative": "",
+                "answerType": 0,
+                "answer": "1",
+                "sections": [
+                    {
+                        "name": "Dialogue",
+                        "state": 0,
+                        "values": {
+                            "Professor#1": "So can you now calculate the confidence interval for me please Rebecca?"
+                        }
+                    },
+
+                    {
+                        "name": "Questions",
+                        "state": 1,
+                        "values": {
+                            "1": "63.5"
+                        }
+                    },
+
+                    {
+                        "name": "Correct",
+                        "state": 2,
+                        "values": {
+                            "Professor#1": "Correct."
+                        }
+                    },
+
+                    {
+                        "name": "Incorrect",
+                        "state": 3,
+                        "values": {
+                            "Professor#1": "WRONG!"
+                        }
+                    }
+                ]
+            },
+
+            "Q128": {
+                "name": "Q128",
+                "next": "Q129",
+                "alternative": "",
+                "answerType": 1,
+                "answer": "1",
+                "sections": [
+                    {
+                        "name": "Dialogue",
+                        "state": 0,
+                        "values": {
+                            "Professor#1": "What can we say about the significance of the confidence interval?"
+                        }
+                    },
+
+                    {
+                        "name": "Questions",
+                        "state": 1,
+                        "values": {
+                            "1": "It tells you more than just the possible range around the esRebeccaate",
+                            "2": "Wrong answer or something"
+                        }
+                    },
+
+                    {
+                        "name": "Correct",
+                        "state": 2,
+                        "values": {
+                            "Professor#1": "Correct."
+                        }
+                    },
+
+                    {
+                        "name": "Incorrect",
+                        "state": 3,
+                        "values": {
+                            "Professor#1": "WRONG!"
+                        }
+                    }
+                ]
+            },
+
+            "Q129": {
+                "name": "Q129",
+                "next": "Q1210",
+                "alternative": "",
+                "answerType": 1,
+                "answer": "1",
+                "sections": [
+                    {
+                        "name": "Dialogue",
+                        "state": 0,
+                        "values": {
+                            "Professor#1": "In a case where the standard deviation is unknown, how would we be able to calculate the confidence interval?",
+                            "Professor#2": "And how would it be calculated, in terms of degrees of freedom? And combined tail area?"
+                        }
+                    },
+
+                    {
+                        "name": "Questions",
+                        "state": 1,
+                        "values": {
+                            "1": "Using t-critical value",
+                            "2": "Wrong answer or something"
+                        }
+                    },
+
+                    {
+                        "name": "Correct",
+                        "state": 2,
+                        "values": {
+                            "Professor#1":"That's correct."
+                        }
+                    },
+
+                    {
+                        "name": "Incorrect",
+                        "state": 3,
+                        "values": {
+                            "Professor#1": "WRONG!"
+                        }
+                    }
+                ]
+            },
+
+            "Q1210": {
+                "name": "Q1210",
+                "next": "end",
+                "alternative": "",
+                "answerType": 1,
+                "answer": "1",
+                "sections": [
+                    {
+                        "name": "Dialogue",
+                        "state": 0,
+                        "values": {
+                            "Professor#1": "Predict if there would be a difference between the CI for the t-critical value compared to the CI interval if the standard deviation was known?",
+                            "Professor#2": "And why is it not different?"
+                        }
+                    },
+
+                    {
+                        "name": "Questions",
+                        "state": 1,
+                        "values": {
+                            "1": "Shorten the answer and put it here",
+                            "2": "Wrong answer or something"
+                        }
+                    },
+
+                    {
+                        "name": "Correct",
+                        "state": 2,
+                        "values": {
+                            "Professor#1": "Correct."
+                        }
+                    },
+
+                    {
+                        "name": "Incorrect",
+                        "state": 3,
+                        "values": {
+                            "Professor#1": "WRONG!"
+                        }
+                    }
+                ]
+            }
+        },
+
+        "Poverty": {
+            "Q221": {
+                "name": "Q221",
+                "next": "Q222",
+                "alternative": "",
+                "answerType": 1,
+                "answer": "",
+                "sections": [
+                    {
+                        "name": "Dialogue",
+                        "state": 0,
+                        "values": {
+                            "Professor#1": "Eliza I hope you got a better understanding of poverty from our analysis.",
+                            "Eliza#1": "Absolutely! I never knew poverty could be defined so explicitly so I am glad that we were able to look at that.",
+                            "Professor#2": "Now we will move on to other things but still keep the central theme of poverty. Read the following scenario:",
+                            "Narrator#1": "The Bekele family lives in Ethiopia.",
+                            "Narrator#2": "Yonas is 31 years old and works in a garment factory.",
+                            "Narrator#3": "He has been married to Izara for 5 years who is 28 years old.",
+                            "Narrator#4": "Together they live with their 2 children,",
+                            "Narrator#5": "Amara who is 3 years old, and Salim who is 4 years old.",
+                            "Narrator#6": "They live in a single bedroom house and often there are issues with water and food.",
+                            "Narrator#7": "Yonas’ job is the only source of income for the family...",
+                            "Narrator#8": "and 90% of the income goes towards bare essentials such as food and hygiene products.",
+                            "Narrator#9": "Their goal is to earn enough money to send Amara and Salim to school when they are old enough.",
+                            "Narrator#10": "One of the Sustainable Development goals of the United Nations is to eradicate poverty entirely.",
+                            "Professor#3": "There are many such stories and scenarios that exist throughout the impoverished worlds,",
+                            "Professor#4": "and the goal of the United Nations is to entirely eradicate poverty...",
+                            "Professor#5": "...so such circumstances will never be experienced by families, let alone homelessness.",
+                            "Professor#6": "Now I would like to take this opportunity to teach you about some core statistical concepts that will help us later on,",
+                            "Professor#7": "in particular the mean and standard deviation as well as other concepts building on from this.",
+                            "Professor#8": "We will of course study these in the context of poverty as prescribed through the lens we have formed from the United Nations SUstainable Development Goal of Poverty."
+                        }
+                    },
+
+                    {
+                        "name": "Questions",
+                        "state": 1,
+                        "values": {
+
+                        }
+                    },
+
+                    {
+                        "name": "Correct",
+                        "state": 2,
+                        "values": {
+
+                        }
+                    },
+
+                    {
+                        "name": "Incorrect",
+                        "state": 3,
+                        "values": {
+                            
+                        }
+                    }
+                ]
+            }
+        },
+
+        "Health": {
+            "Q321": {
+                "name": "Q321",
+                "next": "Q322",
+                "alternative": "",
+                "answerType": 1,
+                "answer": "1",
+                "sections": [
+                    {
+                        "name": "Dialogue",
+                        "state": 0,
+                        "values": {
+                            "Rebecca#1": "Thanks! Okay so onto the numbers,  I need to extract some figures for my analysis",
+                            "Rebecca#2": "What would the mean be for the number of Malaria cases in Burkina Faso and Brazil from 2000 to 2006?",
+                            "Professor#1": "Well first you must know the formula for the mean, what is it?"
+                        }
+                    },
+
+                    {
+                        "name": "Questions",
+                        "state": 1,
+                        "values": {
+                            "1": "The answer.",
+                            "2": "Not the answer."
+                        }
+                    },
+
+                    {
+                        "name": "Correct",
+                        "state": 2,
+                        "values": {
+                            "Professor#1": "Correct."
+                        }
+                    },
+
+                    {
+                        "name": "Incorrect",
+                        "state": 3,
+                        "values": {
+                            "Professor#1": "WRONG!"
+                        }
+                    }
+                ]
+            },
+
+            "Q322": {
+                "name": "Q322",
+                "next": "Q323",
+                "alternative": "",
+                "answerType": 1,
+                "answer": "4",
+                "sections": [
+                    {
+                        "name": "Dialogue",
+                        "state": 0,
+                        "values": {
+                            "Rebecca#1": "Now that we know the formula, we can try to solve the question!",
+                            "Professor#1": "Just before we get to that, what might be a good explanation for the formula?"
+                        }
+                    },
+
+                    {
+                        "name": "Questions",
+                        "state": 1,
+                        "values": {
+                            "1": "Multiple all the values and divide by the number of values",
+                            "2": "Divide all the values and divide by the number of values",
+                            "3": "Subtract all the values and divide by the number of values",
+                            "4": "Add all the values and divide by the number of values"
+                        }
+                    },
+
+                    {
+                        "name": "Correct",
+                        "state": 2,
+                        "values": {
+                            "Professor#1": "Correct."
+                        }
+                    },
+
+                    {
+                        "name": "Incorrect",
+                        "state": 3,
+                        "values": {
+                            "Professor#1": "WRONG!"
+                        }
+                    }
+                ]
+            },
+
+            "Q323": {
+                "name": "Q323",
+                "next": "Q324",
+                "alternative": "",
+                "answerType": 1,
+                "answer": "",
+                "sections": [
+                    {
+                        "name": "Dialogue",
+                        "state": 0,
+                        "values": {
+                            "Rebecca#1": "Wonderful! Now that I know what the mean is, here are the answers I got. And the means are:"
+                        }
+                    },
+
+                    {
+                        "name": "Questions",
+                        "state": 1,
+                        "values": {
+
+                        }
+                    },
+
+                    {
+                        "name": "Correct",
+                        "state": 2,
+                        "values": {
+
+                        }
+                    },
+
+                    {
+                        "name": "Incorrect",
+                        "state": 3,
+                        "values": {
+                            
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}
