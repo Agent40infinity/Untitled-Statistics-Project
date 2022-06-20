@@ -39,23 +39,23 @@ public class SheetReader
     {
         UnityWebRequest reader = UnityWebRequest.Get(fullJsonPath);
         yield return reader.SendWebRequest();
-        //byte[] data = reader.downloadHandler.data;
+        byte[] data = reader.downloadHandler.data;
 
-        if (reader.isNetworkError || reader.isHttpError)
+        /*if (reader.isNetworkError || reader.isHttpError)
         {
             Debug.Log(reader.error);
-        }
+        }*/
 
-        String path = Application.streamingAssetsPath + "/PlayerData/certs.json";
-        //Stream creds = new MemoryStream(data);
-        //ServiceAccountCredential credential = ServiceAccountCredential.FromServiceAccountData(creds);
-        var certificate = new X509Certificate2(reader.downloadHandler.text, "notasecret", X509KeyStorageFlags.Exportable);
+        //String path = Application.streamingAssetsPath + "/PlayerData/certs.json";
+        Stream creds = new MemoryStream(data);
+        ServiceAccountCredential credential = ServiceAccountCredential.FromServiceAccountData(creds);
+        //var certificate = new X509Certificate2(reader.downloadHandler.text, "notasecret", X509KeyStorageFlags.Exportable);
 
-        ServiceAccountCredential credential = new ServiceAccountCredential(
+       /* ServiceAccountCredential credential = new ServiceAccountCredential(
             new ServiceAccountCredential.Initializer(serviceEmail)
             {
                 Scopes = new[] { SheetsService.Scope.Spreadsheets }
-            }.FromCertificate(certificate));
+            }.FromCertificate(certificate));*/
 
         service = new SheetsService(new BaseClientService.Initializer()
         {
