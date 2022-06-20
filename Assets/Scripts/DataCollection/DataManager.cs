@@ -106,6 +106,7 @@ public class DataManager : MonoBehaviour
         for (int i = 0; i < FieldManager.FieldCount; i++)
         {
             FieldState field = FieldManager.GetIndexOf(i);
+            Debug.Log(level.level);
 
             for (int j = 0; j < level.levelData[field].Count; j++)
             {
