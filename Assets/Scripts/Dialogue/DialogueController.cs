@@ -62,6 +62,7 @@ public class DialogueController : MonoBehaviour
         }
 
         LevelManager.queueWaiting = false;
+        queueWaiting = true;
     }
 
     public void QuestionSetup(Question question)
