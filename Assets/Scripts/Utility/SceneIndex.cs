@@ -7,5 +7,4 @@ public enum SceneIndex
     Prelude,
     Selection,
     Level1,
-    Results,
 }

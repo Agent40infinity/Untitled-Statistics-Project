@@ -66,9 +66,11 @@ public class DialogueLoading : MonoBehaviour
         }
     }
 
-    public void SaveLevel(Dictionary<string, Dictionary<string, Dictionary<string, Dictionary<string, string>>>> level)
+    public void GenerateLevel()
     {
-        string path = Application.streamingAssetsPath + fileType["Default"] + "DebugOutput.json"; //Gets the file in directory.
+        Level level = new Level();
+
+        string path = Application.streamingAssetsPath + fileType["Default"] + "Level" + Random.Range(0, 999) + ".json"; //Gets the file in directory.
         string json = JsonConvert.SerializeObject(level, Formatting.Indented); //Creates a new SettingData so that the data can be serialised.
         StreamWriter writer = File.CreateText(path); //Overrides/Creates a new file for settings based on the path and data provided.
         writer.Close();
